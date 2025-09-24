@@ -1,0 +1,79 @@
+.main-product-container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 32px;
+  height: calc(100vh - 230px);
+  min-height: 0;
+}
+.main-product-container h1 {
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 40px;
+  letter-spacing: -0.9;
+  margin-bottom: 12px;
+}
+
+.main-product-container span {
+  color: #475569;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.search-section span {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #475569;
+}
+
+.filtr-product-section {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.product-list-scroller {
+  min-height: 0;
+  height: 100%;
+  max-width: 100%;
+  overflow: auto;
+  padding-right: 6px;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.product-list-scroller::-webkit-scrollbar {
+  width: 8px;
+}
+.product-list-scroller::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+.product-list-scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}

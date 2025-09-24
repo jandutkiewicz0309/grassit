@@ -1,0 +1,65 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 65px;
+  border-bottom: 1px solid #e2e8f0b2;
+  margin: 0 auto;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.button-header {
+  display: inline-flex;
+  align-items: center;
+  color: #475569;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: transform 120ms ease, box-shadow 120ms ease,
+    border-color 120ms ease, background-color 120ms ease;
+  box-shadow: none;
+}
+
+.button-header:hover {
+  transform: translateY(-1px);
+  border-color: #047857;
+  background-color: rgba(4, 120, 87, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.button-header:active {
+  transform: translateY(0); /* lub +1px jeśli chcesz mocniejsze „dociśnięcie” */
+  background-color: rgba(4, 120, 87, 0.1);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.12);
+  border-color: #047857;
+}
+
+.button-header:focus-visible {
+  outline: 2px solid #047857;
+  outline-offset: 2px;
+  border-color: #047857;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button-header {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-header {
+    font-size: 12px;
+    padding: 8px 10px;
+    line-height: 17px;
+    margin-right: 12px;
+  }
+}

@@ -1,0 +1,32 @@
+.icon {
+  color: #ffffff;
+}
+
+.text {
+  color: #ffffff;
+}
+
+.top-info-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #15803d;
+  height: 65px;
+  width: 100%;
+}
+
+.top-info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .top-info-container {
+    flex-direction: column;
+    align-items: start;
+    height: auto;
+    gap: 12px;
+    padding: 16px 12px;
+  }
+}

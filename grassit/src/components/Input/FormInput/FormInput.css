@@ -1,0 +1,39 @@
+.inputContainer {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #e2e8f0;
+  border-radius: 6px;
+  height: 38px;
+  width: 100%;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.inputContainer:focus-within {
+  border-color: #cbd5e1;
+  box-shadow: 0 0 0 3px rgba(203, 213, 225, 0.25);
+}
+
+.inputContainer--error {
+  border-color: #ef4444; /* czerwony */
+  box-shadow: none;
+  margin-bottom: 8px;
+}
+
+.inputContainer--error:focus-within {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.input {
+  width: 100%;
+  color: #111827;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0 10px;
+  background: transparent;
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}

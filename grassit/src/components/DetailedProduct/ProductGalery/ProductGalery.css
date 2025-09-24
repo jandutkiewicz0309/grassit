@@ -1,0 +1,102 @@
+.pg {
+  display: grid;
+  gap: 16px;
+}
+
+/* Główne zdjęcie (16:9, responsywne) */
+.pg-main {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* zmień na 4/3 lub usuń, jeśli chcesz auto-height */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.pg-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Strzałki */
+.pg-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 36px;
+  min-width: 36px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+  font-size: 20px;
+}
+.pg-nav--left {
+  left: 8px;
+}
+.pg-nav--right {
+  right: 8px;
+}
+.pg-nav:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Pasek miniaturek */
+.pg-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.pg-thumb {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+}
+
+.pg-thumb:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.pg-thumb:focus-visible {
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.25);
+}
+
+.pg-thumb-img {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* mniejsze prostokąty jak w podglądzie */
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+}
+
+/* RWD: na małych ekranach można zrobić poziomy pasek przewijany */
+@media (max-width: 640px) {
+  .pg-thumbs {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 44%;
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .pg-thumb {
+    scroll-snap-align: start;
+  }
+}
