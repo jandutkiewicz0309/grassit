@@ -16,7 +16,7 @@ export const ProductContainer: Component<IProductContainer> = (props) => {
   return (
     <div class="main-product-container">
       <h1>Nasze produkty</h1>
-      <span>
+      <span class="main-product-description">
         Odkryj nasze najpopularniejsze produkty do ogrodów, podwórek i
         zastosowań komercyjnych.
       </span>
