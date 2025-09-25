@@ -47,6 +47,7 @@
   height: 100%;
   max-width: 100%;
   overflow: auto;
+  margin: 0px auto;
   padding-right: 6px;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
@@ -60,7 +61,7 @@
 }
 
 .product-list-scroller::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 .product-list-scroller::-webkit-scrollbar-thumb {
   background: #cbd5e1;

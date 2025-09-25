@@ -35,6 +35,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-synthesis-weight: none;
   font-synthesis-style: none;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 h1,

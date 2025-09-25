@@ -1,8 +1,8 @@
-.icon {
+.top-info-icon {
   color: #ffffff;
 }
 
-.text {
+.top-info-text {
   color: #ffffff;
 }
 
@@ -11,7 +11,7 @@
   justify-content: space-evenly;
   align-items: center;
   background-color: #15803d;
-  height: 65px;
+  height: 55px;
   width: 100%;
 }
 

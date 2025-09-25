@@ -1,0 +1,174 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "img": "/static/png/testImg.png",
+      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "nameProduct": "PlayTurf 50",
+      "price": "15.00",
+      "description": "Trwała, amortyzowana nawierzchnia do intensywnej zabawy.",
+      "details": {
+        "producer": "Grassit",
+        "productDescription": "Specyfikacja, parametry techniczne i kluczowe informacje.",
+        "catalogNumber": "GT-0050",
+        "productHeight": "50 mm",
+        "productWeight": "2.8 kg/m²",
+        "productMaterial": "Polietylen (PE)",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "2",
+      "img": "/static/png/testImg.png",
+      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "nameProduct": "PlayTurf 40",
+      "price": "30.00",
+      "description": "Elastyczna mata do placów zabaw i boisk szkolnych.",
+      "details": {
+        "producer": "Grassit",
+        "productDescription": "Wysoka elastyczność, dobra amortyzacja.",
+        "catalogNumber": "GT-0040",
+        "productHeight": "40 mm",
+        "productWeight": "2.5 kg/m²",
+        "productMaterial": "Polipropylen (PP)",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "3",
+      "img": "/static/png/testImg.png",
+      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "nameProduct": "PlayTurf 30",
+      "price": "55.00",
+      "description": "Uniwersalna trawa syntetyczna do ogrodów rodzinnych.",
+      "details": {
+        "producer": "Grassit",
+        "productDescription": "Zbalansowana miękkość i wytrzymałość.",
+        "catalogNumber": "GT-0030",
+        "productHeight": "30 mm",
+        "productWeight": "2.2 kg/m²",
+        "productMaterial": "PE/PP mix",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "4",
+      "img": "/static/png/testImg.png",
+      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "nameProduct": "PlayTurf 20",
+      "price": "115.00",
+      "description": "Gęsta struktura, wysoka odporność na ścieranie.",
+      "details": {
+        "producer": "Grassit",
+        "productDescription": "Dla intensywnie użytkowanych stref.",
+        "catalogNumber": "GT-0020",
+        "productHeight": "20 mm",
+        "productWeight": "2.0 kg/m²",
+        "productMaterial": "Polietylen (PE)",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "5",
+      "img": "/static/png/testImg.png",
+      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "nameProduct": "PlayTurf 10",
+      "price": "105.00",
+      "description": "Kompaktowy splot, łatwa pielęgnacja.",
+      "details": {
+        "producer": "Grassit",
+        "productDescription": "Szybkie odprowadzanie wody, niska wysokość.",
+        "catalogNumber": "GT-0010",
+        "productHeight": "10 mm",
+        "productWeight": "1.6 kg/m²",
+        "productMaterial": "Polipropylen (PP)",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "6",
+      "img": "/static/png/testImg.png",
+      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "nameProduct": "PlayTurf 01",
+      "price": "152.00",
+      "description": "Profesjonalna nawierzchnia do stref komercyjnych.",
+      "details": {
+        "producer": "Grassit Pro",
+        "productDescription": "Certyfikowana pod intensywny ruch.",
+        "catalogNumber": "GTP-0001",
+        "productHeight": "35 mm",
+        "productWeight": "2.7 kg/m²",
+        "productMaterial": "PE (monofilament)",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "7",
+      "img": "/static/png/testImg.png",
+      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "nameProduct": "PlayTurf 02",
+      "price": "99.99",
+      "description": "Miękka i sprężysta, bezpieczna dla dzieci i zwierząt.",
+      "details": {
+        "producer": "Grassit",
+        "productDescription": "Miękkie włókno, naturalny kolor.",
+        "catalogNumber": "GTP-0002",
+        "productHeight": "32 mm",
+        "productWeight": "2.4 kg/m²",
+        "productMaterial": "PE/PP mix",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "8",
+      "img": "/static/png/testImg.png",
+      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "nameProduct": "PlayTurf 03",
+      "price": "154.00",
+      "description": "Wysoka odporność UV, stabilny kolor przez lata.",
+      "details": {
+        "producer": "Grassit Pro",
+        "productDescription": "Długotrwała ochrona przed blaknięciem.",
+        "catalogNumber": "GTP-0003",
+        "productHeight": "45 mm",
+        "productWeight": "2.9 kg/m²",
+        "productMaterial": "PE (wysoka gęstość)",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "9",
+      "img": "/static/png/testImg.png",
+      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "nameProduct": "PlayTurf 04",
+      "price": "87.22",
+      "description": "Lekka, ekonomiczna opcja do mniejszych powierzchni.",
+      "details": {
+        "producer": "Grassit",
+        "productDescription": "Dobry stosunek ceny do jakości.",
+        "catalogNumber": "GTP-0004",
+        "productHeight": "25 mm",
+        "productWeight": "1.9 kg/m²",
+        "productMaterial": "PP",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "10",
+      "img": "/static/png/testImg.png",
+      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "nameProduct": "PlayTurf 011",
+      "price": "119.00",
+      "description": "Balans miękkości i wytrzymałości, idealna do ogrodów.",
+      "details": {
+        "producer": "Grassit",
+        "productDescription": "Naturalny wygląd, łatwa pielęgnacja.",
+        "catalogNumber": "GTP-0011",
+        "productHeight": "38 mm",
+        "productWeight": "2.6 kg/m²",
+        "productMaterial": "PE/PP mix",
+        "UVResistant": "Tak"
+      }
+    }
+  ]
+}

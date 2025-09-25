@@ -1,16 +1,22 @@
 // src/routes/index.tsx
 
-import { ProductItem } from "~/components/Product/ProductItem/ProductItem";
-import testImg from "../../src/components/static/png/testImg.png";
-import { Checkbox } from "~/components/Input/CheckBox/CheckBox";
-import { Category, FilterComponnet } from "~/components/Product/Filter/Filter";
-import { createSignal } from "solid-js";
-import { ProductContainer } from "~/components/Product/ProductContainer/ProductContainer";
-import { productData } from "~/utils/mockData";
+import { DetailedProduct } from "~/components/DetailedProduct/DetailedProduct";
+import data from "~/data/product.json";
 export default function Home() {
   return (
     <main>
-      <ProductContainer productData={productData} />
+      <DetailedProduct
+        UVResistant="Tak"
+        catalogNumber="121233"
+        nameProduct="tesa"
+        price="23"
+        producer="Grassit"
+        productDescription="Specyfikacja, parametry techniczne i kluczowe informacje."
+        productHeight="32"
+        productMaterial="Polityen"
+        productWeight="2123"
+        images={[]}
+      />
     </main>
   );
 }

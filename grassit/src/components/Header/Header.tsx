@@ -11,7 +11,7 @@ export const Header: Component = (props) => {
 
       <div class="header-buttons">
         <A
-          href="./produkty/produkty"
+          href="./produkty"
           class="button-header"
           activeClass="button-header--active"
           end

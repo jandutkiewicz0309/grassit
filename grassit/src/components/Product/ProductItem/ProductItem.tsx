@@ -8,13 +8,13 @@ export interface IProductItem {
   price: string;
   description: string;
   id: string;
-  onClick: (id: string) => void;
+  onClick?: (id: string) => void;
 }
 
 export const ProductItem: Component<IProductItem> = (props) => {
   return (
     <div
-      onClick={() => props.onClick(props.id)}
+      onClick={() => props.onClick!(props.id)}
       id={props.id}
       class="mainContainer"
     >

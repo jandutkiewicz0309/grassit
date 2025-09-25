@@ -7,7 +7,7 @@
 .pg-main {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; /* zmień na 4/3 lub usuń, jeśli chcesz auto-height */
+  aspect-ratio: 16 / 9;
   border-radius: 16px;
   overflow: hidden;
   background: #f1f5f9;

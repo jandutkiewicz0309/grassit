@@ -24,7 +24,6 @@ export const ProductGallery: Component<ProductGalleryProps> = (props) => {
     props.onImageChange?.(props.images[thumbIndexInImages], thumbIndexInImages);
   };
 
-  // strzałki: lewo/prawo
   const go = (dir: -1 | 1) => {
     const n = props.images.length;
     if (!n) return;
