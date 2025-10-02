@@ -11,10 +11,11 @@ import "./ContactUs.css";
 import { setTouched, touched } from "~/components/store/contactUsStore";
 import schema from "./schema";
 import { TbMailFilled } from "solid-icons/tb";
+import { OnSubmitOrderForm } from "~/utils/types";
 
-export const ContactUs: Component<{ onSubmit: (data: any) => void }> = (
-  props
-) => {
+export const ContactUs: Component<{
+  onSubmit: (data: OnSubmitOrderForm) => void;
+}> = (props) => {
   const form = createForm({
     validate: zodForm(schema),
     validateOn: "input",
@@ -28,7 +29,7 @@ export const ContactUs: Component<{ onSubmit: (data: any) => void }> = (
   });
 
   return (
-    <div class="mainContainer">
+    <div class="mainContainer-ContactUs">
       <Form of={form} onSubmit={(data) => props.onSubmit({ ...data })}>
         <div class="inputsContainer">
           <div>
@@ -41,9 +42,9 @@ export const ContactUs: Component<{ onSubmit: (data: any) => void }> = (
                     preset="text"
                     value={field.value ?? ""}
                     onChange={(v) => setValue(form, "name", v)}
-                    onBlur={() => setTouched("name", true)} // ⬅️ lokalne touched
+                    onBlur={() => setTouched("name", true)}
                     placeHolder="Imię"
-                    error={!!touched.name && !!field.error} // ⬅️ pokaż dopiero po blur
+                    error={!!touched.name && !!field.error}
                   />
                   {!!touched.name && field.error && (
                     <span class="inputError">{field.error}</span>

@@ -16,7 +16,6 @@ const product = () => {
   }));
   return (
     <div>
-      <Title>test</Title>
       <ProductContainer productData={products} />
     </div>
   );

@@ -5,6 +5,7 @@ import "./DetailedProduct.css";
 
 export interface IDetailedProduct {
   nameProduct: string;
+  id: string;
   price: string;
   producer: string;
   productDescription: string;
@@ -14,12 +15,14 @@ export interface IDetailedProduct {
   productMaterial: string;
   UVResistant: string;
   images: string[];
+  onAskClick?: (e: MouseEvent) => void;
+  onAskClickAskProduct?: (id: string) => void;
 }
 
 export const DetailedProduct: Component<IDetailedProduct> = (props) => {
   const galleryImages = props.images?.length ? props.images : [];
   return (
-    <div class="main-detailedProduct-container">
+    <div id={props.id} class="main-detailedProduct-container">
       <div class="detailedProduct-gallery">
         <ProductGallery images={galleryImages} alt="Piłka nożna na murawie" />
       </div>
@@ -73,10 +76,17 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
         </div>
 
         <div class="detailedProduct-actions">
-          <button class="detailedProduct-btn detailedProduct-btn--primary">
+          <button
+            onClick={() => props.onAskClickAskProduct?.(props.id)}
+            class="detailedProduct-btn detailedProduct-btn--primary"
+          >
             Dodaj do koszyka
           </button>
-          <button class="detailedProduct-btn detailedProduct-btn--ghost">
+          <button
+            type="button"
+            onClick={props.onAskClick}
+            class="detailedProduct-btn detailedProduct-btn--ghost"
+          >
             Zapytaj o produkt
           </button>
         </div>

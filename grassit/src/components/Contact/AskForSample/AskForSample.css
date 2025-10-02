@@ -1,0 +1,191 @@
+/* ====== KONTENER ====== */
+.askForm {
+  background-color: #ffffff; /* biało jak na screenie */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* ====== UKŁAD ====== */
+.askForm__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.askForm__group {
+}
+
+/* wiersz: ulica + kod */
+.askForm__row {
+  display: grid;
+  grid-template-columns: 1fr 260px; /* street | zip */
+  gap: 12px;
+}
+@media (max-width: 640px) {
+  .askForm__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.askForm__group--zip {
+}
+
+/* ====== ETYKIETA ====== */
+.askForm__label {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  display: inline-block;
+}
+
+/* ====== POLA / KONTENERY ====== */
+.field,
+.field--textarea {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  width: 100%;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+  box-sizing: border-box;
+}
+
+.field {
+  height: 38px;
+}
+
+.field--textarea {
+  height: auto;
+  min-height: 160px;
+  display: block;
+}
+
+.field:focus-within,
+.field--textarea:focus-within {
+  border-color: #cbd5e1;
+  box-shadow: 0 0 0 3px rgba(203, 213, 225, 0.25);
+}
+
+.field--error {
+  border-color: #ef4444;
+  box-shadow: none;
+}
+
+/* komunikat błędu pod polem */
+.field__error {
+  margin-top: 8px;
+  display: block;
+  color: #ef4444;
+  font-size: 12px;
+}
+
+/* focus w błędzie */
+.field--error:focus-within {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+/* ====== INPUT/TA ====== */
+.field__input,
+.field__textarea {
+  width: 100%;
+  color: #111827;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  box-sizing: border-box;
+  padding: 10px;
+  display: block;
+  font: inherit;
+}
+
+.field__input {
+  height: 100%;
+}
+
+.field__textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.4;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.field__input::placeholder,
+.field__textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* ====== AKCJE ====== */
+.askForm__actions {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding-top: 16px;
+}
+
+/* ====== PRZYCISK ====== */
+.askForm__submit {
+  --btn-bg: #16a34a;
+  --btn-bg-hover: #15803d;
+  --btn-bg-active: #166534;
+  --btn-ring: rgba(22, 163, 74, 0.35);
+  background-color: var(--btn-bg);
+  border: 1px solid var(--btn-bg);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 600;
+  transition: transform 120ms ease, background-color 120ms ease,
+    border-color 120ms ease, box-shadow 120ms ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.askForm__submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background-color: var(--btn-bg-hover);
+  border-color: var(--btn-bg-hover);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.askForm__submit:active:not(:disabled) {
+  transform: translateY(0);
+  background-color: var(--btn-bg-active);
+  border-color: var(--btn-bg-active);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.14), 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.askForm__submit:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px var(--btn-ring), 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: var(--btn-bg-hover);
+}
+
+.askForm__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.askForm__submitText {
+  color: #ffffff;
+}
+.askForm__icon {
+  color: #ffffff;
+}

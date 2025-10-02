@@ -1,13 +1,12 @@
 // routes/produkty/[id].tsx
-import { Title } from "@solidjs/meta";
-import { useParams } from "@solidjs/router";
-import { createEffect, createMemo, Show } from "solid-js";
+import { useNavigate, useParams } from "@solidjs/router";
+import { createMemo, Show } from "solid-js";
 import { DetailedProduct } from "~/components/DetailedProduct/DetailedProduct";
 import data from "~/data/product.json";
 
 export default function detailedProduct() {
   const params = useParams();
-
+  const navigate = useNavigate();
   const product = createMemo(() =>
     data.products.find((p) => p.id === params.id)
   );
@@ -19,6 +18,7 @@ export default function detailedProduct() {
         fallback={<div style="padding:32px">Nie znaleziono produktu.</div>}
       >
         <DetailedProduct
+          id={product()!.id}
           nameProduct={product()!.nameProduct}
           price={product()!.price}
           productDescription={product()!.description}
@@ -29,6 +29,8 @@ export default function detailedProduct() {
           productMaterial={product()!.details.productMaterial}
           UVResistant={product()!.details.UVResistant}
           images={product()!.images ?? [product()!.img]}
+          onAskClick={() => navigate("/kontakt")}
+          onAskClickAskProduct={(id: string) => navigate(`/zamów-próbkę/${id}`)}
         />
       </Show>
     </>

@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": "1",
+      "id": "playturf-50",
       "img": "/static/png/testImg.png",
       "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
       "nameProduct": "PlayTurf 50",
@@ -18,7 +18,7 @@
       }
     },
     {
-      "id": "2",
+      "id": "playturf-40",
       "img": "/static/png/testImg.png",
       "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
       "nameProduct": "PlayTurf 40",
@@ -35,7 +35,7 @@
       }
     },
     {
-      "id": "3",
+      "id": "playturf-30",
       "img": "/static/png/testImg.png",
       "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
       "nameProduct": "PlayTurf 30",
@@ -52,7 +52,7 @@
       }
     },
     {
-      "id": "4",
+      "id": "playturf-20",
       "img": "/static/png/testImg.png",
       "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
       "nameProduct": "PlayTurf 20",
@@ -69,7 +69,7 @@
       }
     },
     {
-      "id": "5",
+      "id": "playturf-10",
       "img": "/static/png/testImg.png",
       "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
       "nameProduct": "PlayTurf 10",
@@ -86,7 +86,7 @@
       }
     },
     {
-      "id": "6",
+      "id": "playturf-01",
       "img": "/static/png/testImg.png",
       "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
       "nameProduct": "PlayTurf 01",
@@ -103,7 +103,7 @@
       }
     },
     {
-      "id": "7",
+      "id": "playturf-02",
       "img": "/static/png/testImg.png",
       "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
       "nameProduct": "PlayTurf 02",
@@ -120,7 +120,7 @@
       }
     },
     {
-      "id": "8",
+      "id": "playturf-03",
       "img": "/static/png/testImg.png",
       "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
       "nameProduct": "PlayTurf 03",
@@ -137,7 +137,7 @@
       }
     },
     {
-      "id": "9",
+      "id": "playturf-04",
       "img": "/static/png/testImg.png",
       "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
       "nameProduct": "PlayTurf 04",
@@ -154,7 +154,7 @@
       }
     },
     {
-      "id": "10",
+      "id": "playturf-011",
       "img": "/static/png/testImg.png",
       "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
       "nameProduct": "PlayTurf 011",
