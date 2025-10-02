@@ -9,6 +9,8 @@ import product from "./routes/products";
 import AskProduct from "./routes/kontakt/askProduct";
 import detailedProduct from "./routes/products/[id]";
 import AskProductByIdPage from "./routes/askProduct/[id]";
+import Home from "./routes";
+import Footer from "./components/Footer/Footer";
 
 const Layout = (props: RouteSectionProps) => {
   return (
@@ -16,6 +18,7 @@ const Layout = (props: RouteSectionProps) => {
       <TopInfo email="sdaasdas" phone="322312323" />
       <Header />
       <Suspense>{props.children}</Suspense>
+      <Footer />
     </>
   );
 };
@@ -36,6 +39,10 @@ const routes = [
   {
     path: "/zamów-próbkę/:id",
     componnet: AskProductByIdPage,
+  },
+  {
+    path: "/",
+    componnet: Home,
   },
 ];
 
