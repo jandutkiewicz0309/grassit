@@ -1,3 +1,10 @@
+.sampleBackground {
+  --bg1: #e6f5ed;
+  --bg2: #d6f0e6;
+  --ring: rgba(22, 163, 74, 0.18);
+  background: radial-gradient(1200px 400px at 20% 0%, var(--bg1), var(--bg2));
+}
+
 .sample-product-container {
   max-width: 1200px;
   width: 100%;
