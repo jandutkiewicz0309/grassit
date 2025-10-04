@@ -23,10 +23,9 @@ const DATA: QA[] = [
 ];
 
 const Faq: Component = () => {
-  const [openIdx, setOpenIdx] = createSignal<number | null>(0); // pierwszy otwarty
+  const [openIdx, setOpenIdx] = createSignal<number | null>(0);
   let panels: HTMLDivElement[] = [];
 
-  // pomocnicze: ustaw maxHeight dla animacji
   const recalcHeights = () => {
     panels.forEach((el, i) => {
       const opened = openIdx() === i;
@@ -35,15 +34,12 @@ const Faq: Component = () => {
   };
 
   onMount(() => {
-    // po pierwszym renderze ustaw wysokości
     queueMicrotask(recalcHeights);
-    // gdy okno zmienia rozmiar, przelicz otwarty panel
     window.addEventListener("resize", recalcHeights);
   });
 
   const toggle = (i: number) => {
     setOpenIdx((curr) => (curr === i ? null : i));
-    // po zmianie sygnału daj przeglądarce cykl i przelicz wysokości
     queueMicrotask(recalcHeights);
   };
 
@@ -51,12 +47,11 @@ const Faq: Component = () => {
     <section class="faq">
       <div class="faq__inner">
         <h2 class="faq__title">Często zadawane pytania</h2>
-
         <div class="faq__list" role="list">
           <For each={DATA}>
             {(item, i) => (
               <div class="faqItem" role="listitem">
-                <h3 class="faqItem__head">
+                <p class="faqItem__head">
                   <button
                     type="button"
                     class="faqItem__btn"
@@ -66,21 +61,8 @@ const Faq: Component = () => {
                     onClick={() => toggle(i())}
                   >
                     <span>{item.q}</span>
-                    <svg
-                      class={`chev ${openIdx() === i() ? "chev--open" : ""}`}
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M7.4 8.6 12 13.2l4.6-4.6 1.4 1.4L12 16 6 10l1.4-1.4Z"
-                      />
-                    </svg>
                   </button>
-                </h3>
-
+                </p>
                 <div
                   ref={(el) => (panels[i()] = el)}
                   id={`faq-panel-${i()}`}

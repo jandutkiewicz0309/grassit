@@ -1,4 +1,3 @@
-import { Title } from "@solidjs/meta";
 import { useNavigate } from "@solidjs/router";
 import { ProductContainer } from "~/components/Product/ProductContainer/ProductContainer";
 import data from "~/data/product.json";

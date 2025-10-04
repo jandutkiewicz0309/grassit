@@ -56,23 +56,6 @@ export const ProductGallery: Component<ProductGalleryProps> = (props) => {
           class="pg-main-img"
           draggable={false}
         />
-        {/* Nawigacja klawiaturą */}
-        <button
-          type="button"
-          class="pg-nav pg-nav--left"
-          aria-label="Poprzednie zdjęcie"
-          onClick={() => go(-1)}
-        >
-          ‹
-        </button>
-        <button
-          type="button"
-          class="pg-nav pg-nav--right"
-          aria-label="Następne zdjęcie"
-          onClick={() => go(1)}
-        >
-          ›
-        </button>
       </div>
 
       <div class="pg-thumbs" role="listbox" aria-label="Dodatkowe zdjęcia">

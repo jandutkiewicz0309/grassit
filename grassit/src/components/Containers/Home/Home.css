@@ -1,0 +1,11 @@
+.home-container {
+  position: relative;
+}
+
+.categories-container {
+  border-top-left-radius: 64px;
+  border-top-right-radius: 64px;
+  background-color: white;
+  top: -64px;
+  position: relative;
+}

@@ -37,21 +37,19 @@ export const ProductContainer: Component<IProductContainer> = (props) => {
           }}
           selected={selected()}
         />
-        <div class="product-list-scroller">
-          <div class="product-list">
-            <For each={props.productData}>
-              {(product) => (
-                <ProductItem
-                  description={product.description}
-                  id={product.id}
-                  img={product.img}
-                  nameProduct={product.nameProduct}
-                  onClick={product.onClick}
-                  price={product.price}
-                />
-              )}
-            </For>
-          </div>
+        <div class="product-list">
+          <For each={props.productData}>
+            {(product) => (
+              <ProductItem
+                description={product.description}
+                id={product.id}
+                img={product.img}
+                nameProduct={product.nameProduct}
+                onClick={product.onClick}
+                price={product.price}
+              />
+            )}
+          </For>
         </div>
       </div>
     </div>

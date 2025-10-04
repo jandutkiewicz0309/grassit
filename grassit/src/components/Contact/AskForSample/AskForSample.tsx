@@ -254,9 +254,12 @@ export const AskProductFormCmp: Component<{
         </div>
 
         <div class="askForm__actions">
-          <button class="askForm__submit" type="submit">
-            <TbMailFilled size={16} class="askForm__icon" />
-            <span class="askForm__submitText">Wyślij zapytanie</span>
+          <button
+            type="submit"
+            class="detailedProduct-btn detailedProduct-btn--primary"
+          >
+            <TbMailFilled size={16} style={{ color: "white" }} />
+            Wyślij zapytanie
           </button>
         </div>
       </Form>

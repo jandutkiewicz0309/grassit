@@ -6,14 +6,13 @@
 
 /* HEAD: media + meta */
 .askCard__head {
-  display: grid;
-  grid-template-columns: 360px 1fr; /* obraz | prawa kolumna */
-  gap: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
   align-items: stretch;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
-  padding: 16px;
 }
 
 @media (max-width: 900px) {
@@ -31,14 +30,24 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  max-height: 366px;
+
+  width: 100%;
+
+  height: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
   display: block;
 }
 
 /* prawa kolumna */
 .askCard__meta {
-  display: grid;
-  gap: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  padding-left: 0px;
+  gap: 24px;
 }
 
 .askCard__title {
@@ -84,17 +93,27 @@
 }
 
 .askCard__details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin-top: 4px;
+  height: 100%;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
-  padding: 12px;
+  padding: 16px;
   background: #ffffff;
-  display: grid;
+}
+
+.askCard__detailsTable {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
 .askCard__detailsTitle {
   font-size: 14px;
+  line-height: 20px;
+
   color: #475569;
   font-weight: 600;
   margin-bottom: 2px;
@@ -107,22 +126,43 @@
   align-items: center;
 }
 
-@media (max-width: 520px) {
-  .askCard__row {
-    grid-template-columns: 1fr;
-  }
-}
-
 .askCard__label {
   color: #64748b;
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .askCard__value {
   color: #0f172a;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 /* sekcja z formularzem poniżej */
-.askCard__form {
+
+@media (min-width: 900px) {
+  .askCard__img {
+    max-width: 595px;
+  }
+}
+
+@media (max-width: 900px) {
+  .askCard__head {
+    flex-direction: column;
+  }
+  .askCard__img {
+    width: 100%;
+    height: 100%;
+  }
+  .askCard__meta {
+    padding: 16px;
+    width: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .askCard__row {
+    grid-template-columns: 1fr;
+  }
 }
