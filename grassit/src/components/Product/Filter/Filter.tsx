@@ -39,10 +39,10 @@ export const FilterComponnet: Component<IFilterProps> = (props) => {
         <span>Cena (zł/m2)</span>
         <div class="inputs-container">
           <div class="min-input">
-            <input placeholder="MIN" />
+            <input placeholder="Min" />
           </div>
           <div class="max-input">
-            <input placeholder="MAX" />
+            <input placeholder="Max" />
           </div>
         </div>
       </div>

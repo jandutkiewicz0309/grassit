@@ -1,0 +1,84 @@
+.sampleBackground {
+  --bg1: #e6f5ed;
+  --bg2: #d6f0e6;
+  --ring: rgba(22, 163, 74, 0.18);
+  background: radial-gradient(1200px 400px at 20% 0%, var(--bg1), var(--bg2));
+}
+
+.sample-product-container {
+  max-width: 1200px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  padding: 80px 32px;
+  margin: 0px auto;
+}
+
+.sample-product-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sample-product-header h1,
+p {
+  margin: 0px;
+}
+
+.sample-product-header h1 {
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.sample-product-header p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #475569;
+}
+
+.askProduct-name-price {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.askProduct-name {
+  margin: 0;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.askProduct-price-info {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+}
+.askProduct-price-info p {
+  color: #047857;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.askProduct-price {
+  margin: 0;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  color: #0f172a;
+}

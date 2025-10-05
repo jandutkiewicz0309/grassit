@@ -3,10 +3,13 @@
     {
       "id": "playturf-50",
       "img": "/static/png/testImg.png",
-      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "images": [
+        "/static/png/testImg.png",
+        "/static/png/testImg2.png"
+      ],
       "nameProduct": "PlayTurf 50",
       "price": "15.00",
-      "description": "Trwała, amortyzowana nawierzchnia do intensywnej zabawy.",
+      "description": "Trwała, amortyzowana powierzchnia do zabawy. Idealna dla placów zabaw i miejsc o dużym natężeniu ruchu.",
       "details": {
         "producer": "Grassit",
         "productDescription": "Specyfikacja, parametry techniczne i kluczowe informacje.",
@@ -20,7 +23,10 @@
     {
       "id": "playturf-40",
       "img": "/static/png/testImg.png",
-      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "images": [
+        "/static/png/testImg.png",
+        "/static/png/testImg2.png"
+      ],
       "nameProduct": "PlayTurf 40",
       "price": "30.00",
       "description": "Elastyczna mata do placów zabaw i boisk szkolnych.",
@@ -37,7 +43,10 @@
     {
       "id": "playturf-30",
       "img": "/static/png/testImg.png",
-      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "images": [
+        "/static/png/testImg.png",
+        "/static/png/testImg2.png"
+      ],
       "nameProduct": "PlayTurf 30",
       "price": "55.00",
       "description": "Uniwersalna trawa syntetyczna do ogrodów rodzinnych.",
@@ -54,7 +63,10 @@
     {
       "id": "playturf-20",
       "img": "/static/png/testImg.png",
-      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "images": [
+        "/static/png/testImg.png",
+        "/static/png/testImg2.png"
+      ],
       "nameProduct": "PlayTurf 20",
       "price": "115.00",
       "description": "Gęsta struktura, wysoka odporność na ścieranie.",
@@ -71,7 +83,10 @@
     {
       "id": "playturf-10",
       "img": "/static/png/testImg.png",
-      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "images": [
+        "/static/png/testImg.png",
+        "/static/png/testImg2.png"
+      ],
       "nameProduct": "PlayTurf 10",
       "price": "105.00",
       "description": "Kompaktowy splot, łatwa pielęgnacja.",
@@ -88,7 +103,10 @@
     {
       "id": "playturf-01",
       "img": "/static/png/testImg.png",
-      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "images": [
+        "/static/png/testImg.png",
+        "/static/png/testImg2.png"
+      ],
       "nameProduct": "PlayTurf 01",
       "price": "152.00",
       "description": "Profesjonalna nawierzchnia do stref komercyjnych.",
@@ -105,7 +123,10 @@
     {
       "id": "playturf-02",
       "img": "/static/png/testImg.png",
-      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "images": [
+        "/static/png/testImg.png",
+        "/static/png/testImg2.png"
+      ],
       "nameProduct": "PlayTurf 02",
       "price": "99.99",
       "description": "Miękka i sprężysta, bezpieczna dla dzieci i zwierząt.",
@@ -122,7 +143,10 @@
     {
       "id": "playturf-03",
       "img": "/static/png/testImg.png",
-      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "images": [
+        "/static/png/testImg.png",
+        "/static/png/testImg2.png"
+      ],
       "nameProduct": "PlayTurf 03",
       "price": "154.00",
       "description": "Wysoka odporność UV, stabilny kolor przez lata.",
@@ -139,7 +163,10 @@
     {
       "id": "playturf-04",
       "img": "/static/png/testImg.png",
-      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "images": [
+        "/static/png/testImg.png",
+        "/static/png/testImg2.png"
+      ],
       "nameProduct": "PlayTurf 04",
       "price": "87.22",
       "description": "Lekka, ekonomiczna opcja do mniejszych powierzchni.",
@@ -156,7 +183,10 @@
     {
       "id": "playturf-011",
       "img": "/static/png/testImg.png",
-      "images": ["/static/png/testImg.png", "/static/png/testImg2.png"],
+      "images": [
+        "/static/png/testImg.png",
+        "/static/png/testImg2.png"
+      ],
       "nameProduct": "PlayTurf 011",
       "price": "119.00",
       "description": "Balans miękkości i wytrzymałości, idealna do ogrodów.",

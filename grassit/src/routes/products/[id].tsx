@@ -2,6 +2,7 @@
 import { useNavigate, useParams } from "@solidjs/router";
 import { createMemo, Show } from "solid-js";
 import { DetailedProduct } from "~/components/DetailedProduct/DetailedProduct";
+import ProductNotFound from "~/components/ProductNotFound/ProductNotFound";
 import data from "~/data/product.json";
 
 export default function detailedProduct() {
@@ -13,10 +14,7 @@ export default function detailedProduct() {
 
   return (
     <>
-      <Show
-        when={product()}
-        fallback={<div style="padding:32px">Nie znaleziono produktu.</div>}
-      >
+      <Show when={product()} fallback={<ProductNotFound />}>
         <DetailedProduct
           id={product()!.id}
           nameProduct={product()!.nameProduct}

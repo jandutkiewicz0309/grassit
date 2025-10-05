@@ -18,6 +18,9 @@
 }
 
 .askForm__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 /* wiersz: ulica + kod */
@@ -39,11 +42,10 @@
 .askForm__label {
   color: #64748b;
   font-size: 12px;
+  line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.3px;
   text-transform: uppercase;
-  padding-bottom: 4px;
-  display: inline-block;
 }
 
 /* ====== POLA / KONTENERY ====== */
@@ -67,6 +69,12 @@
   display: block;
 }
 
+.field--textarea textarea {
+  font-size: 14px;
+
+  resize: none;
+}
+
 .field:focus-within,
 .field--textarea:focus-within {
   border-color: #cbd5e1;
@@ -84,6 +92,8 @@
   display: block;
   color: #ef4444;
   font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.3px;
 }
 
 /* focus w błędzie */
@@ -144,7 +154,7 @@
   border: 1px solid var(--btn-bg);
   color: #ffffff;
   border-radius: 8px;
-  padding: 10px 16px;
+  padding: 13px 24px;
   font-weight: 600;
   transition: transform 120ms ease, background-color 120ms ease,
     border-color 120ms ease, box-shadow 120ms ease;
@@ -152,28 +162,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.askForm__submit:hover:not(:disabled) {
-  transform: translateY(-1px);
-  background-color: var(--btn-bg-hover);
-  border-color: var(--btn-bg-hover);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-}
-
-.askForm__submit:active:not(:disabled) {
-  transform: translateY(0);
-  background-color: var(--btn-bg-active);
-  border-color: var(--btn-bg-active);
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.14), 0 2px 6px rgba(0, 0, 0, 0.06);
-}
-
-.askForm__submit:focus-visible {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  box-shadow: 0 0 0 3px var(--btn-ring), 0 4px 12px rgba(0, 0, 0, 0.06);
-  border-color: var(--btn-bg-hover);
+  gap: 8px;
 }
 
 .askForm__submit:disabled {

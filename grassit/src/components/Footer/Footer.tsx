@@ -1,7 +1,7 @@
 import { Component } from "solid-js";
 import { A } from "@solidjs/router";
 import "./Footer.css";
-// import logo from "~/components/static/png/logo.png";
+import logo from "~/components/static/png/logo.png";
 
 const IconFB = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
@@ -32,10 +32,9 @@ const Footer: Component = () => {
   return (
     <footer class="ft">
       <div class="ft__inner">
-        {/* Brand */}
         <div class="ft__col ft__brand">
           <A href="/" class="ft__logoLink" aria-label="Strona główna">
-            <img src={""} alt="" class="ft__logo" />
+            <img src={logo} alt="" class="ft__logo" />
             <span class="sr-only">Grassit</span>
           </A>
           <p class="ft__tagline">
@@ -56,7 +55,6 @@ const Footer: Component = () => {
           </div>
         </div>
 
-        {/* Produkty */}
         <nav class="ft__col" aria-label="Produkty">
           <h3 class="ft__title">Produkty</h3>
           <ul class="ft__links">
@@ -72,7 +70,6 @@ const Footer: Component = () => {
           </ul>
         </nav>
 
-        {/* Informacje */}
         <nav class="ft__col" aria-label="Informacje">
           <h3 class="ft__title">Informacje</h3>
           <ul class="ft__links">
@@ -88,7 +85,6 @@ const Footer: Component = () => {
           </ul>
         </nav>
 
-        {/* Usługi */}
         <nav class="ft__col" aria-label="Usługi">
           <h3 class="ft__title">Usługi</h3>
           <ul class="ft__links">
@@ -104,19 +100,12 @@ const Footer: Component = () => {
           </ul>
         </nav>
 
-        {/* Kontakt */}
         <address class="ft__col ft__contact" aria-label="Kontakt">
           <h3 class="ft__title">Kontakt</h3>
-          <p>
-            ul. Rynkowa 15/15
-            <br />
-            Warszawa, 00-000
-          </p>
-          <p>
-            REGON: 111222333
-            <br />
-            NIP: 999-999-99-99
-          </p>
+          <p>ul. Rynkowa 15/15</p>
+          <p>Warszawa, 00-000</p>
+          <p>REGON: 111222333</p>
+          <p> NIP: 999-999-99-99</p>
           <p>(00) +48 555 555 555</p>
           <p>
             <a href="mailto:email_firmy@email.com">email_firmy@email.com</a>
@@ -124,11 +113,13 @@ const Footer: Component = () => {
         </address>
       </div>
 
-      <div class="ft__bottom">
-        <div class="ft__bottomInner">
-          <p>
-            © {new Date().getFullYear()} Grassit. Wszelkie prawa zastrzeżone.
-          </p>
+      <div class="ft__bottom__wrapper">
+        <div class="ft__bottom">
+          <div class="ft__bottomInner">
+            <p>
+              © {new Date().getFullYear()} Grassit. Wszelkie prawa zastrzeżone.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,5 +1,9 @@
 import { Component } from "solid-js";
 import "./Why.css";
+import drop from "~/components/static/png/drop.png";
+import leaf from "~/components/static/png/leaf.png";
+import shield from "~/components/static/png/shield.png";
+import scissors from "~/components/static/png/scissors.png";
 
 const Why: Component = () => {
   return (
@@ -15,7 +19,7 @@ const Why: Component = () => {
 
         <div class="why__grid">
           <article class="whyCard">
-            <span class="whyCard__icon">{/* Leaf */}</span>
+            <img src={leaf} alt="" loading="lazy" />
             <h3 class="whyCard__title">Ultrarealistyczne źdźbła</h3>
             <p class="whyCard__desc">
               Wielotonowe włókna i podszycie nadają naturalne zróżnicowanie
@@ -24,7 +28,7 @@ const Why: Component = () => {
           </article>
 
           <article class="whyCard">
-            <span class="whyCard__icon">{/* Drop */}</span>
+            <img src={drop} alt="" loading="lazy" />
             <h3 class="whyCard__title">Oszczędne gospodarowanie wodą</h3>
             <p class="whyCard__desc">
               Perforowane podłoże szybko odprowadza wodę i eliminuje błotniste
@@ -33,7 +37,7 @@ const Why: Component = () => {
           </article>
 
           <article class="whyCard">
-            <span class="whyCard__icon">{/* Shield */}</span>
+            <img src={shield} alt="" loading="lazy" />
             <h3 class="whyCard__title">Stworzona, by przetrwać</h3>
             <p class="whyCard__desc">
               Odporne na UV włókna zachowują kolor i kształt nawet przy dużym
@@ -42,7 +46,7 @@ const Why: Component = () => {
           </article>
 
           <article class="whyCard">
-            <span class="whyCard__icon">{/* Scissors off */}</span>
+            <img src={scissors} alt="" loading="lazy" />
             <h3 class="whyCard__title">Minimalna pielęgnacja</h3>
             <p class="whyCard__desc">
               Bez koszenia, podlewania czy nawożenia. Zawsze perfekcyjna.

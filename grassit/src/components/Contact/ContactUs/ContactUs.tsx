@@ -32,7 +32,7 @@ export const ContactUs: Component<{
     <div class="mainContainer-ContactUs">
       <Form of={form} onSubmit={(data) => props.onSubmit({ ...data })}>
         <div class="inputsContainer">
-          <div>
+          <div class="fieldContainer">
             <span class="nameInput">Imię</span>
             <Field of={form} name="name">
               {(field) => (
@@ -43,18 +43,18 @@ export const ContactUs: Component<{
                     value={field.value ?? ""}
                     onChange={(v) => setValue(form, "name", v)}
                     onBlur={() => setTouched("name", true)}
-                    placeHolder="Imię"
+                    placeHolder="Wprowadź swoje imie"
                     error={!!touched.name && !!field.error}
                   />
                   {!!touched.name && field.error && (
-                    <span class="inputError">{field.error}</span>
+                    <span class="inputError nameInput">{field.error}</span>
                   )}
                 </>
               )}
             </Field>
           </div>
 
-          <div>
+          <div class="fieldContainer">
             <span class="nameInput">Nazwisko</span>
             <Field of={form} name="lastName">
               {(field) => (
@@ -65,19 +65,19 @@ export const ContactUs: Component<{
                     value={field.value ?? ""}
                     onChange={(v) => setValue(form, "lastName", v)}
                     onBlur={() => setTouched("lastName", true)}
-                    placeHolder="Nazwisko"
+                    placeHolder="Wprowadź swoje nazwisko"
                     error={!!touched.lastName && !!field.error}
                   />
                   {!!touched.lastName && field.error && (
-                    <span class="inputError">{field.error}</span>
+                    <span class="inputError nameInput">{field.error}</span>
                   )}
                 </>
               )}
             </Field>
           </div>
 
-          <div>
-            <span class="nameInput">E-mail</span>
+          <div class="fieldContainer">
+            <span class="nameInput">Email</span>
             <Field of={form} name="email">
               {(field) => (
                 <>
@@ -87,18 +87,18 @@ export const ContactUs: Component<{
                     value={field.value ?? ""}
                     onChange={(v) => setValue(form, "email", v)}
                     onBlur={() => setTouched("email", true)}
-                    placeHolder="E-mail"
+                    placeHolder="Wprowadź swój adres email"
                     error={!!touched.email && !!field.error}
                   />
                   {!!touched.email && field.error && (
-                    <span class="inputError">{field.error}</span>
+                    <span class="inputError nameInput">{field.error}</span>
                   )}
                 </>
               )}
             </Field>
           </div>
 
-          <div>
+          <div class="fieldContainer">
             <span class="nameInput">Telefon</span>
             <Field of={form} name="phoneNumber">
               {(field) => (
@@ -109,19 +109,19 @@ export const ContactUs: Component<{
                     value={field.value ?? ""}
                     onChange={(v) => setValue(form, "phoneNumber", v)}
                     onBlur={() => setTouched("phoneNumber", true)}
-                    placeHolder="Telefon"
+                    placeHolder="Wprowadź swój numer telefonu"
                     error={!!touched.phoneNumber && !!field.error}
                     inputmode="tel"
                   />
                   {!!touched.phoneNumber && field.error && (
-                    <span class="inputError">{field.error}</span>
+                    <span class="inputError nameInput">{field.error}</span>
                   )}
                 </>
               )}
             </Field>
           </div>
 
-          <div>
+          <div class="fieldContainer">
             <span class="nameInput">Pytanie</span>
             <Field of={form} name="message">
               {(field) => (
@@ -152,7 +152,7 @@ export const ContactUs: Component<{
                     />
                   </div>
                   {!!touched.message && field.error && (
-                    <span class="inputError">{field.error}</span>
+                    <span class="inputError nameInput">{field.error}</span>
                   )}
                 </>
               )}
@@ -160,9 +160,12 @@ export const ContactUs: Component<{
           </div>
         </div>
         <div class="buttonContainer">
-          <button class="formButton" type="submit">
-            <TbMailFilled size={16} class="icon" />
-            <span class="textButton"> Wyślij zapytanie</span>
+          <button
+            type="submit"
+            class="detailedProduct-btn detailedProduct-btn--primary"
+          >
+            <TbMailFilled size={16} style={{ color: "white" }} />
+            Wyślij zapytanie
           </button>
         </div>
       </Form>

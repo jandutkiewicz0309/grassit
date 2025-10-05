@@ -1,17 +1,14 @@
 /* ====== KONTENER ====== */
 .mainContainer-ContactUs {
-  background-color: #cee8dc;
   display: flex;
   flex-direction: column;
   width: 100%;
-
   border-radius: 8px;
   border: 1px solid #e2e8f0;
+  background-color: #fff;
   padding: 16px;
   position: relative;
   box-sizing: border-box;
-  --btn-h: 40px;
-  --btn-gap: 8px;
 }
 
 /* ====== UKŁAD ====== */
@@ -21,14 +18,24 @@
   gap: 16px;
 }
 
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fieldContainer textarea {
+  resize: none;
+}
+
 /* ====== ETYKIETA ====== */
 .nameInput {
   color: #64748b;
   font-size: 12px;
+  line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.3px;
   text-transform: uppercase;
-  padding-bottom: 4px;
 }
 
 /* ====== KONTENERY POL ====== */
@@ -124,7 +131,7 @@
   border: 1px solid var(--btn-bg);
   color: #ffffff;
   border-radius: 8px;
-  padding: 10px 16px;
+  padding: 13px 24px;
   font-weight: 600;
   transition: transform 120ms ease, background-color 120ms ease,
     border-color 120ms ease, box-shadow 120ms ease;
@@ -132,7 +139,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .formButton:hover:not(:disabled) {
@@ -170,9 +177,5 @@
 }
 
 .textButton {
-  color: #ffffff;
-}
-
-.icon {
   color: #ffffff;
 }
