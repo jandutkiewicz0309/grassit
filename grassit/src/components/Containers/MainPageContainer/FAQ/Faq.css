@@ -16,7 +16,6 @@
   margin: 0px;
   font-size: 30px;
   line-height: 36px;
-
   color: #171717;
 }
 
@@ -30,6 +29,70 @@
 
 .faqItem + .faqItem {
   border-top: 1px solid #e2e8f0;
+}
+
+.faqItem {
+  --bg1: #e6f5ed;
+  --bg2: #d6f0e6;
+  --ring: rgba(22, 163, 74, 0.18);
+
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.faqItem::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  background: radial-gradient(1200px 400px at 20% 0%, var(--bg1), var(--bg2));
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  pointer-events: none;
+  border-radius: 0;
+}
+
+.faqItem::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  box-shadow: inset 0 0 0 1px #e2e8f0, inset 0 0 0 6px var(--ring);
+  opacity: 0;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+}
+
+.faqItem:hover::before,
+.faqItem:focus-within::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+.faqItem:hover::after,
+.faqItem:focus-within::after {
+  opacity: 1;
+}
+
+.faqItem__btn,
+.faqItem__panel {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.faqItem__btn:hover {
+  background: transparent;
+}
+
+[aria-expanded="true"] .chev {
+  transform: rotate(180deg);
+}
+
+.faqItem:hover .faqItem__btn span,
+.faqItem:focus-within .faqItem__btn span {
+  color: #0b7a38;
 }
 
 .faqItem__head {

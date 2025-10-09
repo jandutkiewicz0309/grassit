@@ -1,0 +1,180 @@
+/* Pasek z hamburgerem */
+.mh__bar {
+  height: 56px;
+  padding: 0 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mh__brand {
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  color: #111827;
+}
+.mh__hamburger {
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* Pełnoekranowy overlay */
+.mh__overlay {
+  position: fixed;
+  inset: 0;
+  background: #1f2937; /* ciemna ramka jak na screenie */
+  z-index: 60;
+  display: grid;
+  place-items: center;
+}
+
+/* Biała "karta" wewnątrz (jak na screenie) */
+.mh__sheet {
+  position: relative;
+  width: min(540px, 92vw);
+  height: min(94vh, 720px);
+  background: #ffffff;
+  border-radius: 2px;
+  padding: 24px 18px 18px;
+  display: grid;
+  grid-template-rows: 1fr auto; /* nav + CTA */
+  overflow: hidden;
+}
+
+/* Zielony guzik zamknięcia (X) */
+.mh__closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #15803d;
+  color: #ffffff;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* NAV */
+.mh__nav {
+  overflow: auto;
+  padding: 8px 6px 12px 6px;
+}
+
+/* Tytuły sekcji (bazowe) */
+.mh__sectionTitle {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 12px 8px;
+  margin: 4px 0 0;
+  font-weight: 800;
+  font-size: 18px;
+  color: #0b1220;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+}
+
+/* Tytuły, które są linkami (Realizacje/Kontakt) */
+.mh__sectionTitle.is-link {
+  border: 0;
+  padding: 12px 8px;
+  background: transparent;
+  display: block;
+  text-decoration: none;
+}
+
+/* EXPANDER: border + strzałka */
+.mh__expander {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 12px;
+  background: #fff;
+  transition: background 160ms ease, border-color 160ms ease;
+  margin-top: 10px;
+}
+.mh__expander:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+.mh__expander.is-open {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+.mh__chev {
+  flex: 0 0 auto;
+  transition: transform 180ms ease;
+}
+.mh__expander.is-open .mh__chev {
+  transform: rotate(180deg); /* w górę po otwarciu */
+}
+
+/* Grupy i linki */
+.mh__group {
+  padding: 4px 0 10px 8px;
+}
+.mh__item {
+  margin: 4px 0 0;
+}
+
+.mh__link {
+  display: block;
+  padding: 10px 8px;
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 600;
+  border-radius: 8px;
+}
+.mh__link:hover {
+  background: #f3f4f6;
+}
+
+.mh__sublist {
+  padding-left: 18px;
+}
+.mh__sublink {
+  display: block;
+  padding: 8px 8px;
+  text-decoration: none;
+  color: #6b7280;
+  font-weight: 500;
+  border-radius: 8px;
+}
+.mh__sublink:hover {
+  background: #f8fafc;
+}
+
+/* CTA na dole */
+.mh__cta {
+  display: block;
+  margin-top: 12px;
+  background: #15803d;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.mh__cta:active {
+  transform: translateY(1px);
+}
+
+/* Ukryj MobileHeader na desktopie (jeśli masz też Header) */
+@media (min-width: 1200px) {
+  .MobileHeader {
+    display: none;
+  }
+}

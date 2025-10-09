@@ -108,9 +108,9 @@ export async function POST({ request }: APIEvent) {
         ? `Produkt: ${productMeta.nameProduct}\n`
         : "") +
       (p.sku
-        ? `SKU: ${p.sku}\n`
+        ? `numer katalogowy: ${p.sku}\n`
         : productMeta?.details?.catalogNumber
-        ? `SKU: ${productMeta.details.catalogNumber}\n`
+        ? `numer katalogowy: ${productMeta.details.catalogNumber}\n`
         : "") +
       (productMeta?.price ? `Cena: ${productMeta.price}\n` : "") +
       (productUrl ? `Link: ${productUrl}\n` : "") +
@@ -131,9 +131,11 @@ export async function POST({ request }: APIEvent) {
         ? `<p><b>Produkt:</b> ${esc(String(productMeta.nameProduct))}</p>`
         : "") +
       (p.sku
-        ? `<p><b>SKU:</b> ${esc(String(p.sku))}</p>`
+        ? `<p><b>numer katalogowy:</b> ${esc(String(p.sku))}</p>`
         : productMeta?.details?.catalogNumber
-        ? `<p><b>SKU:</b> ${esc(String(productMeta.details.catalogNumber))}</p>`
+        ? `<p><b>numer katalogowy:</b> ${esc(
+            String(productMeta.details.catalogNumber)
+          )}</p>`
         : "") +
       (productMeta?.price
         ? `<p><b>Cena:</b> ${esc(String(productMeta.price))}</p>`

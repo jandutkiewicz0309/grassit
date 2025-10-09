@@ -99,7 +99,7 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
                 class="detailedProduct-btn detailedProduct-btn--primary"
               >
                 <FiShoppingCart size={16} style={{ color: "#fff" }} />
-                Zamów
+                Zamów DARMOWĄ próbkę
               </button>
               <button
                 type="button"

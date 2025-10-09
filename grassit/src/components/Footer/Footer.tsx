@@ -43,10 +43,18 @@ const Footer: Component = () => {
           </p>
 
           <div class="ft__social" aria-label="Media społecznościowe">
-            <A href="#" aria-label="Facebook" class="ft__socialBtn">
+            <A
+              href="https://www.facebook.com/grassitpolska"
+              aria-label="Facebook"
+              class="ft__socialBtn"
+            >
               <IconFB />
             </A>
-            <A href="#" aria-label="Instagram" class="ft__socialBtn">
+            <A
+              href="https://www.instagram.com/grassit.pl/"
+              aria-label="Instagram"
+              class="ft__socialBtn"
+            >
               <IconIG />
             </A>
             <A href="#" aria-label="X / Twitter" class="ft__socialBtn">
@@ -90,9 +98,6 @@ const Footer: Component = () => {
           <ul class="ft__links">
             <li>
               <A href="/montaz">Montaż</A>
-            </li>
-            <li>
-              <A href="/kalkulator">Kalkulator</A>
             </li>
             <li>
               <A href="/doradztwo">Doradztwo</A>
