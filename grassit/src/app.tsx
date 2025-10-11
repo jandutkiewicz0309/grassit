@@ -19,6 +19,9 @@ import product from "./routes/products";
 import detailedProduct from "./routes/products/[id]";
 import NotFound from "./routes/404/[...404]";
 import { MobileHeader } from "./components/Header/MobileHeader/MobileHeader";
+import { Installation } from "./routes/installation";
+import { consulting } from "./routes/consulting";
+import { delivery } from "./routes/delivery";
 
 const Layout = (props: RouteSectionProps) => {
   const [isMobileView, setIsMobileView] = createSignal(false);
@@ -75,6 +78,18 @@ const routes = [
   {
     path: "**",
     componnet: NotFound,
+  },
+  {
+    path: "/montaz",
+    componnet: Installation,
+  },
+  {
+    path: "/doradztwo",
+    componnet: consulting,
+  },
+  {
+    path: "/dostawa",
+    componnet: delivery,
   },
 ];
 

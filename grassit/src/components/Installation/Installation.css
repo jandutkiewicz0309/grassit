@@ -1,0 +1,78 @@
+/* Layout */
+.montaz {
+  padding: 80px 0;
+  min-height: 49vh;
+  background: #f8fafc; /* lekki szary jak na screenie */
+}
+.montaz__grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .montaz__grid {
+    grid-template-columns: 1.15fr 1fr; /* obraz + tekst */
+    gap: 28px;
+  }
+}
+
+/* Media */
+.montaz__media img {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Teksty */
+.montaz__title {
+  margin: 4px 0 12px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #171717; /* kolor nagłówka (wymagany) */
+}
+
+.montaz__content p,
+.montaz__list,
+.montaz__intro,
+.montaz__note {
+  color: #475569; /* kolor opisu (wymagany) */
+  font-size: clamp(15px, 1.6vw, 16px);
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.montaz__intro {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.montaz__list {
+  padding-left: 22px;
+  margin-bottom: 12px;
+}
+.montaz__list li {
+  margin: 4px 0;
+}
+
+/* CTA */
+.montaz__cta {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 18px;
+  background: #15803d; /* zielony jak w menu */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+}
+.montaz__cta:hover {
+  filter: brightness(1.05);
+}
+.montaz__cta:active {
+  transform: translateY(1px);
+}
