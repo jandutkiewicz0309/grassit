@@ -1,13 +1,13 @@
 import { Component } from "solid-js";
 import "./Installation.css";
-// import montazImg from "~/components/static/png/montaz-trawy.png";
+import instalationImg from "~/components/static/png/instalationImg.png";
 
 export const InstallationPage: Component = () => {
   return (
     <section class="montaz">
       <div class="montaz__grid">
         <div class="montaz__media">
-          {/* <img src={montazImg} alt="Montaż trawy syntetycznej" /> */}
+          <img src={instalationImg} alt="Dostawa sztucznej trawy" />
         </div>
 
         <div class="montaz__content">

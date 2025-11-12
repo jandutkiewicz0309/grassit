@@ -1,13 +1,13 @@
 import { Component } from "solid-js";
 import "./Delivery.css";
-// import dostawaImg from "~/components/static/png/dostawa.png";
+import instalationImg from "~/components/static/png/instalationImg.png";
 
 export const DeliveryPage: Component = () => {
   return (
     <section class="dostawa">
       <div class="dostawa__grid">
         <div class="dostawa__media">
-          {/* <img src={dostawaImg} alt="Dostawa sztucznej trawy" /> */}
+          <img src={instalationImg} alt="Dostawa sztucznej trawy" />
         </div>
 
         <div class="dostawa__content">
