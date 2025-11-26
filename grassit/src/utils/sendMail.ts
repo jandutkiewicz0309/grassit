@@ -6,11 +6,14 @@ export async function sendContactEmail(data: OnSubmitOrderForm) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      to: "dutkiewiczjann@gmail.com",
+      to: "biuro@grassit.pl",
       subject: "Nowa wiadomość z formularza",
       payload: data,
     }),
   });
-  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+  if (!resp.ok) {
+    const msg = await resp.text();
+    throw new Error(`HTTP ${resp.status} ${msg}`);
+  }
   return resp.json();
 }
