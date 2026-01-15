@@ -43,7 +43,7 @@ const Layout = (props: RouteSectionProps) => {
 
   return (
     <>
-      <TopInfo email="company@gmail.com" phone="+48 123 456 789" />
+      <TopInfo email="biuro@grassit.pl" phone="+48 515 401 178" />
 
       <Show when={isMobileView()} fallback={<Header />}>
         <MobileHeader />

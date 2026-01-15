@@ -1,38 +1,38 @@
 {
   "products": [
     {
-      "id": "playturf-50",
-      "img": "/static/png/testImg.png",
+      "id": "amalfi",
+      "img": "/static/jpg/amalfi/amalfi1.jpg",
       "images": [
-        "/static/png/testImg.png",
-        "/static/png/testImg2.png"
+        "/static/jpg/amalfi/amalfi2.jpg",
+        "/static/jpg/amalfi/amalfi3.jpg"
       ],
-      "nameProduct": "PlayTurf 50",
+      "nameProduct": "Amalfi",
       "price": "15.00",
-      "description": "Trwała, amortyzowana powierzchnia do zabawy. Idealna dla placów zabaw i miejsc o dużym natężeniu ruchu.",
+      "description": "Stylowa trawa sztuczna o gęstym runie, odporna na UV i przeznaczona do nowoczesnych aranżacji ogrodowych.",
       "details": {
         "producer": "Grassit",
-        "productDescription": "Specyfikacja, parametry techniczne i kluczowe informacje.",
+        "productDescription": "Amalf to stylowa trawa sztuczna o wysokości włókna 42 mm, stworzona z myślą o nowoczesnych aranżacjach krajobrazowych. Wysoka gęstość 17 800 wszyć na m² zapewnia zwarte, estetyczne runo i naturalny efekt zieleni. Wykonana z odpornych na promieniowanie UV włókien PE i PP, zachowuje swój kolor i formę przez długi czas. Całkowita waga 2530 g/m² gwarantuje trwałość oraz solidność, czyniąc ją doskonałym, długowiecznym rozwiązaniem do ogrodów i przestrzeni zewnętrznych.",
         "catalogNumber": "GT-0050",
-        "productHeight": "50 mm",
-        "productWeight": "2.8 kg/m²",
-        "productMaterial": "Polietylen (PE)",
+        "productHeight": "55 mm",
+        "productWeight": "± 3116 g/m²",
+        "productMaterial": "WŁÓKNO PP + POLIESTROWE KRÓTKIE | ±200 gr/m²",
         "UVResistant": "Tak"
       }
     },
     {
-      "id": "playturf-40",
-      "img": "/static/png/testImg.png",
+      "id": "genewa",
+      "img": "/static/jpg/genewa/genewa1.jpg",
       "images": [
-        "/static/png/testImg.png",
-        "/static/png/testImg2.png"
+        "/static/jpg/genewa/genewa3.jpg",
+        "/static/jpg/genewa/genewa2.jpg"
       ],
-      "nameProduct": "PlayTurf 40",
+      "nameProduct": "Genewa",
       "price": "30.00",
-      "description": "Elastyczna mata do placów zabaw i boisk szkolnych.",
+      "description": "Luksusowa trawa syntetyczna o wysokim, gęstym runie, odporna na UV i przeznaczona do intensywnego użytkowania.",
       "details": {
         "producer": "Grassit",
-        "productDescription": "Wysoka elastyczność, dobra amortyzacja.",
+        "productDescription": "Genewa to wysokiej klasy trawa syntetyczna do zastosowań ogrodowych i krajobrazowych, charakteryzująca się imponującą wysokością włókna 55 mm. Wykonana z trwałej mieszanki włókien: 64% polietylenu (PE) oraz 36% polipropylenu (PP), zapewnia naturalny wygląd i długotrwałą odporność na użytkowanie. Dzięki tuftowanej konstrukcji, dużej gęstości oraz masie runa wynoszącej ok. 1866 g/m², a także całkowitej wysokości 57 mm, produkt wyróżnia się wyjątkową puszystością i luksusowym charakterem. Doskonale sprawdzi się w wielu zastosowaniach – od ogrodów prywatnych po przestrzenie publiczne. Trawa oferuje bardzo wysoką przepuszczalność wody (>2000 mm/h), odporność na promieniowanie UV (UVB 3000 h) oraz spełnia normy bezpieczeństwa pożarowego (Efl | EN 13501-1:2018), co czyni ją niezawodnym wyborem do intensywnego użytkowania. Produkt dostępny jest w szerokościach 2 m i 4 m oraz objęty 10-letnią gwarancją.",
         "catalogNumber": "GT-0040",
         "productHeight": "40 mm",
         "productWeight": "2.5 kg/m²",
@@ -41,18 +41,19 @@
       }
     },
     {
-      "id": "playturf-30",
-      "img": "/static/png/testImg.png",
+      "id": "lagos",
+      "img": "/static/jpg/lagos/lagos1.jpg",
       "images": [
-        "/static/png/testImg.png",
-        "/static/png/testImg2.png"
+        "/static/jpg/lagos/lagos2.jpg",
+        "/static/jpg/lagos/lagos3.jpg"
       ],
-      "nameProduct": "PlayTurf 30",
+      "nameProduct": "Lagos",
       "price": "55.00",
-      "description": "Uniwersalna trawa syntetyczna do ogrodów rodzinnych.",
+      "description": "Gęsta trawa syntetyczna o naturalnym wyglądzie, przeznaczona do aranżacji terenów zielonych.",
+
       "details": {
         "producer": "Grassit",
-        "productDescription": "Zbalansowana miękkość i wytrzymałość.",
+        "productDescription": "Trawnik Lagos to sztuczna trawa o wysokości włókna 38 mm, idealna do aranżacji terenów zielonych. Charakteryzuje się wysoką gęstością 23 100 włókien/m² oraz włóknami PE, które zapewniają bujny i naturalny wygląd. Produkt gwarantuje trwałą, bezobsługową powierzchnię zieloną, zachowującą intensywną barwę przez wiele lat.",
         "catalogNumber": "GT-0030",
         "productHeight": "30 mm",
         "productWeight": "2.2 kg/m²",
@@ -61,13 +62,13 @@
       }
     },
     {
-      "id": "playturf-20",
-      "img": "/static/png/testImg.png",
+      "id": "santiago",
+      "img": "/static/jpg/santiago/santiago1.jpg",
       "images": [
-        "/static/png/testImg.png",
-        "/static/png/testImg2.png"
+        "/static/jpg/santiago/santiago2.jpg",
+        "/static/jpg/santiago/santiago3.jpg"
       ],
-      "nameProduct": "PlayTurf 20",
+      "nameProduct": "Santiago",
       "price": "115.00",
       "description": "Gęsta struktura, wysoka odporność na ścieranie.",
       "details": {
@@ -81,13 +82,13 @@
       }
     },
     {
-      "id": "playturf-10",
-      "img": "/static/png/testImg.png",
+      "id": "sofia",
+      "img": "/static/jpg/sofia/sofia2.jpg",
       "images": [
-        "/static/png/testImg.png",
-        "/static/png/testImg2.png"
+        "/static/jpg/sofia/sofia3.jpg",
+        "/static/jpg/sofia/sofia1.jpg"
       ],
-      "nameProduct": "PlayTurf 10",
+      "nameProduct": "Sofia",
       "price": "105.00",
       "description": "Kompaktowy splot, łatwa pielęgnacja.",
       "details": {
@@ -101,13 +102,13 @@
       }
     },
     {
-      "id": "playturf-01",
-      "img": "/static/png/testImg.png",
+      "id": "santa_cruz",
+      "img": "/static/jpg/santa_cruz/santa_cruz2.jpg",
       "images": [
-        "/static/png/testImg.png",
-        "/static/png/testImg2.png"
+        "/static/jpg/santa_cruz/santa_cruz3.jpg",
+        "/static/jpg/santa_cruz/santa_cruz1.jpg"
       ],
-      "nameProduct": "PlayTurf 01",
+      "nameProduct": "Santa Cruz",
       "price": "152.00",
       "description": "Profesjonalna nawierzchnia do stref komercyjnych.",
       "details": {
@@ -121,13 +122,13 @@
       }
     },
     {
-      "id": "playturf-02",
-      "img": "/static/png/testImg.png",
+      "id": "vienna",
+      "img": "/static/jpg/vienna/vienna3.jpg",
       "images": [
-        "/static/png/testImg.png",
-        "/static/png/testImg2.png"
+        "/static/jpg/vienna/vienna1.jpg",
+        "/static/jpg/vienna/vienna2.jpg"
       ],
-      "nameProduct": "PlayTurf 02",
+      "nameProduct": "venna",
       "price": "99.99",
       "description": "Miękka i sprężysta, bezpieczna dla dzieci i zwierząt.",
       "details": {
@@ -141,13 +142,13 @@
       }
     },
     {
-      "id": "playturf-03",
-      "img": "/static/png/testImg.png",
+      "id": "wenecja",
+      "img": "/static/jpg/wenecja/wenecja1.jpg",
       "images": [
-        "/static/png/testImg.png",
-        "/static/png/testImg2.png"
+        "/static/jpg/wenecja/wenecja2.jpg",
+        "/static/jpg/wenecja/wenecja3.jpg"
       ],
-      "nameProduct": "PlayTurf 03",
+      "nameProduct": "Wenecja",
       "price": "154.00",
       "description": "Wysoka odporność UV, stabilny kolor przez lata.",
       "details": {
@@ -157,46 +158,6 @@
         "productHeight": "45 mm",
         "productWeight": "2.9 kg/m²",
         "productMaterial": "PE (wysoka gęstość)",
-        "UVResistant": "Tak"
-      }
-    },
-    {
-      "id": "playturf-04",
-      "img": "/static/png/testImg.png",
-      "images": [
-        "/static/png/testImg.png",
-        "/static/png/testImg2.png"
-      ],
-      "nameProduct": "PlayTurf 04",
-      "price": "87.22",
-      "description": "Lekka, ekonomiczna opcja do mniejszych powierzchni.",
-      "details": {
-        "producer": "Grassit",
-        "productDescription": "Dobry stosunek ceny do jakości.",
-        "catalogNumber": "GTP-0004",
-        "productHeight": "25 mm",
-        "productWeight": "1.9 kg/m²",
-        "productMaterial": "PP",
-        "UVResistant": "Tak"
-      }
-    },
-    {
-      "id": "playturf-011",
-      "img": "/static/png/testImg.png",
-      "images": [
-        "/static/png/testImg.png",
-        "/static/png/testImg2.png"
-      ],
-      "nameProduct": "PlayTurf 011",
-      "price": "119.00",
-      "description": "Balans miękkości i wytrzymałości, idealna do ogrodów.",
-      "details": {
-        "producer": "Grassit",
-        "productDescription": "Naturalny wygląd, łatwa pielęgnacja.",
-        "catalogNumber": "GTP-0011",
-        "productHeight": "38 mm",
-        "productWeight": "2.6 kg/m²",
-        "productMaterial": "PE/PP mix",
         "UVResistant": "Tak"
       }
     }

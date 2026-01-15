@@ -19,7 +19,7 @@ export default function detailedProduct() {
           id={product()!.id}
           nameProduct={product()!.nameProduct}
           price={product()!.price}
-          productDescription={product()!.description}
+          productDescription={product()!.details.productDescription}
           producer={product()!.details.producer}
           catalogNumber={product()!.details.catalogNumber}
           productHeight={product()!.details.productHeight}
