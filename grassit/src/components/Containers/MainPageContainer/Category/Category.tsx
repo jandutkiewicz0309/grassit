@@ -1,9 +1,9 @@
 import { Component, For } from "solid-js";
-import { A } from "@solidjs/router"; // 1. Importujemy komponent A
+import { A } from "@solidjs/router"; 
 import "./Category.css";
-import imgKrajobraz from "~/components/static/png/TrawyKrajobrazowe.png";
-import imgOgrodowe from "~/components/static/png/trawyOgrodoweImg.png";
-import imgSportowe from "~/components/static/png/trawySportoweImg.png";
+import imgKrajobraz from "~/components/static/png/TrawyKrajobrazowe.jpg";
+import imgOgrodowe from "~/components/static/png/trawyOgrodoweImg.jpg";
+import imgSportowe from "~/components/static/png/trawySportoweImg.jpg";
 import imgAkcesoria from "~/components/static/png/akcesoraImg.png";
 
 type Card = {

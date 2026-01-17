@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import lawnImg from "~/components/static/png/NaturalInspiredLawn.png";
+import lawnImg from "~/components/static/png/NaturalInspiredLawn.jpg";
 import "./Sustainability.css";
 import truck from "~/components/static/png/truck.png";
 import warranty from "~/components/static/png/warranty.png";

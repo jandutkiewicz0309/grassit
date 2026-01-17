@@ -1,6 +1,6 @@
 import { Component } from "solid-js";
 import "./Installation.css";
-import instalationImg from "~/components/static/png/instalationImg.png";
+import instalationImg from "~/components/static/png/instalationImg.jpg";
 
 export const InstallationPage: Component = () => {
   return (

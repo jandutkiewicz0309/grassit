@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import mainImg from "~/components/static/png/MainImg.png";
+import mainImg from "~/components/static/png/MainImg.jpg";
 import shape from "~/components/static/png/shape.png";
 import waterDrop from "~/components/static/png/waterDrop.png";
 import whiteScissors from "~/components/static/png/whiteScissors.png";

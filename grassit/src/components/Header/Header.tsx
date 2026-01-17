@@ -1,14 +1,14 @@
 import { Component } from "solid-js";
 import "./Header.css";
 import { A } from "@solidjs/router";
-import logo from "~/components/static/png/greenLogo.png";
+// import logo from "~/components/static/png/greenLogo.png";
 
 export const Header: Component = () => {
   return (
     <div class="header">
       <div class="header-container">
         <A href="/" class="header-logo">
-          <img src={logo} alt="" />
+          {/* <img src={logo} alt="" /> */}
         </A>
         <div class="header-buttons">
           <A
