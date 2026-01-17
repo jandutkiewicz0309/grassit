@@ -1,14 +1,13 @@
 import type { OnSubmitOrderForm } from "~/utils/types";
 
 export async function sendContactEmail(data: OnSubmitOrderForm) {
-  console.log("🚀 Wysyłanie danych do API:", data);
+  const API_URL = "/mail.php"; 
 
-  const resp = await fetch("/api/send-email", {
+  const resp = await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      to: "biuro@grassit.pl",
-      subject: "Formularz kontaktowy",
+      subject: "Wiadomość ze strony",
       payload: data,
     }),
   });
@@ -16,14 +15,14 @@ export async function sendContactEmail(data: OnSubmitOrderForm) {
   const textResponse = await resp.text();
 
   if (!resp.ok) {
-    console.error("Błąd serwera (treść):", textResponse);
-    throw new Error(`Błąd wysyłania: ${resp.status}`);
+    console.error("Błąd serwera:", textResponse);
+    throw new Error(`HTTP Error: ${resp.status}`);
   }
 
   try {
     return JSON.parse(textResponse);
   } catch (e) {
-    console.error("Otrzymano HTML zamiast JSON. Prawdopodobnie błąd 404 lub 500 po stronie serwera.", textResponse);
-    throw new Error("Serwer zwrócił niepoprawne dane (HTML zamiast JSON).");
+    console.error("Nieprawidłowy JSON z PHP:", textResponse);
+    throw new Error("Błąd odpowiedzi serwera");
   }
 }
