@@ -2,13 +2,12 @@ import { Component, Show, createSignal, onCleanup, onMount } from "solid-js";
 import { A } from "@solidjs/router";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineDown } from "solid-icons/ai";
 import "./MobileHeader.css";
-
+import grassit from "~/components/static/jpg/grassit.svg"
 export const MobileHeader: Component = () => {
   const [open, setOpen] = createSignal(false);
   const [openProdukty, setOpenProdukty] = createSignal(false);
   const [openUslugi, setOpenUslugi] = createSignal(false);
 
-  // Body scroll lock
   const lockScroll = () => (document.body.style.overflow = "hidden");
   const unlockScroll = () => (document.body.style.overflow = "");
 
@@ -22,7 +21,6 @@ export const MobileHeader: Component = () => {
     next ? lockScroll() : unlockScroll();
   };
 
-  // ESC to close
   const onKey = (e: KeyboardEvent) => {
     if (e.key === "Escape") close();
   };
@@ -39,10 +37,9 @@ export const MobileHeader: Component = () => {
 
   return (
     <header class="MobileHeader">
-      {/* Pasek górny */}
       <div class="mh__bar">
         <A href="/" class="mh__brand">
-          grassit
+          <img src={grassit} class="mobile_img"/>
         </A>
         <button
           class="mh__hamburger"
@@ -55,7 +52,6 @@ export const MobileHeader: Component = () => {
         </button>
       </div>
 
-      {/* FULLSCREEN OVERLAY MENU */}
       <Show when={open()}>
         <div
           class="mh__overlay"
@@ -63,14 +59,12 @@ export const MobileHeader: Component = () => {
           aria-modal="true"
           onClick={close}
         >
-          {/* Zatrzymaj propagację, by klik wewnątrz nie zamykał */}
           <div class="mh__sheet" onClick={(e) => e.stopPropagation()}>
             <button class="mh__closeBtn" aria-label="Zamknij" onClick={close}>
               <AiOutlineClose size={22} />
             </button>
 
             <nav class="mh__nav">
-              {/* PRODUKTY */}
               <button
                 class={`mh__sectionTitle mh__expander ${
                   openProdukty() ? "is-open" : ""
@@ -81,62 +75,32 @@ export const MobileHeader: Component = () => {
                 <span>PRODUKTY</span>
                 <AiOutlineDown size={18} class="mh__chev" />
               </button>
+
               <Show when={openProdukty()}>
                 <div class="mh__group">
-                  <div class="mh__item">
-                    <A
-                      href="/produkty/trawy-krajobrazowe"
-                      class="mh__link"
-                      onClick={onNavClick}
-                    >
-                      Trawy krajobrazowe
-                    </A>
-                    <div class="mh__sublist">
-                      <A
-                        href="/produkty/trawy-krajobrazowe/ogrod"
-                        class="mh__sublink"
-                        onClick={onNavClick}
-                      >
-                        Ogród
-                      </A>
-                      <A
-                        href="/produkty/trawy-krajobrazowe/plac-zabaw"
-                        class="mh__sublink"
-                        onClick={onNavClick}
-                      >
-                        Plac zabaw
-                      </A>
-                    </div>
-                  </div>
-
-                  <div class="mh__item">
-                    <A
-                      href="/produkty/trawy-sportowe"
-                      class="mh__link"
-                      onClick={onNavClick}
-                    >
-                      Trawy sportowe
-                    </A>
-                    <div class="mh__sublist">
-                      <A
-                        href="/produkty/trawy-sportowe/pilka-nozna"
-                        class="mh__sublink"
-                        onClick={onNavClick}
-                      >
-                        Piłka nożna
-                      </A>
-                      <A
-                        href="/produkty/trawy-sportowe/tenis"
-                        class="mh__sublink"
-                        onClick={onNavClick}
-                      >
-                        Tenis
-                      </A>
-                    </div>
-                  </div>
-
                   <A
-                    href="/produkty/akcesoria"
+                    href="/produkty?category=Trawy Dekoracyjne"
+                    class="mh__link"
+                    onClick={onNavClick}
+                  >
+                    Trawy Dekoracyjne
+                  </A>
+                  <A
+                    href="/produkty?category=Trawy ogrodowe"
+                    class="mh__link"
+                    onClick={onNavClick}
+                  >
+                    Trawy ogrodowe
+                  </A>
+                  <A
+                    href="/produkty?category=Trawy sportowe"
+                    class="mh__link"
+                    onClick={onNavClick}
+                  >
+                    Trawy sportowe
+                  </A>
+                  <A
+                    href="/produkty?category=Akcesoria"
                     class="mh__link"
                     onClick={onNavClick}
                   >
@@ -144,8 +108,6 @@ export const MobileHeader: Component = () => {
                   </A>
                 </div>
               </Show>
-
-              {/* USŁUGI */}
               <button
                 class={`mh__sectionTitle mh__expander ${
                   openUslugi() ? "is-open" : ""
@@ -158,37 +120,25 @@ export const MobileHeader: Component = () => {
               </button>
               <Show when={openUslugi()}>
                 <div class="mh__group">
-                  <A
-                    href="/uslugi/montaz"
-                    class="mh__link"
-                    onClick={onNavClick}
-                  >
+                  <A href="montaz" class="mh__link" onClick={onNavClick}>
                     Montaż
                   </A>
-                  <A
-                    href="/uslugi/kalkulator"
-                    class="mh__link"
-                    onClick={onNavClick}
-                  >
-                    Kalkulator
-                  </A>
-                  <A
-                    href="/uslugi/doradztwo"
-                    class="mh__link"
-                    onClick={onNavClick}
-                  >
+                  <A href="doradztwo" class="mh__link" onClick={onNavClick}>
                     Doradztwo
+                  </A>
+                  <A href="dostawa" class="mh__link" onClick={onNavClick}>
+                    Dostawa
                   </A>
                 </div>
               </Show>
 
-              <A
+              {/* <A
                 href="/realizacje"
                 class="mh__sectionTitle is-link"
                 onClick={onNavClick}
               >
                 REALIZACJE
-              </A>
+              </A> */}
               <A
                 href="/kontakt"
                 class="mh__sectionTitle is-link"
@@ -197,10 +147,6 @@ export const MobileHeader: Component = () => {
                 KONTAKT
               </A>
             </nav>
-
-            <A href="/popros-o-probke" class="mh__cta" onClick={onNavClick}>
-              Poproś o próbkę
-            </A>
           </div>
         </div>
       </Show>

@@ -18,7 +18,7 @@ export const ProductItem: Component<IProductItem> = (props) => {
       id={props.id}
       class="mainContainer"
     >
-      <img class="img" src={props.img} alt="" />
+      <img class="product_img" src={props.img} alt="" />
       <div class="text-container">
         <div class="name-price-info-container">
           <span class="nameProduct">{props.nameProduct}</span>

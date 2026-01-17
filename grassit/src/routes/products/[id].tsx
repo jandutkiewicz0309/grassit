@@ -1,4 +1,3 @@
-// routes/produkty/[id].tsx
 import { useNavigate, useParams } from "@solidjs/router";
 import { createMemo, Show } from "solid-js";
 import { DetailedProduct } from "~/components/DetailedProduct/DetailedProduct";
@@ -6,7 +5,7 @@ import ProductNotFound from "~/components/ProductNotFound/ProductNotFound";
 import data from "~/data/product.json";
 
 export default function detailedProduct() {
-  const params = useParams();
+  const params = useParams(); 
   const navigate = useNavigate();
   const product = createMemo(() =>
     data.products.find((p) => p.id === params.id)

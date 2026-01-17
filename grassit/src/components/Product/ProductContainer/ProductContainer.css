@@ -73,9 +73,7 @@
     flex-direction: column;
   }
 
-  .product-list {
-    grid-template-columns: repeat(auto-fill, minmax(348px, 1fr));
-  }
+
 }
 
 .product-list-scroller::-webkit-scrollbar {

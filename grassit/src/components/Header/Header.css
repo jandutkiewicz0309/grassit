@@ -8,6 +8,14 @@
   padding: 0px 12px;
 }
 
+.img {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 90px;
+  height: 100px;
+}
+
 .header {
   display: flex;
   border-bottom: 1px solid #e2e8f0b2;

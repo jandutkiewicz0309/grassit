@@ -67,13 +67,18 @@ const Footer: Component = () => {
           <h3 class="ft__title">Produkty</h3>
           <ul class="ft__links">
             <li>
-              <A href="/produkty?k=dekoracyjne">Trawy dekoracyjne</A>
+              <A href="/produkty?category=Trawy Dekoracyjne">
+                Trawy Dekoracyjne
+              </A>
             </li>
             <li>
-              <A href="/produkty?k=sport">Trawy sportowe</A>
+              <A href="/produkty?category=Trawy ogrodowe">Trawy ogrodowe</A>
             </li>
             <li>
-              <A href="/produkty?k=akcesoria">Akcesoria</A>
+              <A href="/produkty?category=Trawy sportowe">Trawy sportowe</A>
+            </li>
+            <li>
+              <A href="/produkty?category=Akcesoria">Akcesoria</A>
             </li>
           </ul>
         </nav>
