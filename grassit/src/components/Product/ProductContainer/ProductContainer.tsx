@@ -36,7 +36,6 @@ createEffect(() => {
     const urlToCategoryMap: Record<string, CategoryType> = {
       "Trawy Dekoracyjne": "trawy_dekoracyjne",
       "Trawy sportowe": "trawy_sportowe",
-      "Trawy ogrodowe": "trawy_ogrodowe",
       "Akcesoria": "akcesoria",
     };
 

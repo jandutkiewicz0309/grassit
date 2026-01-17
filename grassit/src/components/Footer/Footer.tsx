@@ -19,14 +19,7 @@ const IconIG = () => (
     />
   </svg>
 );
-const IconTW = () => (
-  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-    <path
-      fill="currentColor"
-      d="M21 6.5c-.6.3-1.3.5-2 .6.7-.5 1.2-1.1 1.4-2-.7.4-1.4.7-2.2.9a3.4 3.4 0 0 0-5.9 3.1A9.7 9.7 0 0 1 4 5.8a3.4 3.4 0 0 0 1 4.6c-.5 0-1-.2-1.4-.4v.1c0 1.6 1.1 3 2.7 3.3-.3.1-.6.1-1 .1-.2 0-.5 0-.7-.1a3.4 3.4 0 0 0 3.2 2.4A6.8 6.8 0 0 1 3 18a9.6 9.6 0 0 0 5.2 1.5c6.3 0 9.8-5.2 9.8-9.8V9c.7-.5 1.3-1.1 1.8-1.8z"
-    />
-  </svg>
-);
+
 
 const Footer: Component = () => {
   return (
@@ -57,9 +50,7 @@ const Footer: Component = () => {
             >
               <IconIG />
             </A>
-            <A href="#" aria-label="X / Twitter" class="ft__socialBtn">
-              <IconTW />
-            </A>
+         
           </div>
         </div>
 
@@ -70,9 +61,6 @@ const Footer: Component = () => {
               <A href="/produkty?category=Trawy Dekoracyjne">
                 Trawy Dekoracyjne
               </A>
-            </li>
-            <li>
-              <A href="/produkty?category=Trawy ogrodowe">Trawy ogrodowe</A>
             </li>
             <li>
               <A href="/produkty?category=Trawy sportowe">Trawy sportowe</A>

@@ -86,13 +86,6 @@ export const MobileHeader: Component = () => {
                     Trawy Dekoracyjne
                   </A>
                   <A
-                    href="/produkty?category=Trawy ogrodowe"
-                    class="mh__link"
-                    onClick={onNavClick}
-                  >
-                    Trawy ogrodowe
-                  </A>
-                  <A
                     href="/produkty?category=Trawy sportowe"
                     class="mh__link"
                     onClick={onNavClick}

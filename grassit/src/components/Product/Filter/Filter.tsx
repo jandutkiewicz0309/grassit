@@ -2,13 +2,12 @@ import { Component, createSignal } from "solid-js";
 import { Checkbox } from "~/components/Input/CheckBox/CheckBox";
 import "./Filter.css";
 
-export type CategoryType = "trawy_dekoracyjne" | "trawy_sportowe" | "trawy_ogrodowe" | "akcesoria";
+export type CategoryType = "trawy_dekoracyjne" | "trawy_sportowe" | "akcesoria";
 
 
 const CATEGORY_LABELS: Record<CategoryType, string> = {
   trawy_dekoracyjne: "Dekoracyjne",
   trawy_sportowe: "Sportowe",
-  trawy_ogrodowe: "Ogrodowe",
   akcesoria: "Akcesoria",
 };
 

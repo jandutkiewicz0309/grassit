@@ -1,8 +1,7 @@
 import { Component, For } from "solid-js";
-import { A } from "@solidjs/router"; 
+import { A } from "@solidjs/router";
 import "./Category.css";
 import imgKrajobraz from "~/components/static/png/TrawyKrajobrazowe.jpg";
-import imgOgrodowe from "~/components/static/png/trawyOgrodoweImg.jpg";
 import imgSportowe from "~/components/static/png/trawySportoweImg.jpg";
 import imgAkcesoria from "~/components/static/png/akcesoraImg.png";
 
@@ -18,37 +17,30 @@ const cards: Card[] = [
   {
     title: "Trawy Dekoracyjne",
     desc: "Gęste, dekoracyjne trawniki dla dużych przestrzeni zewnętrznych",
-    href: "/produkty?category=Dekoracyjne",
+    href: "/produkty?category=Trawy Dekoracyjne",
     img: imgKrajobraz,
-    span: 8,
-  },
-  {
-    title: "Trawy ogrodowe",
-    desc: "Naturalny wygląd i komfort użytkowania w domowym ogrodzie",
-    href: "/produkty?category=trawy_ogrodowe",
-    img: imgOgrodowe,
-    span: 4,
+    span: 12,
   },
   {
     title: "Trawy sportowe",
     desc: "Wytrzymałe nawierzchnie do piłki nożnej, tenisa i golfa.",
-    href: "/produkty?category=trawy_sportowe",
+    href: "/produkty?category=Trawy sportowe",
     img: imgSportowe,
     span: 6,
   },
   {
     title: "Akcesoria",
     desc: "Narzędzia montażowe, kije, łączniki i szczotki.",
-    href: "/produkty?category=akcesoria",
+    href: "/produkty?category=Akcesoria",
     img: imgAkcesoria,
     span: 6,
   },
 ];
 
 const chips = ["Place zabaw", "Trawy – bez montażu", "Trawy uniwersalne"];
+
 const exclusiveChips = [
   "Trawy Dekoracyjne",
-  "Trawy ogrodowe",
   "Trawy sportowe",
   "Akcesoria",
 ];
