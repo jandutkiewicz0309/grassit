@@ -67,7 +67,7 @@ const Footer: Component = () => {
           <h3 class="ft__title">Produkty</h3>
           <ul class="ft__links">
             <li>
-              <A href="/produkty?k=krajobrazowe">Trawy krajobrazowe</A>
+              <A href="/produkty?k=dekoracyjne">Trawy dekoracyjne</A>
             </li>
             <li>
               <A href="/produkty?k=sport">Trawy sportowe</A>
@@ -81,9 +81,6 @@ const Footer: Component = () => {
         <nav class="ft__col" aria-label="Informacje">
           <h3 class="ft__title">Informacje</h3>
           <ul class="ft__links">
-            <li>
-              <A href="/about">O firmie</A>
-            </li>
             <li>
               <A href="/dostawa">Dostawa</A>
             </li>
@@ -107,13 +104,13 @@ const Footer: Component = () => {
 
         <address class="ft__col ft__contact" aria-label="Kontakt">
           <h3 class="ft__title">Kontakt</h3>
-          <p>ul. Rynkowa 15/15</p>
-          <p>Warszawa, 00-000</p>
-          <p>REGON: 111222333</p>
-          <p> NIP: 999-999-99-99</p>
-          <p>(00) +48 555 555 555</p>
+          <p> Kazimierza Wielkiego 47 A</p>
+          <p>32-400 Myślenice, Polska</p>
+          <p>REGON: 522476299</p>
+          <p> NIP: 6812093897</p>
+          <p>+48 515 401 178</p>
           <p>
-            <a href="mailto:email_firmy@email.com">email_firmy@email.com</a>
+            <a href="mailto:biuro@grassit.pl">biuro@grassit.pl</a>
           </p>
         </address>
       </div>

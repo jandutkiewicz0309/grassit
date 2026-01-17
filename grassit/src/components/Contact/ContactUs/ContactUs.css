@@ -115,11 +115,17 @@
 }
 
 .buttonContainer {
-  width: 100%;
   display: flex;
-  justify-content: end;
-  align-items: end;
-  padding-top: 16px;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+.askForm__legal {
+  font-size: 10px; 
+  line-height: 1.4;     
+  color: #888;          
+  text-align: justify; 
+  margin: 0;
 }
 
 .formButton {

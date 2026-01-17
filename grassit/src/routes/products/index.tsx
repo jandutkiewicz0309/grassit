@@ -1,8 +1,9 @@
 import { useNavigate } from "@solidjs/router";
+import { CategoryType } from "~/components/Product/Filter/Filter";
 import { ProductContainer } from "~/components/Product/ProductContainer/ProductContainer";
 import data from "~/data/product.json";
 
-const product = () => {
+const ProductPage = () => {
   const navigate = useNavigate();
 
   const products = data.products.map((p) => ({
@@ -11,8 +12,11 @@ const product = () => {
     nameProduct: p.nameProduct,
     price: p.price,
     description: p.description,
+
+    category: p.category as CategoryType, 
     onClick: (id: string) => navigate(`/produkty/${id}`),
   }));
+
   return (
     <div>
       <ProductContainer productData={products} />
@@ -20,4 +24,4 @@ const product = () => {
   );
 };
 
-export default product;
+export default ProductPage;

@@ -137,11 +137,17 @@
 
 /* ====== AKCJE ====== */
 .askForm__actions {
-  width: 100%;
   display: flex;
-  justify-content: end;
-  align-items: end;
-  padding-top: 16px;
+  flex-direction: column; /* Ustawia tekst nad lub pod przyciskiem */
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.askForm__legal {
+  font-size: 0.75rem; /* Mniejszy tekst (ok 12px) */
+  color: black; /* Szary kolor (neutralny) */
+  line-height: 1.4;
+  margin: 0;
+  text-align: left; /* Lub center, zależnie od designu */
 }
 
 /* ====== PRZYCISK ====== */

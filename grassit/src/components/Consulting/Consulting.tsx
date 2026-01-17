@@ -1,13 +1,13 @@
 import { Component } from "solid-js";
 import "./Consulting.css";
-// import doradztwoImg from "~/components/static/png/doradztwo.png";
+import doradztwoImg from "~/components/static/png/consulting.png";
 
 export const ConsultingPage: Component = () => {
   return (
     <section class="doradztwo">
       <div class="doradztwo__grid">
         <div class="doradztwo__media">
-          {/* <img src={doradztwoImg} alt="Doradztwo przy wyborze trawy" /> */}
+          <img src={doradztwoImg} alt="Doradztwo przy wyborze trawy" />
         </div>
 
         <div class="doradztwo__content">

@@ -2,6 +2,7 @@
   "products": [
     {
       "id": "amalfi",
+      "category": "trawy_dekoracyjne",
       "img": "/static/jpg/amalfi/amalfi1.jpg",
       "images": [
         "/static/jpg/amalfi/amalfi2.jpg",
@@ -22,6 +23,7 @@
     },
     {
       "id": "genewa",
+      "category": "trawy_dekoracyjne",
       "img": "/static/jpg/genewa/genewa1.jpg",
       "images": [
         "/static/jpg/genewa/genewa3.jpg",
@@ -42,6 +44,7 @@
     },
     {
       "id": "lagos",
+      "category": "trawy_dekoracyjne",
       "img": "/static/jpg/lagos/lagos1.jpg",
       "images": [
         "/static/jpg/lagos/lagos2.jpg",
@@ -63,6 +66,7 @@
     },
     {
       "id": "santiago",
+      "category": "trawy_dekoracyjne",
       "img": "/static/jpg/santiago/santiago1.jpg",
       "images": [
         "/static/jpg/santiago/santiago2.jpg",
@@ -83,6 +87,7 @@
     },
     {
       "id": "sofia",
+      "category": "trawy_dekoracyjne",
       "img": "/static/jpg/sofia/sofia2.jpg",
       "images": [
         "/static/jpg/sofia/sofia3.jpg",
@@ -103,6 +108,7 @@
     },
     {
       "id": "santa_cruz",
+      "category": "trawy_dekoracyjne",
       "img": "/static/jpg/santa_cruz/santa_cruz2.jpg",
       "images": [
         "/static/jpg/santa_cruz/santa_cruz3.jpg",
@@ -123,6 +129,7 @@
     },
     {
       "id": "vienna",
+      "category": "trawy_dekoracyjne",
       "img": "/static/jpg/vienna/vienna3.jpg",
       "images": [
         "/static/jpg/vienna/vienna1.jpg",
@@ -143,6 +150,7 @@
     },
     {
       "id": "wenecja",
+      "category": "trawy_dekoracyjne",
       "img": "/static/jpg/wenecja/wenecja1.jpg",
       "images": [
         "/static/jpg/wenecja/wenecja2.jpg",

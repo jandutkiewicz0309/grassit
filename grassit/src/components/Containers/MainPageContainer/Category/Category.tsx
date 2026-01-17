@@ -1,4 +1,5 @@
 import { Component, For } from "solid-js";
+import { A } from "@solidjs/router"; // 1. Importujemy komponent A
 import "./Category.css";
 import imgKrajobraz from "~/components/static/png/TrawyKrajobrazowe.png";
 import imgOgrodowe from "~/components/static/png/trawyOgrodoweImg.png";
@@ -15,30 +16,30 @@ type Card = {
 
 const cards: Card[] = [
   {
-    title: "Trawy krajobrazowe",
+    title: "Trawy Dekoracyjne",
     desc: "Gęste, dekoracyjne trawniki dla dużych przestrzeni zewnętrznych",
-    href: "/produkty?cat=krajobrazowe",
+    href: "/produkty?category=Dekoracyjne",
     img: imgKrajobraz,
     span: 8,
   },
   {
     title: "Trawy ogrodowe",
     desc: "Naturalny wygląd i komfort użytkowania w domowym ogrodzie",
-    href: "/produkty?cat=ogrodowe",
+    href: "/produkty?category=trawy_ogrodowe",
     img: imgOgrodowe,
     span: 4,
   },
   {
     title: "Trawy sportowe",
     desc: "Wytrzymałe nawierzchnie do piłki nożnej, tenisa i golfa.",
-    href: "/produkty?cat=sportowe",
+    href: "/produkty?category=trawy_sportowe",
     img: imgSportowe,
     span: 6,
   },
   {
     title: "Akcesoria",
     desc: "Narzędzia montażowe, kije, łączniki i szczotki.",
-    href: "/produkty?cat=akcesoria",
+    href: "/produkty?category=akcesoria",
     img: imgAkcesoria,
     span: 6,
   },
@@ -46,7 +47,7 @@ const cards: Card[] = [
 
 const chips = ["Place zabaw", "Trawy – bez montażu", "Trawy uniwersalne"];
 const exclusiveChips = [
-  "Trawy krajobrazowe",
+  "Trawy Dekoracyjne",
   "Trawy ogrodowe",
   "Trawy sportowe",
   "Akcesoria",
@@ -73,7 +74,7 @@ const Categories: Component = () => {
       <div class="cats__grid">
         <For each={cards}>
           {(c) => (
-            <a
+            <A
               class="catCard"
               href={c.href}
               style={{ "grid-column": `span ${c.span ?? 6}` }}
@@ -102,7 +103,7 @@ const Categories: Component = () => {
                   </span>
                 </div>
               </div>
-            </a>
+            </A>
           )}
         </For>
       </div>

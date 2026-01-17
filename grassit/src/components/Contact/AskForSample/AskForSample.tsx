@@ -243,7 +243,7 @@ export const AskProductFormCmp: Component<{
                       setValue(
                         form,
                         "notes",
-                        (e.currentTarget as HTMLTextAreaElement).value
+                        (e.currentTarget as HTMLTextAreaElement).value,
                       )
                     }
                   />
@@ -254,6 +254,22 @@ export const AskProductFormCmp: Component<{
         </div>
 
         <div class="askForm__actions">
+          <p class="askForm__legal">
+            Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w
+            formularzu kontaktowym przez GRASSIT SPÓŁKA Z OGRANICZONĄ
+            ODPOWIEDZIALNOŚCIĄ z siedzibą w Kazimierza Wielkiego 47 A, 32-400
+            Myślenice, w celu udzielenia odpowiedzi na przesłane zapytanie
+            dotyczące produktów, przedstawienia oferty cenowej oraz realizacji
+            kontaktu handlowego i ewentualnej realizacji zamówienia, na
+            podstawie art. 6 ust. 1 lit. a oraz b Rozporządzenia Parlamentu
+            Europejskiego i Rady (UE) 2016/679 (RODO). Zostałem/-am
+            poinformowany/-a, że podanie danych jest dobrowolne, ale niezbędne
+            do realizacji powyższych celów, a dane będą przetwarzane przez okres
+            niezbędny do obsługi zapytania lub realizacji umowy. Przysługuje mi
+            prawo dostępu do treści moich danych, ich sprostowania, usunięcia,
+            ograniczenia przetwarzania oraz cofnięcia zgody w dowolnym momencie.
+          </p>
+
           <button
             type="submit"
             class="detailedProduct-btn detailedProduct-btn--primary"
