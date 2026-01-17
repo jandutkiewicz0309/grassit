@@ -1,118 +1,111 @@
 import type { APIEvent } from "@solidjs/start/server";
 import data from "~/data/product.json";
 
+// Wymuszamy runtime Node.js (wymagane dla nodemailer)
 export const runtime = "node";
 
-function esc(s: string) {
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
 export async function POST({ request }: APIEvent) {
-  console.log("✅ POST HANDLER HIT");
+  console.log("✅ API /api/send-email HIT");
 
   try {
-    if (!process.env.SMTP_PASS) {
-      throw new Error("SMTP_PASS IS MISSING FROM ENV (SERVER)");
+    // 1. Sprawdzenie zmiennych środowiskowych
+    if (!process.env.SMTP_PASS || !process.env.SMTP_USER) {
+      console.error("❌ Brak konfiguracji SMTP w .env");
+      return new Response(
+        JSON.stringify({ ok: false, error: "Server configuration error" }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
     }
 
+    // 2. Dynamiczny import nodemailer
     const nodemailer = await import("nodemailer");
 
-    const { to, subject, payload } = (await request.json()) as {
+    // 3. Pobranie danych z requestu
+    const body = await request.json();
+    const { to, subject, payload } = body as {
       to: string;
       subject?: string;
-      payload: Record<string, unknown>;
+      payload: Record<string, any>;
     };
 
-    console.log("SMTP DEBUG:", {
-      host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
-      secure: process.env.SMTP_SECURE,
-      user: process.env.SMTP_USER,
-      passExists: !!process.env.SMTP_PASS,
-    });
-
+    // 4. Konfiguracja Transportera (ZGODNA Z TWOIM .ENV)
+    // Używamy zmiennych z process.env zamiast wpisywać "na sztywno"
     const transporter = nodemailer.createTransport({
-      host: "pro2.mail.ovh.net",
-      port: 587,
-      secure: false,
+      host: process.env.SMTP_HOST || "pro2.mail.ovh.net",
+      port: Number(process.env.SMTP_PORT) || 465,
+      secure: process.env.SMTP_SECURE === "true", // true dla 465, false dla 587
       auth: {
-        user: process.env.SMTP_USER!,
-        pass: process.env.SMTP_PASS!,
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
       tls: {
-        rejectUnauthorized: false,
-        minVersion: "TLSv1.2",
+        // To pomaga przy problemach z certyfikatami, ale docelowo lepiej usunąć rejectUnauthorized: false na produkcji jeśli certyfikat jest ok
+        rejectUnauthorized: false, 
       },
     });
 
-    await transporter.verify();
+    // 5. Weryfikacja połączenia SMTP
+    try {
+      await transporter.verify();
+      console.log("✅ SMTP Connected successfully");
+    } catch (smtpError) {
+      console.error("❌ SMTP Connection Failed:", smtpError);
+      throw new Error("Nie można połączyć się z serwerem pocztowym.");
+    }
 
-    await transporter.verify();
+    const from = process.env.SMTP_FROM || process.env.SMTP_USER;
+    const p = payload || {};
 
-    const from =
-      process.env.SMTP_FROM ?? process.env.SMTP_USER ?? "no-reply@example.com";
-
-    const p: any = payload || {};
-
+    // Logika rozróżniania formularzy
+    // Jeśli mamy dane adresowe -> to jest zamówienie próbki / zapytanie o produkt
     const isAsk =
       typeof p?.street === "string" &&
       typeof p?.zip === "string" &&
       typeof p?.city === "string";
 
-    const products = (data as any)?.products ?? [];
+    // Budowanie treści maila
+    let finalSubject = subject || "Wiadomość ze strony Grassit";
+    let textContent = "";
 
-    const productMeta =
-      (p.productId && products.find((x: any) => x.id === p.productId)) ||
-      (p.sku &&
-        products.find((x: any) => x?.details?.catalogNumber === p.sku)) ||
-      null;
+    if (isAsk) {
+      finalSubject = `Zamówienie próbki / Zapytanie: ${p.productName || "Ogólne"}`;
+      textContent = `NOWE ZAMÓWIENIE PRÓBKI:\n\n` +
+        `Produkt: ${p.productName || "-"}\n` +
+        `Imię i nazwisko: ${p.name || ""} ${p.lastName || ""}\n` +
+        `Email: ${p.email || ""}\n` +
+        `Telefon: ${p.phoneNumber || ""}\n` +
+        `Adres: ${p.street || ""}, ${p.zip || ""} ${p.city || ""}\n` +
+        `Uwagi: ${p.notes || "-"}`;
+    } else {
+      finalSubject = `Formularz kontaktowy: ${p.name || "Gość"}`;
+      textContent = `NOWA WIADOMOŚĆ KONTAKTOWA:\n\n` +
+        `Imię i nazwisko: ${p.name || ""} ${p.lastName || ""}\n` +
+        `Email: ${p.email || ""}\n` +
+        `Telefon: ${p.phoneNumber || ""}\n` +
+        `Wiadomość:\n${p.message || "-"}`;
+    }
 
-    const askText =
-      `Zapytanie o produkt:\n` +
-      (p.productName ? `Produkt: ${p.productName}\n` : "") +
-      (p.sku ? `Numer katalogowy: ${p.sku}\n` : "") +
-      `Imię: ${p.name ?? ""}\n` +
-      `Nazwisko: ${p.lastName ?? ""}\n` +
-      `E-mail: ${p.email ?? ""}\n` +
-      `Telefon: ${p.phoneNumber ?? ""}\n` +
-      (p.notes ? `\nUwagi:\n${p.notes}\n` : "");
-
-    const contactText =
-      `Nowy formularz kontaktowy:\n` +
-      `Imię: ${p.name ?? ""}\n` +
-      `Nazwisko: ${p.lastName ?? ""}\n` +
-      `E-mail: ${p.email ?? ""}\n` +
-      `Telefon: ${p.phoneNumber ?? ""}\n` +
-      (p.message ? `\nWiadomość:\n${p.message}\n` : "");
-
-    const text = isAsk ? askText : contactText;
-
-    const finalSubject =
-      subject ||
-      (isAsk
-        ? `Zapytanie o produkt: ${p.productName ?? ""}`
-        : "Formularz kontaktowy");
-
-    const info = await transporter.sendMail({
-      from,
-      to,
+    // 6. Wysyłka
+    await transporter.sendMail({
+      from: `"Formularz Grassit" <${from}>`,
+      to: to, // Adres docelowy (biuro@grassit.pl)
+      replyTo: p.email, // Abyś mógł kliknąć "Odpowiedz" i pisało do klienta
       subject: finalSubject,
-      text,
-      replyTo: p?.email as string | undefined,
+      text: textContent,
     });
+
+    console.log("✅ Email sent successfully");
 
     return new Response(JSON.stringify({ ok: true }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
+
   } catch (err: any) {
-    console.error(" [send-email] ERROR:", err);
+    console.error("🔥 API ERROR:", err);
+    // Zwracamy JSON z błędem, a nie HTML 500!
     return new Response(
-      JSON.stringify({ ok: false, error: err?.message ?? "Internal error" }),
+      JSON.stringify({ ok: false, error: err.message || "Unknown error" }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
