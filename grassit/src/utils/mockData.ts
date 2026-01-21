@@ -23,5 +23,4 @@ export const productData: Omit<IProductItem, "onClick">[] = [
     price: "40",
     description: "Trwała, amortyzowana...",
   },
-  // ...
 ];

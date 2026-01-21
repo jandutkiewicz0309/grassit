@@ -16,33 +16,25 @@ type Card = {
 const cards: Card[] = [
   {
     title: "Trawy Dekoracyjne",
-    desc: "Gęste, dekoracyjne trawniki dla dużych przestrzeni zewnętrznych",
+    desc: "Gęste, dekoracyjne trawniki  dla twojego ogrodu i innych powierzchni zewnętrznych",
     href: "/produkty?category=Trawy Dekoracyjne",
     img: imgKrajobraz,
     span: 12,
   },
   {
     title: "Trawy sportowe",
-    desc: "Wytrzymałe nawierzchnie do piłki nożnej, tenisa i golfa.",
+    desc: "Najwyższej jakości murawy sportowe do tenisa, piłki nożnej i padla.",
     href: "/produkty?category=Trawy sportowe",
     img: imgSportowe,
     span: 6,
   },
   {
     title: "Akcesoria",
-    desc: "Narzędzia montażowe, kije, łączniki i szczotki.",
+    desc: " Narzędzia montażowe i inne.",
     href: "/produkty?category=Akcesoria",
     img: imgAkcesoria,
     span: 6,
   },
-];
-
-const chips = ["Place zabaw", "Trawy – bez montażu", "Trawy uniwersalne"];
-
-const exclusiveChips = [
-  "Trawy Dekoracyjne",
-  "Trawy sportowe",
-  "Akcesoria",
 ];
 
 const Categories: Component = () => {
@@ -50,17 +42,11 @@ const Categories: Component = () => {
     <section class="cats">
       <div class="cats__head">
         <div class="cats__info">
-          <h2>Odkryj nasze kategorie</h2>
+          <h2>Wybierz odpowiedni rodzaj trawy do swoich potrzeb</h2>
           <p class="cats__lead">
             Wybierz typ trawy dopasowany do przestrzeni: ogród, krajobraz,
             sport, lub dobierz akcesoria do montażu.
           </p>
-        </div>
-        <div class="cats__chips" aria-label="Kategorie informacji">
-          <For each={exclusiveChips}>
-            {(label) => <div class="exclusive_chip">{label}</div>}
-          </For>
-          <For each={chips}>{(label) => <div class="chip">{label}</div>}</For>
         </div>
       </div>
       <div class="cats__grid">

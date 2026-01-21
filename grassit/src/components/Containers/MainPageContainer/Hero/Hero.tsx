@@ -12,12 +12,12 @@ const Hero: Component = () => (
     <div class="hero__inner">
       <p class="hero__eyebrow">
         <img alt="shape" src={shape} />
-        Ekologiczna, ultrarealistyczna trawa
+        Produkt ekologiczny
       </p>
 
       <h1 class="hero__title">
-        Zawsze zielona, zero
-        <br /> pielęgnacji
+        Zielony trawnik
+        <br /> przez cały rok
       </h1>
 
       <p class="hero__lead">
@@ -39,7 +39,7 @@ const Hero: Component = () => (
       <ul class="hero__usps" aria-label="Korzyści">
         <li>
           <img alt="shape" src={waterDrop} />
-          Oszczędzasz aż do 80% wody
+          oszczędność wody
         </li>
         <li>
           <BsShieldCheck />

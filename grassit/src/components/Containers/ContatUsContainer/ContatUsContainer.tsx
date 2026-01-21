@@ -14,9 +14,10 @@ export const ContatUsContainer: Component<IContatUsContainer> = (props) => {
         <div class="contactUsContainer-description">
           <h1 class="contactUsContainer-title">Skontaktuj się</h1>
           <span class="contactUsContainer-depiction">
-            Proszę wypełnić poniższy formularz, a przedstawiciel handlowy
-            skontaktuje się z Państwem, aby pomóc w rozpoczęciu projektu. Można
-            również skontaktować się z naszymi licznymi
+            Uzupełnij formularz kontaktowy a nasz pracownik skontaktuje się z
+            Tobą najszybciej jak to możliwe. Jeżeli potrzebujesz pilnej
+            informacji, zapraszamy do kontaktu telefonicznego pod numerem (+48)
+            515 401 178.
           </span>
         </div>
         <ContactUs onSubmit={props.onSubmit} />

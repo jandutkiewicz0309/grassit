@@ -28,6 +28,7 @@
 .cats__info {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .cats__head h2 {
@@ -40,33 +41,6 @@
 .cats__lead {
   color: #475569;
   margin: 0;
-}
-
-.cats__chips {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.exclusive_chip {
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  background: #15803c21;
-  border: 1px solid #15803d;
-  color: #15803d;
-  user-select: none;
-}
-
-.chip {
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  background: #ffffff1a;
-  border: 1px solid #475569;
-  color: #475569;
-  user-select: none;
 }
 
 /* GRID */

@@ -18,7 +18,7 @@ const Sustainability: Component = () => {
           <img class="sust__img" src={lawnImg} alt="" loading="lazy" />
         </div>
         <div class="sust__content">
-          <h2 class="sust__title">Zrównoważona z natury</h2>
+          <h2 class="sust__title">Produkt przyjazny środowisku</h2>
           <p class="sust__lead">
             Nasza trawa ogranicza zużycie wody i spływ chemikaliów, pozostając
             miękka i bezpieczna dla dzieci oraz zwierząt.
@@ -27,29 +27,31 @@ const Sustainability: Component = () => {
             <li class="sust__item">
               <Check />
               <div>
-                <div class="sust__itemTitle">Materiały bez ołowiu i toksyn</div>
+                <div class="sust__itemTitle">Brak toksycznych materiałów</div>
                 <div class="sust__itemDesc">
-                  Spełnia rygorystyczne normy bezpieczeństwa dla przestrzeni
-                  mieszkalnych i komercyjnych.
+                  produkt spełnia rygorystyczne normy bezpieczeństwa dla
+                  przestrzeni mieszkalnych i komercyjnych
                 </div>
               </div>
             </li>
             <li class="sust__item">
               <Check />
               <div>
-                <div class="sust__itemTitle">Oszczędność wody do 80%</div>
+                <div class="sust__itemTitle">Oszczędność wody</div>
                 <div class="sust__itemDesc">
-                  Inteligentny drenaż, bez potrzeby nawadniania.
+                  produkt nie wymaga podlewania, a jego specjalny drenaż
+                  odprowadza wodę do ziemi bez zostawiania kałuży i efektu
+                  „mokrej wykładziny”
                 </div>
               </div>
             </li>
             <li class="sust__item">
               <Check />
               <div>
-                <div class="sust__itemTitle">Opcje podłoża do recyklingu</div>
+                <div class="sust__itemTitle">Produkt podlega recyklingowi</div>
                 <div class="sust__itemDesc">
-                  Wybierz produkty z podłożem zaprojektowanym z myślą o odzysku
-                  po zakończeniu użytkowania.
+                  podłoże w większości produktów nadaje się do recyklingu, przez
+                  co utylizacja trawnika nie wpływa negatywnie na środowisko
                 </div>
               </div>
             </li>
@@ -61,7 +63,7 @@ const Sustainability: Component = () => {
             </span>
             <span class="badge">
               <img src={warranty} alt="" loading="lazy" />
-              Gwarancja 10–15 lat
+              Gwarancja do 12 lat
             </span>
           </div>
         </div>

@@ -26,17 +26,17 @@ export const ProductContainer: Component<IProductContainer> = (props) => {
   const [searchQuery, setSearchQuery] = createSignal("");
   const [priceRange, setPriceRange] = createSignal({ min: 0, max: 99999 });
 
-createEffect(() => {
+  createEffect(() => {
     const rawCategory = searchParams.category;
-    
-    const categoryNameFromUrl = Array.isArray(rawCategory) 
-      ? rawCategory[0] 
+
+    const categoryNameFromUrl = Array.isArray(rawCategory)
+      ? rawCategory[0]
       : rawCategory;
 
     const urlToCategoryMap: Record<string, CategoryType> = {
       "Trawy Dekoracyjne": "trawy_dekoracyjne",
       "Trawy sportowe": "trawy_sportowe",
-      "Akcesoria": "akcesoria",
+      Akcesoria: "akcesoria",
     };
 
     if (categoryNameFromUrl && urlToCategoryMap[categoryNameFromUrl]) {
@@ -66,8 +66,7 @@ createEffect(() => {
     <div class="main-product-container">
       <h1>Nasze produkty</h1>
       <span class="main-product-description">
-        Odkryj nasze najpopularniejsze produkty do ogrodów, podwórek i
-        zastosowań komercyjnych.
+        Odkryj nasz katalog trawników oraz akcesoriów do sztucznej trawy.
       </span>
 
       <div class="search-section">

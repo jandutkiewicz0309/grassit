@@ -44,7 +44,7 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
                 </h2>
                 <p>Dostępne</p>
               </div>
-            </div>
+            </div> 
 
             <span class="detailedProduct-description">
               {props.productDescription}
