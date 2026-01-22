@@ -1,11 +1,12 @@
 import { useNavigate, useParams } from "@solidjs/router";
 import { createMemo, Show } from "solid-js";
+import { BackArrow } from "~/components/BackArrow/BackArrow";
 import { DetailedProduct } from "~/components/DetailedProduct/DetailedProduct";
 import ProductNotFound from "~/components/ProductNotFound/ProductNotFound";
 import data from "~/data/product.json";
 
 export default function detailedProduct() {
-  const params = useParams(); 
+  const params = useParams();
   const navigate = useNavigate();
   const product = createMemo(() =>
     data.products.find((p) => p.id === params.id)
@@ -13,6 +14,7 @@ export default function detailedProduct() {
 
   return (
     <>
+      <BackArrow />
       <Show when={product()} fallback={<ProductNotFound />}>
         <DetailedProduct
           id={product()!.id}

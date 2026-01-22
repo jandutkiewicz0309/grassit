@@ -1,4 +1,5 @@
 import { useNavigate } from "@solidjs/router";
+import { BackArrow } from "~/components/BackArrow/BackArrow";
 import { CategoryType } from "~/components/Product/Filter/Filter";
 import { ProductContainer } from "~/components/Product/ProductContainer/ProductContainer";
 import data from "~/data/product.json";
@@ -13,12 +14,13 @@ const ProductPage = () => {
     price: p.price,
     description: p.description,
 
-    category: p.category as CategoryType, 
+    category: p.category as CategoryType,
     onClick: (id: string) => navigate(`/produkty/${id}`),
   }));
 
   return (
     <div>
+      <BackArrow />
       <ProductContainer productData={products} />
     </div>
   );

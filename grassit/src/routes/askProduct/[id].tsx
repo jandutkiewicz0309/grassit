@@ -1,5 +1,6 @@
 import { useParams } from "@solidjs/router";
 import { createMemo, Show } from "solid-js";
+import { BackArrow } from "~/components/BackArrow/BackArrow";
 import OrderProductSample from "~/components/Containers/OrderProductSample/OrderProductSample";
 import ProductNotFound from "~/components/ProductNotFound/ProductNotFound";
 import data from "~/data/product.json";
@@ -15,7 +16,9 @@ export default function AskProductByIdPage() {
   });
 
   return (
-    <Show when={product()} fallback={<ProductNotFound />}>
+    <>
+      <BackArrow />
+      <Show when={product()} fallback={<ProductNotFound />}>
       <OrderProductSample
         productName={product()!.nameProduct}
         productImg={product()!.images?.[0] ?? product()!.img}
@@ -30,5 +33,6 @@ export default function AskProductByIdPage() {
         }}
       />
     </Show>
+    </>
   );
 }

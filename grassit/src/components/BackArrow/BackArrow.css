@@ -1,0 +1,48 @@
+.back-arrow {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #047857;
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease, background-color 120ms ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.back-arrow:hover {
+  transform: translateY(-2px);
+  border-color: #047857;
+  background-color: rgba(4, 120, 87, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.back-arrow:active {
+  transform: translateY(0);
+  background-color: rgba(4, 120, 87, 0.1);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.back-arrow:focus-visible {
+  outline: 2px solid #047857;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-arrow {
+    transition: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .back-arrow {
+    display: none;
+  }
+}
