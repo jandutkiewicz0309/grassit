@@ -133,7 +133,7 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
                     onClick={() => props.onSimilarProductClick?.(product.id)}
                   >
                     <div class="similar-product-image">
-                      <img src={product.img} alt={product.nameProduct} />
+                      <img src={product.img} alt={product.nameProduct} loading="lazy" />
                     </div>
                     <div class="similar-product-info">
                       <span class="similar-product-name">{product.nameProduct}</span>

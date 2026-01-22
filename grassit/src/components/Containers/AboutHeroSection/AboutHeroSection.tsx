@@ -14,12 +14,14 @@ const AboutHeroSection: Component = () => {
           src={mainImg}
           alt="Sztuczna trawa - główne zdjęcie"
           class="about-hero-section__image"
+          loading="lazy"
         />
         <div class="about-hero-section__overlay">
           <img
             src={grassitLogo}
             alt="Grassit logo"
             class="about-hero-section__logo"
+            loading="lazy"
           />
         
         </div>

@@ -85,8 +85,15 @@
 }
 
 /* Responsive styles */
+@media (max-width: 1500px) {
+  .about-hero-section__overlay {
+    top: -2px;
+  }
+}
+
 @media (max-width: 768px) {
   .about-hero-section__overlay {
+    top: -2px;
     padding-top: 24px;
     gap: 12px;
   }

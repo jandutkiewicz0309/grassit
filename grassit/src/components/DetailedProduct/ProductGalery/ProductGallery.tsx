@@ -55,6 +55,7 @@ export const ProductGallery: Component<ProductGalleryProps> = (props) => {
           alt={props.alt ?? ""}
           class="pg-main-img"
           draggable={false}
+          loading="lazy"
         />
       </div>
 
@@ -71,7 +72,7 @@ export const ProductGallery: Component<ProductGalleryProps> = (props) => {
                 if (e.key === "Enter" || e.key === " ") swapWith(t.i);
               }}
             >
-              <img src={t.src} alt="" class="pg-thumb-img" draggable={false} />
+              <img src={t.src} alt="" class="pg-thumb-img" draggable={false} loading="lazy" />
             </button>
           )}
         </For>

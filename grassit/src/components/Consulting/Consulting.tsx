@@ -7,7 +7,7 @@ export const ConsultingPage: Component = () => {
     <section class="doradztwo">
       <div class="doradztwo__grid">
         <div class="doradztwo__media">
-          <img src={doradztwoImg} alt="Doradztwo przy wyborze trawy" />
+          <img src={doradztwoImg} alt="Doradztwo przy wyborze trawy" loading="lazy" />
         </div>
 
         <div class="doradztwo__content">

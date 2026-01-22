@@ -7,7 +7,7 @@ export const DeliveryPage: Component = () => {
     <section class="dostawa">
       <div class="dostawa__grid">
         <div class="dostawa__media">
-          <img src={delivery} alt="Dostawa sztucznej trawy" />
+          <img src={delivery} alt="Dostawa sztucznej trawy" loading="lazy" />
         </div>
 
         <div class="dostawa__content">

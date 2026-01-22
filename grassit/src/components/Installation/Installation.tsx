@@ -7,7 +7,7 @@ export const InstallationPage: Component = () => {
     <section class="montaz">
       <div class="montaz__grid">
         <div class="montaz__media">
-          <img src={instalationImg} alt="Dostawa sztucznej trawy" />
+          <img src={instalationImg} alt="Dostawa sztucznej trawy" loading="lazy" />
         </div>
 
         <div class="montaz__content">
