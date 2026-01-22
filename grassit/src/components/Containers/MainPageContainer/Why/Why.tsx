@@ -21,7 +21,7 @@ const Why: Component = () => {
             <p class="whyCard__desc">
               Nasze produkty stworzone są aby skutecznie imitować żywy, idealnie
               utrzymany trawnik. Niektóre modele posiadają do 14 różnych odcieni
-              zielonego na 10 cm2” - tutaj zrobić znaczek mały od cm2.
+              koloru zielonego na 10 cm²
             </p>
           </article>
 
@@ -41,7 +41,7 @@ const Why: Component = () => {
             </div>
             <h3 class="whyCard__title">Produkt przyjazny zwierzętom</h3>
             <p class="whyCard__desc">
-              Produkty w naszej ofercie posiadają drenaż który skutecznie
+              Trawniki w naszej ofercie posiadają drenaż który skutecznie
               odprowadza wodę oraz mocz zwierząt nie pozostawiając plam.
             </p>
           </article>

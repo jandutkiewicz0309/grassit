@@ -8,9 +8,14 @@ const AskProduct = () => {
     <>
       <BackArrow />
       <ContatUsContainer
+        title="Skontaktuj się"
         onSubmit={async (data: OnSubmitOrderForm) => {
-          await sendEmailWithToast(data, "Dziękujemy! Formularz został wysłany.");
+          await sendEmailWithToast(
+            data,
+            "Dziękujemy! Formularz został wysłany.",
+          );
         }}
+        text="Uzupełnij formularz kontaktowy a nasz pracownik skontaktuje się z Tobą najszybciej jak to możliwe. Jeżeli potrzebujesz pilnej informacji, zapraszamy do kontaktu telefonicznego pod numerem (+48) 515 401 178."
       />
     </>
   );

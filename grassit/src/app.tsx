@@ -23,6 +23,7 @@ import { MobileHeader } from "./components/Header/MobileHeader/MobileHeader";
 import { Installation } from "./routes/installation";
 import { consulting } from "./routes/consulting";
 import { delivery } from "./routes/delivery";
+import About from "./routes/about";
 
 const Layout = (props: RouteSectionProps) => {
   const [isMobileView, setIsMobileView] = createSignal(false);
@@ -89,11 +90,6 @@ const routes = [
     path: "/",
     componnet: Home,
   },
-
-  {
-    path: "**",
-    componnet: NotFound,
-  },
   {
     path: "/montaz",
     componnet: Installation,
@@ -105,6 +101,14 @@ const routes = [
   {
     path: "/dostawa",
     componnet: delivery,
+  },
+  {
+    path: "/o-nas",
+    componnet: About,
+  },
+  {
+    path: "**",
+    componnet: NotFound,
   },
 ];
 

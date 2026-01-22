@@ -75,6 +75,9 @@ const Footer: Component = () => {
           <h3 class="ft__title">Informacje</h3>
           <ul class="ft__links">
             <li>
+              <A href="/o-nas">O nas</A>
+            </li>
+            <li>
               <A href="/dostawa">Dostawa</A>
             </li>
             <li>
