@@ -50,6 +50,9 @@ importers:
       solid-sonner:
         specifier: ^0.2.8
         version: 0.2.8(solid-js@1.9.9)
+      solid-toast:
+        specifier: ^0.5.0
+        version: 0.5.0(solid-js@1.9.9)
       vinxi:
         specifier: ^0.5.7
         version: 0.5.8(@types/node@24.5.2)(db0@0.3.2)(ioredis@5.7.0)(jiti@2.5.1)(terser@5.44.0)
@@ -2444,6 +2447,11 @@ packages:
     resolution: {integrity: sha512-EQ2EIznvHHpAmkYh2CTu0AdCgmPJRJWLGFRWygE8j+vMEfvIV2wotHU5qgWzqzVTG1SODGsay2Lwq6ENWx/rPA==}
     peerDependencies:
       solid-js: ^1.6.0
+
+  solid-toast@0.5.0:
+    resolution: {integrity: sha512-t770JakjyS2P9b8Qa1zMLOD51KYKWXbTAyJePVUoYex5c5FH5S/HtUBUbZAWFcqRCKmAE8KhyIiCvDZA8bOnxQ==}
+    peerDependencies:
+      solid-js: ^1.5.4
 
   solid-use@0.9.1:
     resolution: {integrity: sha512-UwvXDVPlrrbj/9ewG9ys5uL2IO4jSiwys2KPzK4zsnAcmEl7iDafZWW1Mo4BSEWOmQCGK6IvpmGHo1aou8iOFw==}
@@ -5735,6 +5743,10 @@ snapshots:
       - supports-color
 
   solid-sonner@0.2.8(solid-js@1.9.9):
+    dependencies:
+      solid-js: 1.9.9
+
+  solid-toast@0.5.0(solid-js@1.9.9):
     dependencies:
       solid-js: 1.9.9
 

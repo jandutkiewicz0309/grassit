@@ -19,22 +19,22 @@ export const Header: Component = () => {
           >
             <span class="button-header-text">Produkty</span>
           </A>
-          {/* <A
+          <A
             href="/uslugi"
             class="button-header"
             activeClass="button-header--active"
             end
           >
             <span class="button-header-text">Usługi</span>
-          </A> */}
-          {/* <A
+          </A>
+          <A
             href="/realizacje"
             class="button-header"
             activeClass="button-header--active"
             end
           >
             <span class="button-header-text">Realizacje</span>
-          </A> */}
+          </A>
           <A
             href="/kontakt"
             class="button-header"

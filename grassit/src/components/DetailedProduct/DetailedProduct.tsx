@@ -1,7 +1,14 @@
-import { Component } from "solid-js";
+import { Component, For } from "solid-js";
 import { ProductGallery } from "./ProductGalery/ProductGallery";
 import "./DetailedProduct.css";
 import { FiMail, FiShoppingCart } from "solid-icons/fi";
+
+export interface SimilarProduct {
+  id: string;
+  img: string;
+  nameProduct: string;
+  price: string;
+}
 
 export interface IDetailedProduct {
   nameProduct: string;
@@ -15,8 +22,10 @@ export interface IDetailedProduct {
   productMaterial: string;
   UVResistant: string;
   images: string[];
+  similarProducts?: SimilarProduct[];
   onAskClick?: (e: MouseEvent) => void;
   onAskClickAskProduct?: (id: string) => void;
+  onSimilarProductClick?: (id: string) => void;
 }
 
 export const DetailedProduct: Component<IDetailedProduct> = (props) => {
@@ -112,6 +121,30 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
             </div>
           </div>
         </div>
+
+        {props.similarProducts && props.similarProducts.length > 0 && (
+          <div class="similar-products">
+            <h2 class="similar-products-title">Podobne produkty</h2>
+            <div class="similar-products-grid">
+              <For each={props.similarProducts}>
+                {(product) => (
+                  <div
+                    class="similar-product-card"
+                    onClick={() => props.onSimilarProductClick?.(product.id)}
+                  >
+                    <div class="similar-product-image">
+                      <img src={product.img} alt={product.nameProduct} />
+                    </div>
+                    <div class="similar-product-info">
+                      <span class="similar-product-name">{product.nameProduct}</span>
+                      <span class="similar-product-price">{product.price} zł/m²</span>
+                    </div>
+                  </div>
+                )}
+              </For>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

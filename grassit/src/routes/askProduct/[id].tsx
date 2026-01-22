@@ -5,7 +5,7 @@ import OrderProductSample from "~/components/Containers/OrderProductSample/Order
 import ProductNotFound from "~/components/ProductNotFound/ProductNotFound";
 import data from "~/data/product.json";
 import { Product } from "~/utils/interfaces";
-import { sendContactEmail } from "~/utils/sendMail";
+import { sendEmailWithToast } from "~/utils/sendMail";
 import { OnSubmitOrderForm } from "~/utils/types";
 
 export default function AskProductByIdPage() {
@@ -19,20 +19,19 @@ export default function AskProductByIdPage() {
     <>
       <BackArrow />
       <Show when={product()} fallback={<ProductNotFound />}>
-      <OrderProductSample
-        productName={product()!.nameProduct}
-        productImg={product()!.images?.[0] ?? product()!.img}
-        catalogNumber={product()!.details.catalogNumber}
-        producer={product()!.details.producer}
-        price={product()!.price}
-        description={product()!.description}
-        productId={product()!.id}
-        onSubmit={async (payload: OnSubmitOrderForm) => {
-          await sendContactEmail(payload);
-          alert("Dziękujemy! Wysłaliśmy zapytanie o produkt.");
-        }}
-      />
-    </Show>
+        <OrderProductSample
+          productName={product()!.nameProduct}
+          productImg={product()!.images?.[0] ?? product()!.img}
+          catalogNumber={product()!.details.catalogNumber}
+          producer={product()!.details.producer}
+          price={product()!.price}
+          description={product()!.description}
+          productId={product()!.id}
+          onSubmit={async (payload: OnSubmitOrderForm) => {
+            await sendEmailWithToast(payload, "Dziękujemy! Wysłaliśmy zapytanie o produkt.");
+          }}
+        />
+      </Show>
     </>
   );
 }

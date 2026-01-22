@@ -8,6 +8,7 @@ import {
   Show,
   Suspense,
 } from "solid-js";
+import { Toaster } from "solid-toast";
 import "./app.css";
 import Footer from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
@@ -43,6 +44,20 @@ const Layout = (props: RouteSectionProps) => {
 
   return (
     <>
+      <Toaster
+        position="top-center"
+        gutter={12}
+        toastOptions={{
+          duration: 4000,
+          style: {
+            "border-radius": "8px",
+            padding: "14px 20px",
+            "font-size": "14px",
+            "line-height": "20px",
+            "box-shadow": "0 4px 12px rgba(0, 0, 0, 0.15)",
+          },
+        }}
+      />
       {/* <TopInfo email="biuro@grassit.pl" phone="+48 515 401 178" /> */}
 
       <Show when={isMobileView()} fallback={<Header />}>

@@ -12,6 +12,24 @@ export default function detailedProduct() {
     data.products.find((p) => p.id === params.id)
   );
 
+  const similarProducts = createMemo(() => {
+    const currentProduct = product();
+    if (!currentProduct) return [];
+
+    return data.products
+      .filter(
+        (p) =>
+          p.category === currentProduct.category && p.id !== currentProduct.id
+      )
+      .slice(0, 3)
+      .map((p) => ({
+        id: p.id,
+        img: p.img,
+        nameProduct: p.nameProduct,
+        price: p.price,
+      }));
+  });
+
   return (
     <>
       <BackArrow />
@@ -28,8 +46,10 @@ export default function detailedProduct() {
           productMaterial={product()!.details.productMaterial}
           UVResistant={product()!.details.UVResistant}
           images={product()!.images ?? [product()!.img]}
+          similarProducts={similarProducts()}
           onAskClick={() => navigate("/kontakt")}
           onAskClickAskProduct={(id: string) => navigate(`/zamów-próbkę/${id}`)}
+          onSimilarProductClick={(id: string) => navigate(`/produkty/${id}`)}
         />
       </Show>
     </>
