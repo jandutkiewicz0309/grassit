@@ -109,9 +109,9 @@
     {
       "id": "santa_cruz",
       "category": "trawy_dekoracyjne",
-      "img": "/static/jpg/santa_cruz/santa_cruz2.jpg",
+      "img": "/static/jpg/santa_cruz/santa_cruz3.jpg",
       "images": [
-        "/static/jpg/santa_cruz/santa_cruz3.jpg",
+        "/static/jpg/santa_cruz/santa_cruz2.jpg",
         "/static/jpg/santa_cruz/santa_cruz1.jpg"
       ],
       "nameProduct": "Santa Cruz",
@@ -135,7 +135,7 @@
         "/static/jpg/vienna/vienna1.jpg",
         "/static/jpg/vienna/vienna2.jpg"
       ],
-      "nameProduct": "venna",
+      "nameProduct": "Vienna",
       "price": "99.99",
       "description": "Model Vienna (45 mm) to wyjątkowo gęsta i miękka trawa sztuczna o luksusowym, naturalnym wyglądzie. Dzięki wysokiej gramaturze i odporności UV idealnie sprawdzi się w ogrodzie.",
       "details": {
