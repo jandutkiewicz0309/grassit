@@ -8,6 +8,10 @@ export default createHandler(() => (
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta
+            name="description"
+            content="Idealna dla ogrodów, obiektów sportowych i przestrzeni komercyjnych. Oferujemy profesjonalny montaż i gwarantujemy trwałość na lata"
+          />
           <link rel="icon" href="/Grassit_logo-monochrom_black.png" />
           {assets}
         </head>
