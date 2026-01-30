@@ -168,6 +168,30 @@
         "productMaterial": "PE (wysoka gęstość)",
         "UVResistant": "Tak"
       }
+    },
+        {
+      "id": "Football_Pro_50",
+      "category": "trawy_sportowe",
+      "subcategory ": "murawy_piłkarskie",
+      "img": "/static/jpg/footballPro50/footballPro50.jpg",
+      "images": [
+        "/static/jpg/footballPro50/footballPro50_2.jpg",
+        "/static/jpg/footballPro50/footballPro50_3.jpg",
+        "/static/jpg/footballPro50/footballPro50_4.jpg",
+        "/static/jpg/footballPro50/footballPro50_5.jpg",
+        "/static/jpg/footballPro50/footballPro50_6.jpg"
+      ],
+      "nameProduct": " Grassit Football Pro 50",
+      "price": "154.00",
+      "description": "Grassit Football Pro 50 (50 mm) to profesjonalna trawa syntetyczna 3G przeznaczona do boisk piłkarskich. Dzięki gęstości 10 080 splotów/m² oraz możliwości zastosowania wypełnienia (piasek, granulat gumowy, korek) zapewnia trwałość, stabilność i optymalne warunki gry nawet przy intensywnym użytkowaniu.",
+      "details": {
+        "producer": "Grassit Pro",
+        "productDescription": "Wprowadź Grassit Football Pro 50 do swojej profesjonalnej oferty sportowej — najwyższej klasy rozwiązanie w kategorii traw syntetycznych 3G, idealne do zastosowań piłkarskich. Ta trawa o wysokości 50 mm wymaga zastosowania wypełnienia (piasek, granulat gumowy, korek lub ich kombinacja), aby zapewnić optymalne właściwości gry. Została zaprojektowana z myślą o intensywnym użytkowaniu i wysokiej trwałości. Dzięki gęstości 10 080 splotów/m² oraz dostępności w rolkach o szerokości 200 cm i 400 cm, Grassit Football Pro 50 stanowi profesjonalną, niezawodną i wytrzymałą nawierzchnię, spełniającą wymagania nowoczesnych boisk piłkarskich.",
+        "productHeight": "50 mm",
+        "productWeight": "2080 g/m²",
+        "productMaterial": "PP + Polar + Siatka",
+        "UVResistant": "Tak"
+      }
     }
   ]
 }
