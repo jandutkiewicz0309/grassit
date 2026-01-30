@@ -204,7 +204,7 @@
       ],
       "nameProduct": "Grassit Football Nosandy",
       "price": "154.00",
-      "description": "Grassit Football Nosandy (30 mm) to wytrzymała trawa syntetyczna do zastosowań multisportowych. Gęstość 15 700 splotów/m² oraz włókna PP z podkładem fleece zapewniają stabilną nawierzchnię i długą żywotność, potwierdzoną 5–8-letnią gwarancją UV.",
+      "description": "Grassit Football Nosandy (30 mm) to wytrzymała trawa syntetyczna do zastosowań multisportowych, zapewniająca stabilną nawierzchnię i długą żywotność.",
       "details": {
         "producer": "Grassit Pro",
         "productDescription": "Poznaj Grassit Football Nosandy — trawę syntetyczną o wysokości 30 mm, zaprojektowaną z myślą o zastosowaniach multisportowych. Dzięki gęstości 15 700 splotów/m² oraz zastosowaniu włókien z polipropylenu (PP) w połączeniu z podkładem typu fleece, nawierzchnia ta zapewnia wysoką trwałość i stabilne warunki do uprawiania sportu. Grassit Football Nosandy oferuje optymalną powierzchnię do intensywnych aktywności sportowych oraz objęta jest gwarancją odporności na promieniowanie UV wynoszącą od 5 do 8 lat.",
@@ -270,6 +270,69 @@
         "productDescription": "",
         "productHeight": "14 mm",
         "productWeight": "2985 g/m²",
+        "productMaterial": "PP",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "golf_club_pro",
+      "category": "trawy_sportowe",
+      "subcategory ": "murawy_golfowe",
+      "img": "/static/jpg/golfClubPro/golfClubPro.jpg",
+      "images": [
+        "/static/jpg/golfClubPro/golfClubPro2.jpg",
+        "/static/jpg/golfClubPro/golfClubPro3.jpg"
+      ],
+      "nameProduct": "Grassit GOLF Club PRO",
+      "price": "154.00",
+      "description": "Grassit GOLF Club PRO (12 mm) to profesjonalna trawa golfowa o wyjątkowej gęstości, zapewniająca precyzyjne toczenie piłki i długą żywotność.",
+      "details": {
+        "producer": "Grassit Pro",
+        "productDescription": "Wprowadź Grassit GOLF Club PRO do swojej oferty — najwyższej klasy rozwiązanie stworzone z myślą o profesjonalnym rynku golfowym. Ta trawa syntetyczna o wysokości 12 mm została zaprojektowana dla najbardziej wymagających golfistów. Dzięki imponującej masie runa 2105 g/m² oraz wyjątkowej gęstości 63 000 splotów/m² zapewnia doskonały, powtarzalny toczenie piłki, kluczowe dla najwyższego poziomu gry. Wykonana z wysokiej jakości, stabilizowanego UV polietylenu, Grassit GOLF Club PRO gwarantuje wyjątkową trwałość i niskie wymagania konserwacyjne. Produkt objęty jest 8-letnią gwarancją UV (na północ od Paryża) oraz 5-letnią gwarancją UV (na południe od Paryża), co czyni go idealnym wyborem dla pól golfowych, profesjonalnych ośrodków treningowych oraz luksusowych realizacji prywatnych.",
+        "productHeight": "14 mm",
+        "productWeight": "3303 g/m²",
+        "productMaterial": "PP",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "golf_club_27",
+      "category": "trawy_sportowe",
+      "subcategory ": "murawy_golfowe",
+      "img": "/static/jpg/golfClub27/golfClub27.jpg",
+      "images": [
+        "/static/jpg/golfClub27/golfClub27_2.jpg",
+        "/static/jpg/golfClub27/golfClub27_3.jpg"
+      ],
+      "nameProduct": "Grassit GOLF Club 27",
+      "price": "154.00",
+      "description": "Grassit GOLF Club 27 (25 mm) to profesjonalna trawa golfowa do tee boxów i driving range, zaprojektowana do intensywnego użytkowania.",
+      "details": {
+        "producer": "Grassit Pro",
+        "productDescription": "Wprowadź Grassit GOLF Club 27 do swojej oferty — profesjonalne rozwiązanie przeznaczone do tee boxów oraz driving range. Ta wyjątkowo wytrzymała trawa syntetyczna o wysokości włókna 25 mm i całkowitej masie 5208 g/m², w połączeniu z imponującą gęstością 63 000 splotów/m², stanowi idealny wybór do intensywnego użytkowania. Zapewnia stabilne, powtarzalne właściwości gry, niezbędne w profesjonalnym środowisku treningowym. Wykonana z wysokiej jakości polietylenu stabilizowanego UV, Grassit GOLF Club 27 cechuje się wysoką odpornością na zużycie oraz warunki atmosferyczne. Produkt objęty jest 8-letnią gwarancją UV (na północ od Paryża) oraz 5-letnią gwarancją UV (na południe od Paryża), co czyni go doskonałą inwestycją dla pól golfowych i ośrodków treningowych stawiających na najwyższą jakość i trwałość.",
+        "productHeight": "27 mm",
+        "productWeight": "5208 g/m²",
+        "productMaterial": "PP",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "golf_turf_12",
+      "category": "trawy_sportowe",
+      "subcategory ": "murawy_golfowe",
+      "img": "/static/jpg/golfTurf12/golfTurf12.jpg",
+      "images": [
+        "/static/jpg/golfTurf12/golfTurf2.jpg",
+        "/static/jpg/golfTurf12/golfTurf3.jpg"
+      ],
+      "nameProduct": "Grassit GOLF Turf 12",
+      "price": "154.00",
+      "description": "Grassit GOLF Turf 12 (12 mm) to wszechstronna trawa golfowa zapewniająca stabilną nawierzchnię i równomierne toczenie piłki podczas treningu.",
+      "details": {
+        "producer": "Grassit Pro",
+        "productDescription": "Grassit GOLF Turf 12 to wszechstronna trawa syntetyczna o wysokości 12 mm, zaprojektowana z myślą o zastosowaniach golfowych, łącząca funkcjonalność z estetycznym, kontrolowanym wyglądem. Dzięki całkowitej masie 2175 g/m² oraz gęstej strukturze 31 500 splotów/m² nawierzchnia zapewnia stabilność oraz równomierne toczenie piłki podczas treningów i ćwiczeń. Włókna wykonane z polietylenu stabilizowanego UV gwarantują długotrwałą wydajność zarówno w przestrzeniach wewnętrznych, jak i zewnętrznych. Produkt objęty jest 8-letnią gwarancją UV, co czyni Grassit GOLF Turf 12 niezawodnym wyborem dla putting greenów, stref treningowych oraz obszarów do ćwiczeń, gdzie kluczowe są trwałość, kontrola i powtarzalne warunki gry.",
+        "productHeight": "14 mm",
+        "productWeight": "2175 g/m²",
         "productMaterial": "PP",
         "UVResistant": "Tak"
       }
