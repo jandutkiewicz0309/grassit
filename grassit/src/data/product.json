@@ -169,7 +169,7 @@
         "UVResistant": "Tak"
       }
     },
-        {
+    {
       "id": "Football_Pro_50",
       "category": "trawy_sportowe",
       "subcategory ": "murawy_piłkarskie",
@@ -181,7 +181,7 @@
         "/static/jpg/footballPro50/footballPro50_5.jpg",
         "/static/jpg/footballPro50/footballPro50_6.jpg"
       ],
-      "nameProduct": " Grassit Football Pro 50",
+      "nameProduct": "Grassit Football Pro 50",
       "price": "154.00",
       "description": "Grassit Football Pro 50 (50 mm) to profesjonalna trawa syntetyczna 3G przeznaczona do boisk piłkarskich. Dzięki gęstości 10 080 splotów/m² oraz możliwości zastosowania wypełnienia (piasek, granulat gumowy, korek) zapewnia trwałość, stabilność i optymalne warunki gry nawet przy intensywnym użytkowaniu.",
       "details": {
@@ -190,6 +190,27 @@
         "productHeight": "50 mm",
         "productWeight": "2080 g/m²",
         "productMaterial": "PP + Polar + Siatka",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "Football_Nosandy",
+      "category": "trawy_sportowe",
+      "subcategory ": "murawy_piłkarskie",
+      "img": "/static/jpg/footballNosandy/footballNosandy1.jpg",
+      "images": [
+        "/static/jpg/footballNosandy/footballNosandy2.jpg",
+        "/static/jpg/footballNosandy/footballNosandy3.jpg"
+      ],
+      "nameProduct": "Grassit Football Nosandy",
+      "price": "154.00",
+      "description": "Grassit Football Nosandy (30 mm) to wytrzymała trawa syntetyczna do zastosowań multisportowych. Gęstość 15 700 splotów/m² oraz włókna PP z podkładem fleece zapewniają stabilną nawierzchnię i długą żywotność, potwierdzoną 5–8-letnią gwarancją UV.",
+      "details": {
+        "producer": "Grassit Pro",
+        "productDescription": "Poznaj Grassit Football Nosandy — trawę syntetyczną o wysokości 30 mm, zaprojektowaną z myślą o zastosowaniach multisportowych. Dzięki gęstości 15 700 splotów/m² oraz zastosowaniu włókien z polipropylenu (PP) w połączeniu z podkładem typu fleece, nawierzchnia ta zapewnia wysoką trwałość i stabilne warunki do uprawiania sportu. Grassit Football Nosandy oferuje optymalną powierzchnię do intensywnych aktywności sportowych oraz objęta jest gwarancją odporności na promieniowanie UV wynoszącą od 5 do 8 lat.",
+        "productHeight": "32 mm",
+        "productWeight": "3633 g/m²",
+        "productMaterial": "PP",
         "UVResistant": "Tak"
       }
     }
