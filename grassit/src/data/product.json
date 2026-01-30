@@ -183,10 +183,10 @@
       ],
       "nameProduct": "Grassit Football Pro 50",
       "price": "154.00",
-      "description": "Grassit Football Pro 50 (50 mm) to profesjonalna trawa syntetyczna 3G przeznaczona do boisk piłkarskich. Dzięki gęstości 10 080 splotów/m² oraz możliwości zastosowania wypełnienia (piasek, granulat gumowy, korek) zapewnia trwałość, stabilność i optymalne warunki gry nawet przy intensywnym użytkowaniu.",
+      "description": "Grassit Football Pro 50 (50 mm) to profesjonalna trawa syntetyczna 3G do boisk piłkarskich, zapewniająca trwałość i stabilne warunki gry przy intensywnym użytkowaniu.",
       "details": {
         "producer": "Grassit Pro",
-        "productDescription": "Wprowadź Grassit Football Pro 50 do swojej profesjonalnej oferty sportowej — najwyższej klasy rozwiązanie w kategorii traw syntetycznych 3G, idealne do zastosowań piłkarskich. Ta trawa o wysokości 50 mm wymaga zastosowania wypełnienia (piasek, granulat gumowy, korek lub ich kombinacja), aby zapewnić optymalne właściwości gry. Została zaprojektowana z myślą o intensywnym użytkowaniu i wysokiej trwałości. Dzięki gęstości 10 080 splotów/m² oraz dostępności w rolkach o szerokości 200 cm i 400 cm, Grassit Football Pro 50 stanowi profesjonalną, niezawodną i wytrzymałą nawierzchnię, spełniającą wymagania nowoczesnych boisk piłkarskich.",
+        "productDescription": "Wprowadź Grassit Football Pro 50 do swojej profesjonalnej oferty sportowej najwyższej klasy rozwiązanie w kategorii traw syntetycznych 3G, idealne do zastosowań piłkarskich. Ta trawa o wysokości 50 mm wymaga zastosowania wypełnienia (piasek, granulat gumowy, korek lub ich kombinacja), aby zapewnić optymalne właściwości gry. Została zaprojektowana z myślą o intensywnym użytkowaniu i wysokiej trwałości. Dzięki gęstości 10 080 splotów/m² oraz dostępności w rolkach o szerokości 200 cm i 400 cm, Grassit Football Pro 50 stanowi profesjonalną, niezawodną i wytrzymałą nawierzchnię, spełniającą wymagania nowoczesnych boisk piłkarskich.",
         "productHeight": "50 mm",
         "productWeight": "2080 g/m²",
         "productMaterial": "PP + Polar + Siatka",
@@ -210,6 +210,66 @@
         "productDescription": "Poznaj Grassit Football Nosandy — trawę syntetyczną o wysokości 30 mm, zaprojektowaną z myślą o zastosowaniach multisportowych. Dzięki gęstości 15 700 splotów/m² oraz zastosowaniu włókien z polipropylenu (PP) w połączeniu z podkładem typu fleece, nawierzchnia ta zapewnia wysoką trwałość i stabilne warunki do uprawiania sportu. Grassit Football Nosandy oferuje optymalną powierzchnię do intensywnych aktywności sportowych oraz objęta jest gwarancją odporności na promieniowanie UV wynoszącą od 5 do 8 lat.",
         "productHeight": "32 mm",
         "productWeight": "3633 g/m²",
+        "productMaterial": "PP",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "Padel_Kit_Common",
+      "category": "trawy_sportowe",
+      "subcategory ": "murawy_padlowe",
+      "img": "/static/jpg/padelKitCommon/padelKitBlue1.jpg",
+      "images": [
+        "/static/jpg/padelKitCommon/padelKitBlue1.jpg",
+        "/static/jpg/padelKitCommon/padelKitBlue1.jpg"
+      ],
+      "nameProduct": "Grassit Padel KIT Blue",
+      "price": "154.00",
+      "description": "",
+      "details": {
+        "producer": "Grassit Pro",
+        "productDescription": "",
+        "productHeight": "10 mm",
+        "productWeight": "1485 g/m²",
+        "productMaterial": "Czarny podkład wykonany w 100% z polipropylenu (PP) z technologią fibre-lock fleece",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "Padel_Kit_pro_blue",
+      "category": "trawy_sportowe",
+      "subcategory ": "murawy_padlowe",
+      "img": "/static/jpg/padelKitProBlue/padelKitPro1.jpg",
+      "images": [
+        "/static/jpg/padelKitProBlue/padelKitPro2.jpg",
+        "/static/jpg/padelKitProBlue/padelKitPro3.jpg"
+      ],
+      "nameProduct": "Grassit Padel KIT PRO Blue",
+      "price": "154.00",
+      "description": "",
+      "details": {
+        "producer": "Grassit Pro",
+        "productDescription": "",
+        "productHeight": "14 mm",
+        "productWeight": "2985 g/m²",
+        "productMaterial": "PP",
+        "UVResistant": "Tak"
+      }
+    },
+    {
+      "id": "Padel_Kit_pro_green",
+      "category": "trawy_sportowe",
+      "subcategory ": "murawy_padlowe",
+      "img": "/static/jpg/padelKitProGreen/padelKitProGreen1.jpg",
+      "images": ["/static/jpg/padelKitProGreen/padelKitProGreen2.jpg"],
+      "nameProduct": "Grassit Padel KIT PRO Green",
+      "price": "154.00",
+      "description": "",
+      "details": {
+        "producer": "Grassit Pro",
+        "productDescription": "",
+        "productHeight": "14 mm",
+        "productWeight": "2985 g/m²",
         "productMaterial": "PP",
         "UVResistant": "Tak"
       }
