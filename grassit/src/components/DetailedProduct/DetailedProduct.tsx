@@ -30,7 +30,6 @@ export interface IDetailedProduct {
 }
 
 export const DetailedProduct: Component<IDetailedProduct> = (props) => {
-  const galleryImages = props.images?.length ? props.images : [];
   return (
     <div class="wrapper">
       <div id={props.id} class="main-detailedProduct-container">
@@ -41,7 +40,7 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
         <div class="contentWrapper">
           <div class="detailedProduct-gallery">
             <ProductGallery
-              images={galleryImages}
+              images={props.images?.length ? props.images : []}
               alt="Piłka nożna na murawie"
             />
           </div>

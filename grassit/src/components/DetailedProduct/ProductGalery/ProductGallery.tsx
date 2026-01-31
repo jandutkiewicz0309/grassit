@@ -1,4 +1,4 @@
-import { Component, createSignal, For, createMemo, onMount } from "solid-js";
+import { Component, createSignal, For, createMemo, onMount, createEffect, on } from "solid-js";
 import "./ProductGallery.css";
 
 export interface ProductGalleryProps {
@@ -9,6 +9,10 @@ export interface ProductGalleryProps {
 
 export const ProductGallery: Component<ProductGalleryProps> = (props) => {
   const [currentIndex, setCurrentIndex] = createSignal(0);
+
+  createEffect(on(() => props.images, () => {
+    setCurrentIndex(0);
+  }, { defer: true }));
 
   const mainSrc = createMemo(() => props.images[currentIndex()] || "");
   const thumbs = createMemo(() =>

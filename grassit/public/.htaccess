@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# Jesli plik lub katalog istnieje, serwuj go normalnie
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# W przeciwnym razie przekieruj do index.html (SPA fallback)
+RewriteRule ^ index.html [QSA,L]
