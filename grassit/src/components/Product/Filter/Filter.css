@@ -6,7 +6,7 @@
   gap: 16px;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  max-height: 230px;
+  max-height: fit-content;
 }
 
 .header-section {
@@ -73,6 +73,28 @@
   font-weight: 400;
   color: #334155;
   line-height: 20px;
+}
+
+.subcat-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 22px;
+  gap: 2px;
+}
+
+.subcat-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.subcat-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: #64748b;
+  line-height: 18px;
 }
 
 .bottom-inputs-section {

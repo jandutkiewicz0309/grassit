@@ -46,6 +46,7 @@ export default function detailedProduct() {
           productMaterial={product()!.details.productMaterial}
           UVResistant={product()!.details.UVResistant}
           images={product()!.images ?? [product()!.img]}
+          technicalCard={product()!.technicalCard}
           similarProducts={similarProducts()}
           onAskClick={() => navigate("/kontakt")}
           onAskClickAskProduct={(id: string) => navigate(`/zamów-próbkę/${id}`)}

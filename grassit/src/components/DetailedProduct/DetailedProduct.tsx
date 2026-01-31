@@ -1,8 +1,8 @@
-import { Component, For } from "solid-js";
+import { Component, For, Show } from "solid-js";
 import { ProductGallery } from "./ProductGalery/ProductGallery";
 import "./DetailedProduct.css";
-import { FiMail, FiShoppingCart } from "solid-icons/fi";
-
+import { FiMail, FiShoppingCart, FiFileText } from "solid-icons/fi";
+import { AiFillFilePdf } from 'solid-icons/ai'
 export interface SimilarProduct {
   id: string;
   img: string;
@@ -16,12 +16,13 @@ export interface IDetailedProduct {
   price: string;
   producer: string;
   productDescription: string;
-  catalogNumber: string;
+  catalogNumber?: string;
   productHeight: string;
   productWeight: string;
   productMaterial: string;
   UVResistant: string;
   images: string[];
+  technicalCard?: string;
   similarProducts?: SimilarProduct[];
   onAskClick?: (e: MouseEvent) => void;
   onAskClickAskProduct?: (id: string) => void;
@@ -48,8 +49,8 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
             <div class="detailedProduct-name-price">
               <h1 class="detailedProduct-name">{props.nameProduct}</h1>
               <div class="detailedProduct-price-info">
-                <h2 class="detailedProduct-price">
-                  {props.price}zł <span class="price-unit">/ m²</span>
+                <h2 class="detailedProduct-price" style={isNaN(parseFloat(props.price)) ? { "font-size": "14px", "white-space": "nowrap" } : {}}>
+                  {props.price}{!isNaN(parseFloat(props.price)) && <>zł <span class="price-unit">/ m²</span></>}
                 </h2>
                 <p>Dostępne</p>
               </div>
@@ -65,12 +66,6 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
                 <div class="detailedProduct-row">
                   <span class="detailedProduct-label">Producent</span>
                   <span class="detailedProduct-value">{props.producer}</span>
-                </div>
-                <div class="detailedProduct-row">
-                  <span class="detailedProduct-label">Numer katalogowy</span>
-                  <span class="detailedProduct-value">
-                    {props.catalogNumber}
-                  </span>
                 </div>
               </div>
             </div>
@@ -118,6 +113,16 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
                 <FiMail style={{ color: "#0f172a" }} size={16} />
                 Wyślij zapytanie
               </button>
+              <Show when={props.technicalCard}>
+                <button
+                  type="button"
+                  onClick={() => window.open(props.technicalCard, "_blank")}
+                  class="detailedProduct-btn detailedProduct-btn--blue"
+                >
+                  <AiFillFilePdf style={{ color: "#3b82f6" }} size={18} />
+                  Pobierz karte techniczna
+                </button>
+              </Show>
             </div>
           </div>
         </div>
@@ -137,7 +142,7 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
                     </div>
                     <div class="similar-product-info">
                       <span class="similar-product-name">{product.nameProduct}</span>
-                      <span class="similar-product-price">{product.price} zł/m²</span>
+                      <span class="similar-product-price" style={isNaN(parseFloat(product.price)) ? { "font-size": "11px", "white-space": "nowrap" } : {}}>{product.price}{!isNaN(parseFloat(product.price)) && " zł"}</span>
                     </div>
                   </div>
                 )}

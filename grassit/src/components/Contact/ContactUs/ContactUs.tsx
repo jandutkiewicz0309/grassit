@@ -142,7 +142,7 @@ export const ContactUs: Component<{
                         setValue(
                           form,
                           "message",
-                          (e.currentTarget as HTMLTextAreaElement).value
+                          (e.currentTarget as HTMLTextAreaElement).value,
                         )
                       }
                       onBlur={() => setTouched("message", true)}
@@ -161,19 +161,23 @@ export const ContactUs: Component<{
         </div>
         <div class="buttonContainer">
           <p class="askForm__legal">
-            Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w
-            formularzu kontaktowym przez GRASSIT SPÓŁKA Z OGRANICZONĄ
-            ODPOWIEDZIALNOŚCIĄ z siedzibą w Kazimierza Wielkiego 47 A, 32-400
-            Myślenice, w celu udzielenia odpowiedzi na przesłane zapytanie
-            dotyczące produktów, przedstawienia oferty cenowej oraz realizacji
-            kontaktu handlowego i ewentualnej realizacji zamówienia, na
-            podstawie art. 6 ust. 1 lit. a oraz b Rozporządzenia Parlamentu
-            Europejskiego i Rady (UE) 2016/679 (RODO). Zostałem/-am
-            poinformowany/-a, że podanie danych jest dobrowolne, ale niezbędne
-            do realizacji powyższych celów, a dane będą przetwarzane przez okres
-            niezbędny do obsługi zapytania lub realizacji umowy. Przysługuje mi
-            prawo dostępu do treści moich danych, ich sprostowania, usunięcia,
-            ograniczenia przetwarzania oraz cofnięcia zgody w dowolnym momencie.
+            Administratorem danych osobowych jest GRASSIT Sp. z o.o. z siedzibą
+            w Myślenicach (32-400), ul. Kazimierza Wielkiego 47. Dane osobowe
+            podane w formularzu kontaktowym przetwarzane są w celu obsługi
+            zapytania przesłanego za pomocą formularza oraz podjęcia działań na
+            żądanie osoby, której dane dotyczą, przed zawarciem umowy – na
+            podstawie art. 6 ust. 1 lit. b Rozporządzenia Parlamentu
+            Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. Dane
+            mogą być również przetwarzane w celu kontaktu handlowego – na
+            podstawie prawnie uzasadnionego interesu administratora (art. 6 ust.
+            1 lit. f RODO). Podanie danych jest dobrowolne, jednak niezbędne do
+            realizacji zapytania. Dane osobowe będą przechowywane przez okres
+            niezbędny do obsługi zapytania, a w przypadku zawarcia umowy – przez
+            okres jej realizacji oraz po jej zakończeniu przez czas wymagany
+            przepisami prawa. Przysługuje prawo dostępu do danych, ich
+            sprostowania, usunięcia, ograniczenia przetwarzania, wniesienia
+            sprzeciwu, przenoszenia danych oraz wniesienia skargi do Prezesa
+            Urzędu Ochrony Danych Osobowych.
           </p>
           <button
             type="submit"

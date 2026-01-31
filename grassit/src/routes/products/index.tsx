@@ -13,8 +13,8 @@ const ProductPage = () => {
     nameProduct: p.nameProduct,
     price: p.price,
     description: p.description,
-
     category: p.category as CategoryType,
+    subcategory: "subcategory" in p ? (p as any).subcategory : undefined,
     onClick: (id: string) => navigate(`/produkty/${id}`),
   }));
 
