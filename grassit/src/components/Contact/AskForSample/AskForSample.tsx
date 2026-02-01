@@ -59,6 +59,11 @@ export const AskProductFormCmp: Component<{
                 <input type="hidden" name="productId" value={f.value ?? ""} />
               )}
             </Field>
+            <Field of={form} name="productName">
+              {(f) => (
+                <input type="hidden" name="productName" value={f.value ?? ""} />
+              )}
+            </Field>
             <Field of={form} name="name">
               {(f) => (
                 <>
