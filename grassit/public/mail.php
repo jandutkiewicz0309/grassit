@@ -1,4 +1,8 @@
 <?php
+error_reporting(E_ALL);
+ini_set('log_errors', '1');
+ini_set('error_log', __DIR__ . '/mail_debug.log');
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json; charset=UTF-8");
@@ -60,6 +64,7 @@ $adminHeaders .= "Reply-To: " . ($p['email'] ?? 'biuro@grassit.pl') . "\r\n";
 $adminHeaders .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 $adminOk = mail($to, $subject, $messageBody, $adminHeaders);
+error_log("ADMIN mail to=$to subject=$subject result=" . ($adminOk ? 'OK' : 'FAIL'));
 
 // =========================================================================
 //  2. Mail do klienta (HTML template)
@@ -92,6 +97,7 @@ if ($customerEmail) {
     $customerHeaders .= "Content-Type: text/html; charset=UTF-8\r\n";
 
     $customerOk = mail($customerEmail, $customerSubject, $customerBody, $customerHeaders);
+    error_log("CUSTOMER mail to=$customerEmail result=" . ($customerOk ? 'OK' : 'FAIL'));
 }
 
 // =========================================================================
