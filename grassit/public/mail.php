@@ -73,7 +73,6 @@ if ($customerEmail) {
 
     if ($isSampleOrder) {
         $productName = $p['productName'] ?? '-';
-        $productId   = $p['productId'] ?? '-';
 
         // Karta techniczna — konwencja: /static/pdf/{id_lowercase}.pdf
         $techCardUrl = '';
@@ -82,7 +81,7 @@ if ($customerEmail) {
         }
 
         $customerSubject = "Grassit — potwierdzenie zamówienia próbki: " . $productName;
-        $customerBody = buildSampleOrderTemplate($customerName, $productName, $productId, $techCardUrl, $siteUrl);
+        $customerBody = buildSampleOrderTemplate($customerName, $productName, $techCardUrl, $siteUrl);
     } else {
         $customerSubject = "Grassit — dziękujemy za kontakt!";
         $customerBody = buildContactTemplate($customerName, $siteUrl);
@@ -192,7 +191,7 @@ function buildContactTemplate(string $name, string $siteUrl): string {
 }
 
 // ---- Zamówienie próbki ----
-function buildSampleOrderTemplate(string $name, string $productName, string $productId, string $techCardUrl, string $siteUrl): string {
+function buildSampleOrderTemplate(string $name, string $productName, string $techCardUrl, string $siteUrl): string {
     $techCardBtn = '';
     if ($techCardUrl !== '') {
         $techCardBtn = '
@@ -218,8 +217,6 @@ function buildSampleOrderTemplate(string $name, string $productName, string $pro
           <td style="padding:20px 24px;">
             <p style="margin:0 0 4px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#64748b;">Produkt</p>
             <p style="margin:0 0 16px;font-size:20px;font-weight:700;color:#0f172a;">' . htmlspecialchars($productName) . '</p>
-            <p style="margin:0 0 4px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#64748b;">ID produktu</p>
-            <p style="margin:0;font-size:14px;color:#0f172a;">' . htmlspecialchars($productId) . '</p>
             ' . $techCardBtn . '
           </td>
         </tr>
