@@ -120,6 +120,38 @@
   color: #0f172a;
 }
 
+/* Color variant selector */
+.detailedProduct-color-variants {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detailedProduct-color-options {
+  display: flex;
+  gap: 10px;
+}
+
+.detailedProduct-color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  padding: 0;
+}
+
+.detailedProduct-color-swatch:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.detailedProduct-color-swatch.active {
+  border: 3px solid #0f172a;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #0f172a;
+}
+
 .detailedProduct-description {
   color: #475569;
   font-size: 16px;

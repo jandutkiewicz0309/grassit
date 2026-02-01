@@ -250,6 +250,7 @@
       "id": "Padel_Kit_pro_blue",
       "category": "trawy_sportowe",
       "subcategory": "murawy_padlowe",
+      "hidden": true,
       "technicalCard": "/static/pdf/padel_kit_pro_blue.pdf",
       "img": "/static/jpg/padelKitProBlue/padelKitPro1.jpg",
       "images": [
@@ -259,6 +260,10 @@
       "nameProduct": "Grassit Padel KIT PRO Blue",
       "price": "Wycena indywidualna",
       "description": "",
+      "colorVariants": [
+        { "id": "Padel_Kit_pro_green", "color": "#16a34a", "label": "Zielony" },
+        { "id": "Padel_Kit_pro_blue", "color": "#2563eb", "label": "Niebieski" }
+      ],
       "details": {
         "producer": "Grassit Pro",
         "productDescription": "",
@@ -275,9 +280,13 @@
       "technicalCard": "/static/pdf/padel_kit_pro_green.pdf",
       "img": "/static/jpg/padelKitProGreen/padelKitProGreen1.jpg",
       "images": ["/static/jpg/padelKitProGreen/padelKitProGreen2.jpg"],
-      "nameProduct": "Grassit Padel KIT PRO Green",
+      "nameProduct": "Grassit Padel KIT PRO",
       "price": "Wycena indywidualna",
       "description": "",
+      "colorVariants": [
+        { "id": "Padel_Kit_pro_green", "color": "#16a34a", "label": "Zielony" },
+        { "id": "Padel_Kit_pro_blue", "color": "#2563eb", "label": "Niebieski" }
+      ],
       "details": {
         "producer": "Grassit Pro",
         "productDescription": "",

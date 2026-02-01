@@ -7,7 +7,7 @@ import data from "~/data/product.json";
 const ProductPage = () => {
   const navigate = useNavigate();
 
-  const products = data.products.map((p) => ({
+  const products = data.products.filter((p) => !(p as any).hidden).map((p) => ({
     id: p.id,
     img: p.img,
     nameProduct: p.nameProduct,

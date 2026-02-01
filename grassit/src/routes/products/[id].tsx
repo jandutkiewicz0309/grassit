@@ -19,7 +19,7 @@ export default function detailedProduct() {
     return data.products
       .filter(
         (p) =>
-          p.category === currentProduct.category && p.id !== currentProduct.id
+          p.category === currentProduct.category && p.id !== currentProduct.id && !(p as any).hidden
       )
       .slice(0, 3)
       .map((p) => ({
@@ -47,10 +47,12 @@ export default function detailedProduct() {
           UVResistant={product()!.details.UVResistant}
           images={product()!.images ?? [product()!.img]}
           technicalCard={product()!.technicalCard}
+          colorVariants={(product() as any).colorVariants}
           similarProducts={similarProducts()}
           onAskClick={() => navigate("/kontakt")}
           onAskClickAskProduct={(id: string) => navigate(`/zamów-próbkę/${id}`)}
           onSimilarProductClick={(id: string) => navigate(`/produkty/${id}`)}
+          onColorVariantClick={(id: string) => navigate(`/produkty/${id}`)}
         />
       </Show>
     </>

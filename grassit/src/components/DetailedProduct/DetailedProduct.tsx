@@ -10,6 +10,12 @@ export interface SimilarProduct {
   price: string;
 }
 
+export interface ColorVariant {
+  id: string;
+  color: string;
+  label: string;
+}
+
 export interface IDetailedProduct {
   nameProduct: string;
   id: string;
@@ -23,10 +29,12 @@ export interface IDetailedProduct {
   UVResistant: string;
   images: string[];
   technicalCard?: string;
+  colorVariants?: ColorVariant[];
   similarProducts?: SimilarProduct[];
   onAskClick?: (e: MouseEvent) => void;
   onAskClickAskProduct?: (id: string) => void;
   onSimilarProductClick?: (id: string) => void;
+  onColorVariantClick?: (id: string) => void;
 }
 
 export const DetailedProduct: Component<IDetailedProduct> = (props) => {
@@ -54,6 +62,28 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
                 <p>Dostępne</p>
               </div>
             </div> 
+
+            <Show when={props.colorVariants && props.colorVariants.length > 0}>
+              <div class="detailedProduct-color-variants">
+                <span class="detailedProduct-section-title">Kolor</span>
+                <div class="detailedProduct-color-options">
+                  <For each={props.colorVariants}>
+                    {(variant) => (
+                      <button
+                        class={`detailedProduct-color-swatch ${variant.id === props.id ? "active" : ""}`}
+                        style={{ "background-color": variant.color }}
+                        title={variant.label}
+                        onClick={() => {
+                          if (variant.id !== props.id) {
+                            props.onColorVariantClick?.(variant.id);
+                          }
+                        }}
+                      />
+                    )}
+                  </For>
+                </div>
+              </div>
+            </Show>
 
             <span class="detailedProduct-description">
               {props.productDescription}
