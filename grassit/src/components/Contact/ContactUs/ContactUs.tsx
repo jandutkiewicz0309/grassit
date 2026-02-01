@@ -3,6 +3,7 @@ import {
   createForm,
   Field,
   Form,
+  reset,
   setValue,
   zodForm,
 } from "@modular-forms/solid";
@@ -14,7 +15,7 @@ import { TbMailFilled } from "solid-icons/tb";
 import { OnSubmitOrderForm } from "~/utils/types";
 
 export const ContactUs: Component<{
-  onSubmit: (data: OnSubmitOrderForm) => void;
+  onSubmit: (data: OnSubmitOrderForm) => Promise<boolean>;
 }> = (props) => {
   const form = createForm({
     validate: zodForm(schema),
@@ -30,7 +31,13 @@ export const ContactUs: Component<{
 
   return (
     <div class="mainContainer-ContactUs">
-      <Form of={form} onSubmit={(data) => props.onSubmit({ ...data })}>
+      <Form of={form} onSubmit={async (data) => {
+          const success = await props.onSubmit({ ...data });
+          if (success) {
+            reset(form);
+            setTouched({});
+          }
+        }}>
         <div class="inputsContainer">
           <div class="fieldContainer">
             <span class="nameInput">Imię</span>

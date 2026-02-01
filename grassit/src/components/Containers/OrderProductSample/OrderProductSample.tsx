@@ -11,7 +11,7 @@ export interface IProps {
   price: string;
   productId?: string;
   description?: string;
-  onSubmit: (data: OnSubmitOrderForm) => void;
+  onSubmit: (data: OnSubmitOrderForm) => Promise<boolean>;
 }
 
 const OrderProductSample: Component<IProps> = (props) => {

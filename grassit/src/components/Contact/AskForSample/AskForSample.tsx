@@ -3,6 +3,7 @@ import {
   createForm,
   Field,
   Form,
+  reset,
   setValue,
   zodForm,
 } from "@modular-forms/solid";
@@ -15,7 +16,7 @@ import { OnSubmitOrderForm } from "~/utils/types";
 
 export const AskProductFormCmp: Component<{
   initial?: Partial<AskProductForm>;
-  onSubmit: (data: OnSubmitOrderForm) => void;
+  onSubmit: (data: OnSubmitOrderForm) => Promise<boolean>;
 }> = (props) => {
   const form = createForm<AskProductForm>({
     validate: zodForm(askProductSchema),
@@ -42,7 +43,12 @@ export const AskProductFormCmp: Component<{
     <div class="askForm">
       <Form
         of={form}
-        onSubmit={(data) => props.onSubmit(data as AskProductForm)}
+        onSubmit={async (data) => {
+          const success = await props.onSubmit(data as AskProductForm);
+          if (success) {
+            reset(form);
+          }
+        }}
       >
         <div class="askForm__fields">
           {/* Imię */}

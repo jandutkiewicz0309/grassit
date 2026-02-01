@@ -2,7 +2,7 @@ import { defineConfig } from "@solidjs/start/config";
 
 export default defineConfig({
   server: {
-    preset: "static"
+    preset: "static",
   },
-  ssr: false
+  ssr: false,
 });

@@ -28,7 +28,7 @@ export default function AskProductByIdPage() {
           description={product()!.description}
           productId={product()!.id}
           onSubmit={async (payload: OnSubmitOrderForm) => {
-            await sendEmailWithToast(payload, "Dziękujemy! Wysłaliśmy zapytanie o produkt.");
+            return await sendEmailWithToast(payload, "Dziękujemy! Wysłaliśmy zapytanie o produkt.");
           }}
         />
       </Show>

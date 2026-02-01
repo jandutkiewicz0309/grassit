@@ -12,7 +12,7 @@ export interface IAskFormContainer {
   price: string;
   productId?: string;
   description?: string;
-  onSubmit: (data: OnSubmitOrderForm) => void;
+  onSubmit: (data: OnSubmitOrderForm) => Promise<boolean>;
 }
 
 export const AskFormContainer: Component<IAskFormContainer> = (props) => {

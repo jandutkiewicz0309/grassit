@@ -4,7 +4,7 @@ import { OnSubmitOrderForm } from "~/utils/types";
 import "./ContatUsContainer.css";
 
 export interface IContatUsContainer {
-  onSubmit: (data: OnSubmitOrderForm) => void;
+  onSubmit: (data: OnSubmitOrderForm) => Promise<boolean>;
   text?: string;
   title?: string
 }

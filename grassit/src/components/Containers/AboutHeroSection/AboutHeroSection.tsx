@@ -59,7 +59,7 @@ const AboutHeroSection: Component = () => {
           <div class="about-hero-section__form-wrapper">
             <ContatUsContainer
               onSubmit={async (data: OnSubmitOrderForm) => {
-                await sendEmailWithToast(data, "Dziękujemy! Formularz został wysłany.");
+                return await sendEmailWithToast(data, "Dziękujemy! Formularz został wysłany.");
               }}
               text="Skontaktuj się z naszym zespołem i dowiedz się, jak możemy pomóc Ci zaplanować i zrealizować Twój projekt."
               title="Zrób pierwszy krok do pięknego ogrodu – napisz do nas."

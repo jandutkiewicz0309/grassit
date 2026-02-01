@@ -10,7 +10,7 @@ const AskProduct = () => {
       <ContatUsContainer
         title="Skontaktuj się"
         onSubmit={async (data: OnSubmitOrderForm) => {
-          await sendEmailWithToast(
+          return await sendEmailWithToast(
             data,
             "Dziękujemy! Formularz został wysłany.",
           );
