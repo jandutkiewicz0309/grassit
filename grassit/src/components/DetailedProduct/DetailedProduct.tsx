@@ -42,23 +42,23 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
     <div class="wrapper">
       <div id={props.id} class="main-detailedProduct-container">
         <div class="detailedProduct-header">
-          <h1>Szczegóły produktu</h1>
+          <p class="detailedProduct-header-title">Szczegóły produktu</p>
           <p>Specyfikacja, parametry techniczne i kluczowe informacje.</p>
         </div>
         <div class="contentWrapper">
           <div class="detailedProduct-gallery">
             <ProductGallery
               images={props.images?.length ? props.images : []}
-              alt="Piłka nożna na murawie"
+              alt={props.nameProduct}
             />
           </div>
           <div class="detailedProduct-info">
             <div class="detailedProduct-name-price">
               <h1 class="detailedProduct-name">{props.nameProduct}</h1>
               <div class="detailedProduct-price-info">
-                <h2 class="detailedProduct-price" style={isNaN(parseFloat(props.price)) ? { "font-size": "14px", "white-space": "nowrap" } : {}}>
+                <span class="detailedProduct-price" style={isNaN(parseFloat(props.price)) ? { "font-size": "14px", "white-space": "nowrap" } : {}}>
                   {props.price}{!isNaN(parseFloat(props.price)) && <> zł <span class="price-unit">netto / m²</span></>}
-                </h2>
+                </span>
                 <p>Dostępne</p>
               </div>
             </div> 

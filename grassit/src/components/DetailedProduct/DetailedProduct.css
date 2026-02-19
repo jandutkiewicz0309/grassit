@@ -30,8 +30,9 @@
   gap: 12px;
 }
 
-.detailedProduct-header h1 {
+.detailedProduct-header .detailedProduct-header-title {
   font-size: 36px;
+  font-weight: bold;
   line-height: 40px;
   color: #0f172a;
   margin: 0px;

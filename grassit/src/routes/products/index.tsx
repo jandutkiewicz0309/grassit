@@ -1,3 +1,4 @@
+import { Meta, Title } from "@solidjs/meta";
 import { useNavigate } from "@solidjs/router";
 import { BackArrow } from "~/components/BackArrow/BackArrow";
 import { CategoryType } from "~/components/Product/Filter/Filter";
@@ -20,10 +21,12 @@ const ProductPage = () => {
   }));
 
   return (
-    <div>
+    <main>
+      <Title>Produkty - Grassit</Title>
+      <Meta name="description" content="Odkryj nasz katalog traw syntetycznych – trawy dekoracyjne, sportowe i akcesoria. Sprawdź ceny i zamów darmową próbkę." />
       <BackArrow />
       <ProductContainer productData={products} />
-    </div>
+    </main>
   );
 };
 

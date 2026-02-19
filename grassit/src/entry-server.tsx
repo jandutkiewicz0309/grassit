@@ -12,6 +12,9 @@ export default createHandler(() => (
             name="description"
             content="Idealna dla ogrodów, obiektów sportowych i przestrzeni komercyjnych. Oferujemy profesjonalny montaż i gwarantujemy trwałość na lata"
           />
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="Grassit" />
+          <meta property="og:locale" content="pl_PL" />
           <link rel="icon" href="/Grassit_logo-monochrom_black.png" />
           {assets}
         </head>

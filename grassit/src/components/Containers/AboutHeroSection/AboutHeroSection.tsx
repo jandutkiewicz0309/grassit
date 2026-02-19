@@ -29,6 +29,7 @@ const AboutHeroSection: Component = () => {
 
       <div class="categories-container">
         <div class="categories-container__inner">
+          <h1 class="about-hero-section__title">O Grassit</h1>
           <p class="about-hero-section__text">
             Jesteśmy firmą specjalizującą się w sprzedaży oraz profesjonalnej instalacji wysokiej jakości
             sztucznej trawy. Od lat pomagamy naszym klientom tworzyć estetyczne, funkcjonalne i trwałe

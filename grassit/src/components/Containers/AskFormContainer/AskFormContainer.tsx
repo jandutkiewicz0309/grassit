@@ -31,11 +31,11 @@ export const AskFormContainer: Component<IAskFormContainer> = (props) => {
 
         <div class="askCard__meta">
           <div class="askProduct-name-price">
-            <h1 class="askProduct-name">{props.productName}</h1>
+            <h2 class="askProduct-name">{props.productName}</h2>
             <div class="askProduct-price-info">
-              <h2 class="askProduct-price" style={isNaN(parseFloat(props.price)) ? { "font-size": "14px", "white-space": "nowrap" } : {}}>
+              <span class="askProduct-price" style={isNaN(parseFloat(props.price)) ? { "font-size": "14px", "white-space": "nowrap" } : {}}>
                 {props.price}{!isNaN(parseFloat(props.price)) && <>zł <span class="price-unit">/ m²</span></>}
-              </h2>
+              </span>
               <p>Dostępne</p>
             </div>
           </div>

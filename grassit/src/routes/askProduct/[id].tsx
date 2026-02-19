@@ -1,3 +1,4 @@
+import { Meta, Title } from "@solidjs/meta";
 import { useParams } from "@solidjs/router";
 import { createMemo, Show } from "solid-js";
 import { BackArrow } from "~/components/BackArrow/BackArrow";
@@ -17,6 +18,10 @@ export default function AskProductByIdPage() {
 
   return (
     <>
+      <Show when={product()}>
+        <Title>Zamów próbkę {product()!.nameProduct} - Grassit</Title>
+        <Meta name="description" content={`Zamów darmową próbkę ${product()!.nameProduct} od Grassit.`} />
+      </Show>
       <BackArrow />
       <Show when={product()} fallback={<ProductNotFound />}>
         <OrderProductSample

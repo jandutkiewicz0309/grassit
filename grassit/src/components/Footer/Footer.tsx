@@ -27,7 +27,7 @@ const Footer: Component = () => {
       <div class="ft__inner">
         <div class="ft__col ft__brand">
           <A href="/" class="ft__logoLink" aria-label="Strona główna">
-            <img src={logo} alt="" class="ft__logo" />
+            <img src={logo} alt="Grassit" class="ft__logo" />
             <span class="sr-only">Grassit</span>
           </A>
           <p class="ft__tagline">
@@ -55,7 +55,7 @@ const Footer: Component = () => {
         </div>
 
         <nav class="ft__col" aria-label="Produkty">
-          <h3 class="ft__title">Produkty</h3>
+          <p class="ft__title">Produkty</p>
           <ul class="ft__links">
             <li>
               <A href="/produkty?category=Trawy Dekoracyjne">
@@ -72,7 +72,7 @@ const Footer: Component = () => {
         </nav>
 
         <nav class="ft__col" aria-label="Informacje">
-          <h3 class="ft__title">Informacje</h3>
+          <p class="ft__title">Informacje</p>
           <ul class="ft__links">
             <li>
               <A href="/o-nas">O nas</A>
@@ -87,7 +87,7 @@ const Footer: Component = () => {
         </nav>
 
         <nav class="ft__col" aria-label="Usługi">
-          <h3 class="ft__title">Usługi</h3>
+          <p class="ft__title">Usługi</p>
           <ul class="ft__links">
             <li>
               <A href="/montaz">Montaż</A>
@@ -99,7 +99,7 @@ const Footer: Component = () => {
         </nav>
 
         <address class="ft__col ft__contact" aria-label="Kontakt">
-          <h3 class="ft__title">Kontakt</h3>
+          <p class="ft__title">Kontakt</p>
           <p> Kazimierza Wielkiego 47 A</p>
           <p>32-400 Myślenice, Polska</p>
           <p>REGON: 522476299</p>

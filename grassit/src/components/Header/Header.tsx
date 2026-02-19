@@ -8,7 +8,7 @@ export const Header: Component = () => {
     <div class="header">
       <div class="header-container">
         <A href="/" class="header-logo">
-          <img src={logo} alt="" class="img"/>
+          <img src={logo} alt="Grassit" class="img"/>
         </A>
         <div class="header-buttons">
           <A

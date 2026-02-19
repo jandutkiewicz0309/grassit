@@ -1,3 +1,4 @@
+import { Meta, Title } from "@solidjs/meta";
 import { useNavigate, useParams } from "@solidjs/router";
 import { createMemo, Show } from "solid-js";
 import { BackArrow } from "~/components/BackArrow/BackArrow";
@@ -31,7 +32,14 @@ export default function detailedProduct() {
   });
 
   return (
-    <>
+    <main>
+      <Show when={product()}>
+        <Title>{product()!.nameProduct} - Grassit</Title>
+        <Meta name="description" content={product()!.description} />
+        <Meta property="og:title" content={`${product()!.nameProduct} - Grassit`} />
+        <Meta property="og:description" content={product()!.description} />
+        <Meta property="og:image" content={product()!.images?.[0] ?? product()!.img} />
+      </Show>
       <BackArrow />
       <Show when={product()} fallback={<ProductNotFound />}>
         <DetailedProduct
@@ -55,6 +63,6 @@ export default function detailedProduct() {
           onColorVariantClick={(id: string) => navigate(`/produkty/${id}`)}
         />
       </Show>
-    </>
+    </main>
   );
 }

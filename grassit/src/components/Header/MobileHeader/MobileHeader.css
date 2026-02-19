@@ -1,3 +1,4 @@
+/* ── Top bar ── */
 .mh__bar {
   height: 56px;
   padding: 0 16px;
@@ -7,17 +8,20 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .mobile_img {
   margin-top: 8px;
   width: 50px;
   height: 50px;
 }
+
 .mh__brand {
   font-weight: 700;
   font-size: 18px;
   text-decoration: none;
   color: #111827;
 }
+
 .mh__hamburger {
   background: transparent;
   border: 0;
@@ -27,147 +31,212 @@
   cursor: pointer;
 }
 
+/* ── Overlay ── */
 .mh__overlay {
   position: fixed;
   inset: 0;
-  background: #1f2937; /* ciemna ramka jak na screenie */
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
   z-index: 60;
   display: grid;
   place-items: center;
+  animation: mh-fadeIn 200ms ease;
 }
 
+@keyframes mh-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Sheet ── */
 .mh__sheet {
   position: relative;
-  width: min(540px, 92vw);
-  height: min(94vh, 720px);
+  width: min(440px, 92vw);
+  max-height: 90vh;
   background: #ffffff;
-  border-radius: 2px;
-  padding: 24px 18px 18px;
-  display: grid;
-  grid-template-rows: 1fr auto; /* nav + CTA */
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
+  animation: mh-slideUp 250ms ease;
+}
+
+@keyframes mh-slideUp {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Sheet header ── */
+.mh__sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.mh__sheet-logo {
+  width: 42px;
+  height: 42px;
 }
 
 .mh__closeBtn {
-  position: absolute;
-  top: 15px;
-  right: 16px;
-  background: #15803d;
-  color: #ffffff;
+  background: #f1f5f9;
+  color: #475569;
   border: 0;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
   display: grid;
   place-items: center;
   cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
 }
 
+.mh__closeBtn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* ── Nav ── */
 .mh__nav {
   overflow: auto;
-  padding: 34px 6px 12px 6px;
+  padding: 12px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.mh__sectionTitle {
-  width: 100%;
-  text-align: left;
-  background: transparent;
-  border: 0;
-  padding: 12px 8px;
-  margin: 4px 0 0;
-  font-weight: 800;
-  font-size: 18px;
-  color: #0b1220;
-  letter-spacing: 0.2px;
-  cursor: pointer;
+/* ── Section wrapper ── */
+.mh__section {
+  display: flex;
+  flex-direction: column;
 }
 
-.mh__sectionTitle.is-link {
-  border: 0;
-  padding: 12px 8px;
-  background: transparent;
-  display: block;
-  text-decoration: none;
-}
-
+/* ── Expander button ── */
 .mh__expander {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 12px 12px;
-  background: #fff;
-  transition: background 160ms ease, border-color 160ms ease;
-  margin-top: 10px;
-}
-.mh__expander:hover {
-  background: #f9fafb;
-  border-color: #d1d5db;
-}
-.mh__expander.is-open {
-  border-color: #cbd5e1;
-  background: #f8fafc;
-}
-.mh__chev {
-  flex: 0 0 auto;
-  transition: transform 180ms ease;
-}
-.mh__expander.is-open .mh__chev {
-  transform: rotate(180deg); /* w górę po otwarciu */
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 14px;
+  background: transparent;
+  font-weight: 600;
+  font-size: 15px;
+  color: #0f172a;
+  cursor: pointer;
+  transition: background 160ms ease;
 }
 
-.mh__group {
-  padding: 4px 0 10px 8px;
+.mh__expander:hover {
+  background: #f8fafc;
 }
-.mh__item {
-  margin: 4px 0 0;
+
+.mh__expander.is-open {
+  background: #f8fafc;
+}
+
+.mh__expander-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mh__expander-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #f0fdf4;
+  color: #15803d;
+  flex-shrink: 0;
+}
+
+.mh__chev {
+  flex: 0 0 auto;
+  color: #94a3b8;
+  transition: transform 200ms ease;
+}
+
+.mh__expander.is-open .mh__chev {
+  transform: rotate(180deg);
+}
+
+/* ── Sub-links group ── */
+.mh__group {
+  padding: 4px 0 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .mh__link {
-  display: block;
-  padding: 10px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px 11px 62px;
   text-decoration: none;
-  color: #4b5563;
-  font-weight: 600;
-  border-radius: 8px;
-}
-.mh__link:hover {
-  background: #f3f4f6;
-}
-
-.mh__sublist {
-  padding-left: 18px;
-}
-.mh__sublink {
-  display: block;
-  padding: 8px 8px;
-  text-decoration: none;
-  color: #6b7280;
+  color: #475569;
   font-weight: 500;
-  border-radius: 8px;
-}
-.mh__sublink:hover {
-  background: #f8fafc;
+  font-size: 14px;
+  border-radius: 10px;
+  transition: background 120ms ease, color 120ms ease;
 }
 
+.mh__link:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.mh__link-icon {
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.mh__link:hover .mh__link-icon {
+  color: #15803d;
+}
+
+/* ── Divider ── */
+.mh__divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 8px 14px;
+}
+
+/* ── CTA button ── */
 .mh__cta {
-  display: block;
-  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 4px 0 0;
   background: #15803d;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
-  font-weight: 700;
-  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 12px;
   padding: 14px 16px;
+  transition: background 160ms ease, transform 120ms ease;
 }
+
+.mh__cta:hover {
+  background: #166534;
+}
+
 .mh__cta:active {
   transform: translateY(1px);
 }
 
-/* Ukryj MobileHeader na desktopie (jeśli masz też Header) */
+/* ── Hide on desktop ── */
 @media (min-width: 1200px) {
   .MobileHeader {
     display: none;

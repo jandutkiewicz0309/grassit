@@ -1,8 +1,10 @@
 import { Component, Show, createSignal, onCleanup, onMount } from "solid-js";
 import { A } from "@solidjs/router";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineDown } from "solid-icons/ai";
+import { FiPackage, FiTool, FiMail, FiLayers, FiActivity, FiGrid, FiSettings, FiMessageCircle, FiTruck } from "solid-icons/fi";
 import "./MobileHeader.css";
 import grassit from "~/components/static/jpg/grassit.svg"
+
 export const MobileHeader: Component = () => {
   const [open, setOpen] = createSignal(false);
   const [openProdukty, setOpenProdukty] = createSignal(false);
@@ -60,84 +62,101 @@ export const MobileHeader: Component = () => {
           onClick={close}
         >
           <div class="mh__sheet" onClick={(e) => e.stopPropagation()}>
-            <button class="mh__closeBtn" aria-label="Zamknij" onClick={close}>
-              <AiOutlineClose size={22} />
-            </button>
+            <div class="mh__sheet-header">
+              <img src={grassit} class="mh__sheet-logo" />
+              <button class="mh__closeBtn" aria-label="Zamknij" onClick={close}>
+                <AiOutlineClose size={20} />
+              </button>
+            </div>
 
             <nav class="mh__nav">
-              <button
-                class={`mh__sectionTitle mh__expander ${
-                  openProdukty() ? "is-open" : ""
-                }`}
-                aria-expanded={openProdukty()}
-                onClick={() => setOpenProdukty((v) => !v)}
-              >
-                <span>PRODUKTY</span>
-                <AiOutlineDown size={18} class="mh__chev" />
-              </button>
+              <div class="mh__section">
+                <button
+                  class={`mh__expander ${openProdukty() ? "is-open" : ""}`}
+                  aria-expanded={openProdukty()}
+                  onClick={() => setOpenProdukty((v) => !v)}
+                >
+                  <div class="mh__expander-left">
+                    <span class="mh__expander-icon">
+                      <FiPackage size={18} />
+                    </span>
+                    <span>Produkty</span>
+                  </div>
+                  <AiOutlineDown size={16} class="mh__chev" />
+                </button>
 
-              <Show when={openProdukty()}>
-                <div class="mh__group">
-                  <A
-                    href="/produkty?category=Trawy Dekoracyjne"
-                    class="mh__link"
-                    onClick={onNavClick}
-                  >
-                    Trawy Dekoracyjne
-                  </A>
-                  <A
-                    href="/produkty?category=Trawy sportowe"
-                    class="mh__link"
-                    onClick={onNavClick}
-                  >
-                    Trawy Sportowe
-                  </A>
-                  <A
-                    href="/produkty?category=Akcesoria"
-                    class="mh__link"
-                    onClick={onNavClick}
-                  >
-                    Akcesoria
-                  </A>
-                </div>
-              </Show>
-              <button
-                class={`mh__sectionTitle mh__expander ${
-                  openUslugi() ? "is-open" : ""
-                }`}
-                aria-expanded={openUslugi()}
-                onClick={() => setOpenUslugi((v) => !v)}
-              >
-                <span>USŁUGI</span>
-                <AiOutlineDown size={18} class="mh__chev" />
-              </button>
-              <Show when={openUslugi()}>
-                <div class="mh__group">
-                  <A href="montaz" class="mh__link" onClick={onNavClick}>
-                    Montaż
-                  </A>
-                  <A href="doradztwo" class="mh__link" onClick={onNavClick}>
-                    Doradztwo
-                  </A>
-                  <A href="dostawa" class="mh__link" onClick={onNavClick}>
-                    Dostawa
-                  </A>
-                </div>
-              </Show>
+                <Show when={openProdukty()}>
+                  <div class="mh__group">
+                    <A
+                      href="/produkty?category=Trawy Dekoracyjne"
+                      class="mh__link"
+                      onClick={onNavClick}
+                    >
+                      <FiLayers size={15} class="mh__link-icon" />
+                      Trawy Dekoracyjne
+                    </A>
+                    <A
+                      href="/produkty?category=Trawy sportowe"
+                      class="mh__link"
+                      onClick={onNavClick}
+                    >
+                      <FiActivity size={15} class="mh__link-icon" />
+                      Trawy Sportowe
+                    </A>
+                    <A
+                      href="/produkty?category=Akcesoria"
+                      class="mh__link"
+                      onClick={onNavClick}
+                    >
+                      <FiGrid size={15} class="mh__link-icon" />
+                      Akcesoria
+                    </A>
+                  </div>
+                </Show>
+              </div>
 
-              {/* <A
-                href="/realizacje"
-                class="mh__sectionTitle is-link"
-                onClick={onNavClick}
-              >
-                REALIZACJE
-              </A> */}
+              <div class="mh__section">
+                <button
+                  class={`mh__expander ${openUslugi() ? "is-open" : ""}`}
+                  aria-expanded={openUslugi()}
+                  onClick={() => setOpenUslugi((v) => !v)}
+                >
+                  <div class="mh__expander-left">
+                    <span class="mh__expander-icon">
+                      <FiTool size={18} />
+                    </span>
+                    <span>Usługi</span>
+                  </div>
+                  <AiOutlineDown size={16} class="mh__chev" />
+                </button>
+
+                <Show when={openUslugi()}>
+                  <div class="mh__group">
+                    <A href="montaz" class="mh__link" onClick={onNavClick}>
+                      <FiSettings size={15} class="mh__link-icon" />
+                      Montaż
+                    </A>
+                    <A href="doradztwo" class="mh__link" onClick={onNavClick}>
+                      <FiMessageCircle size={15} class="mh__link-icon" />
+                      Doradztwo
+                    </A>
+                    <A href="dostawa" class="mh__link" onClick={onNavClick}>
+                      <FiTruck size={15} class="mh__link-icon" />
+                      Dostawa
+                    </A>
+                  </div>
+                </Show>
+              </div>
+
+              <div class="mh__divider" />
+
               <A
                 href="/kontakt"
-                class="mh__sectionTitle is-link"
+                class="mh__cta"
                 onClick={onNavClick}
               >
-                KONTAKT
+                <FiMail size={18} />
+                Kontakt
               </A>
             </nav>
           </div>

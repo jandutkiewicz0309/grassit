@@ -8,10 +8,10 @@ import { BsShieldCheck } from "solid-icons/bs";
 import "./Hero.css";
 
 const Hero: Component = () => (
-  <header class="hero" style={{ "--hero-bg": `url(${mainImg})` }}>
+  <section class="hero" style={{ "--hero-bg": `url(${mainImg})` }}>
     <div class="hero__inner">
       <p class="hero__eyebrow">
-        <img alt="shape" src={shape} />
+        <img alt="Kształt dekoracyjny" src={shape} />
         Produkt ekologiczny
       </p>
 
@@ -38,7 +38,7 @@ const Hero: Component = () => (
 
       <ul class="hero__usps" aria-label="Korzyści">
         <li>
-          <img alt="shape" src={waterDrop} />
+          <img alt="Kropla wody" src={waterDrop} />
           oszczędność wody
         </li>
         <li>
@@ -46,12 +46,12 @@ const Hero: Component = () => (
           Odporna na UV, bezpieczna dla zwierząt
         </li>
         <li>
-          <img alt="shape" src={whiteScissors} />
+          <img alt="Nożyczki" src={whiteScissors} />
           Nie wymaga pielęgnacji
         </li>
       </ul>
     </div>
-  </header>
+  </section>
 );
 
 export default Hero;

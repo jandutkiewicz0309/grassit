@@ -15,7 +15,7 @@ const Sustainability: Component = () => {
     <section class="sust">
       <div class="sust__inner">
         <div class="sust__media">
-          <img class="sust__img" src={lawnImg} alt="" loading="lazy" />
+          <img class="sust__img" src={lawnImg} alt="Sztuczna trawa inspirowana naturą" loading="lazy" />
         </div>
         <div class="sust__content">
           <h2 class="sust__title">Produkt przyjazny środowisku</h2>
