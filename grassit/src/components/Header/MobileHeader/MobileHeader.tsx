@@ -90,7 +90,7 @@ export const MobileHeader: Component = () => {
                     class="mh__link"
                     onClick={onNavClick}
                   >
-                    Trawy sportowe
+                    Trawy Sportowe
                   </A>
                   <A
                     href="/produkty?category=Akcesoria"

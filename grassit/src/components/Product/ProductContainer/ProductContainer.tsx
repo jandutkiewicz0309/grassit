@@ -14,6 +14,7 @@ import "./ProductContainer.css";
 export interface IProductItemWithCategory extends IProductItem {
   category: CategoryType;
   subcategory?: string;
+  badge?: string;
 }
 
 export interface IProductContainer {
@@ -133,6 +134,7 @@ export const ProductContainer: Component<IProductContainer> = (props) => {
                 nameProduct={product.nameProduct}
                 onClick={product.onClick}
                 price={product.price}
+                badge={product.badge}
               />
             )}
           </For>

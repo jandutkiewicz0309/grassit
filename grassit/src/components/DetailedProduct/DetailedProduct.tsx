@@ -57,7 +57,7 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
               <h1 class="detailedProduct-name">{props.nameProduct}</h1>
               <div class="detailedProduct-price-info">
                 <h2 class="detailedProduct-price" style={isNaN(parseFloat(props.price)) ? { "font-size": "14px", "white-space": "nowrap" } : {}}>
-                  {props.price}{!isNaN(parseFloat(props.price)) && <>zł <span class="price-unit">/ m²</span></>}
+                  {props.price}{!isNaN(parseFloat(props.price)) && <> zł <span class="price-unit">netto / m²</span></>}
                 </h2>
                 <p>Dostępne</p>
               </div>

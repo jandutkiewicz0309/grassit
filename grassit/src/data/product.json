@@ -10,7 +10,7 @@
         "/static/jpg/amalfi/amalfi3.jpg"
       ],
       "nameProduct": "Amalfi",
-      "price": "15.00",
+      "price": "89,00",
       "description": "Stylowa trawa sztuczna o gęstym runie, odporna na UV i przeznaczona do nowoczesnych aranżacji ogrodowych.",
       "details": {
         "producer": "Grassit",
@@ -32,7 +32,7 @@
         "/static/jpg/genewa/genewa2.jpg"
       ],
       "nameProduct": "Genewa",
-      "price": "30.00",
+      "price": "149,00",
       "description": "Luksusowa trawa syntetyczna o wysokim, gęstym runie, odporna na UV i przeznaczona do intensywnego użytkowania.",
       "details": {
         "producer": "Grassit",
@@ -54,7 +54,7 @@
         "/static/jpg/lagos/lagos3.jpg"
       ],
       "nameProduct": "Lagos",
-      "price": "55.00",
+      "price": "99,00",
       "description": "Gęsta trawa syntetyczna o naturalnym wyglądzie, przeznaczona do aranżacji terenów zielonych.",
 
       "details": {
@@ -77,7 +77,7 @@
         "/static/jpg/santiago/santiago3.jpg"
       ],
       "nameProduct": "Santiago",
-      "price": "115.00",
+      "price": "66,00",
       "description": "Santiago (28 mm) to gęsta i trwała trawa krajobrazowa o naturalnym wyglądzie. Dzięki odporności na UV i solidnej wadze (2104 g/m²) zachowuje estetykę na lata.",
       "details": {
         "producer": "Grassit",
@@ -99,7 +99,7 @@
         "/static/jpg/sofia/sofia1.jpg"
       ],
       "nameProduct": "Sofia",
-      "price": "105.00",
+      "price": "109,00",
       "description": "Sofia (35 mm) to trawa premium o imponującej gęstości i wadze runa 1660 g/m². Wyjątkowo pełna, naturalna i odporna na UV – idealna do ekskluzywnych aranżacji.",
       "details": {
         "producer": "Grassit",
@@ -121,7 +121,7 @@
         "/static/jpg/santa_cruz/santa_cruz1.jpg"
       ],
       "nameProduct": "Santa Cruz",
-      "price": "152.00",
+      "price": "119,00",
       "description": "Santa Cruz (40 mm) to wyjątkowo solidna trawa o imponującej wadze 3010 g/m². Stworzona do nowoczesnych aranżacji, odporna na UV i zachowująca intensywną zieleń przez lata.",
       "details": {
         "producer": "Grassit Pro",
@@ -143,7 +143,8 @@
         "/static/jpg/vienna/vienna2.jpg"
       ],
       "nameProduct": "Vienna",
-      "price": "99.99",
+      "price": "139,00",
+      "badge": "BEST SELLER",
       "description": "Model Vienna (45 mm) to wyjątkowo gęsta i miękka trawa sztuczna o luksusowym, naturalnym wyglądzie. Dzięki wysokiej gramaturze i odporności UV idealnie sprawdzi się w ogrodzie.",
       "details": {
         "producer": "Grassit",
@@ -165,7 +166,7 @@
         "/static/jpg/wenecja/wenecja3.jpg"
       ],
       "nameProduct": "Wenecja",
-      "price": "154.00",
+      "price": "54,00",
       "description": "Wenecja (30 mm) to uniwersalna trawa krajobrazowa o soczyście zielonym wyglądzie. Dzięki gęstości 16 800 wszyć/m² i mieszance włókien PE+PP gwarantuje trwałość oraz efekt idealnie zadbanego trawnika.",
       "details": {
         "producer": "Grassit Pro",

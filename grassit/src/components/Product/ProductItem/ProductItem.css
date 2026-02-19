@@ -34,9 +34,30 @@
   }
 }
 
+.product_img-wrapper {
+  position: relative;
+}
+
+.product_badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #15803d;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  z-index: 1;
+  line-height: 16px;
+}
+
 .product_img {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  width: 100%;
+  display: block;
 }
 
 .text-container {
@@ -66,6 +87,13 @@
   color: #15803d;
   line-height: 20px;
   font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.price-netto {
+  font-size: 11px;
+  color: #64748b;
   font-weight: 400;
 }
 
