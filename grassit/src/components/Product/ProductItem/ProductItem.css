@@ -71,8 +71,9 @@
 
 .name-price-info-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
 }
 
 .nameProduct {
@@ -97,12 +98,6 @@
   font-weight: 400;
 }
 
-.name-price-info-container--stacked {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-}
-
 .price--text {
   font-size: 12px;
   color: #047857;
@@ -114,6 +109,10 @@
   line-height: 20px;
   font-weight: 400;
   color: #475569;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .bottom-info {
