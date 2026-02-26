@@ -3,9 +3,19 @@
 @import "@fontsource/chivo/latin-500.css";
 @import "@fontsource/chivo/latin-700.css";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --font-sans: "Chivo", system-ui, -apple-system, Segoe UI, Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+html {
+  overflow-x: hidden;
 }
 
 html,
@@ -20,6 +30,16 @@ body {
   /* Firefox */
   scrollbar-width: thin;
   scrollbar-color: #15803d #f1f5f9;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+main {
+  flex: 1;
 }
 
 /* Chrome, Edge, Safari */
