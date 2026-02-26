@@ -26,6 +26,8 @@ export const AskFormContainer: Component<IAskFormContainer> = (props) => {
             alt={props.productName}
             class="askCard__img"
             loading="lazy"
+            width={400}
+            height={300}
           />
         </div>
 

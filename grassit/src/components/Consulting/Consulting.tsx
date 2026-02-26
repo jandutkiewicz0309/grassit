@@ -1,6 +1,6 @@
 import { Component } from "solid-js";
 import "./Consulting.css";
-import doradztwoImg from "~/components/static/png/consulting.png";
+import doradztwoImg from "~/components/static/png/consulting.webp";
 
 export const ConsultingPage: Component = () => {
   return (

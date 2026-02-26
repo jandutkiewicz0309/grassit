@@ -1,6 +1,6 @@
 import { Component } from "solid-js";
 import { ContatUsContainer } from "~/components/Containers/ContatUsContainer/ContatUsContainer";
-import mainImg from "~/components/static/png/MainImg.jpg";
+import mainImg from "~/components/static/png/MainImg.webp";
 import grassitLogo from "~/components/static/jpg/grassit.svg";
 import { sendEmailWithToast } from "~/utils/sendMail";
 import { OnSubmitOrderForm } from "~/utils/types";
