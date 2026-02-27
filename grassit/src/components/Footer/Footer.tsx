@@ -27,7 +27,7 @@ const Footer: Component = () => {
       <div class="ft__inner">
         <div class="ft__col ft__brand">
           <A href="/" class="ft__logoLink" aria-label="Strona główna">
-            <img src={logo} alt="Grassit" class="ft__logo" />
+            <img src={logo} alt="Grassit" class="ft__logo" width="61" height="40" />
             <span class="sr-only">Grassit</span>
           </A>
           <p class="ft__tagline">

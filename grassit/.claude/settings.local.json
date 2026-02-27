@@ -12,7 +12,9 @@
       "Bash(cd:*)",
       "Bash(node:*)",
       "Bash(cd C:/Users/jandu/grassit/grassit && pnpm build 2>&1)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(find \"C:/Users/jandu/grassit/grassit/public/\" -name \"*.png\" -o -name \"*.svg\" 2>/dev/null | grep -v node_modules\nfind \"C:/Users/jandu/grassit/grassit/\" -maxdepth 3 -name \"grassit_logo*\" -o -name \"Grassit_logo*\" 2>/dev/null | grep -v node_modules | grep -v \".output\")",
+      "Bash(pnpm add:*)"
     ]
   }
 }

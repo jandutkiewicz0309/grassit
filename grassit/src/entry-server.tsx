@@ -15,7 +15,9 @@ export default createHandler(() => (
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="Grassit" />
           <meta property="og:locale" content="pl_PL" />
-          <link rel="icon" href="/Grassit_logo-monochrom_black.png" />
+          <link rel="icon" href="/static/png/Grassit_logo.svg" type="image/svg+xml" />
+          <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/chivo-latin-400-normal.woff2" crossorigin="anonymous" />
+          <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/chivo-latin-700-normal.woff2" crossorigin="anonymous" />
           {assets}
         </head>
         <body>

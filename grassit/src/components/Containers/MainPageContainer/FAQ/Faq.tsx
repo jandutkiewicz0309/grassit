@@ -1,4 +1,4 @@
-import { Component, For, createSignal, onMount } from "solid-js";
+import { Component, For, createSignal } from "solid-js";
 import "./Faq.css";
 
 type QA = { q: string; a: string };
@@ -24,23 +24,9 @@ const DATA: QA[] = [
 
 const Faq: Component = () => {
   const [openIdx, setOpenIdx] = createSignal<number | null>(0);
-  let panels: HTMLDivElement[] = [];
-
-  const recalcHeights = () => {
-    panels.forEach((el, i) => {
-      const opened = openIdx() === i;
-      el.style.maxHeight = opened ? `${el.scrollHeight}px` : "0px";
-    });
-  };
-
-  onMount(() => {
-    queueMicrotask(recalcHeights);
-    window.addEventListener("resize", recalcHeights);
-  });
 
   const toggle = (i: number) => {
     setOpenIdx((curr) => (curr === i ? null : i));
-    queueMicrotask(recalcHeights);
   };
 
   return (
@@ -58,17 +44,17 @@ const Faq: Component = () => {
                     aria-expanded={openIdx() === i()}
                     aria-controls={`faq-panel-${i()}`}
                     id={`faq-button-${i()}`}
+                    onMouseDown={(e) => e.preventDefault()}
                     onClick={() => toggle(i())}
                   >
                     <span>{item.q}</span>
                   </button>
                 </p>
                 <div
-                  ref={(el) => (panels[i()] = el)}
                   id={`faq-panel-${i()}`}
                   role="region"
                   aria-labelledby={`faq-button-${i()}`}
-                  class="faqItem__panel"
+                  class={`faqItem__panel${openIdx() === i() ? " faqItem__panel--open" : ""}`}
                 >
                   <div class="faqItem__content">{item.a}</div>
                 </div>

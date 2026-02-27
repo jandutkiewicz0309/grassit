@@ -15,7 +15,7 @@ const Sustainability: Component = () => {
     <section class="sust">
       <div class="sust__inner">
         <div class="sust__media">
-          <img class="sust__img" src={lawnImg} alt="Sztuczna trawa inspirowana naturą" loading="lazy" />
+          <img class="sust__img" src={lawnImg} alt="Sztuczna trawa inspirowana naturą" loading="lazy" width="586" height="450" />
         </div>
         <div class="sust__content">
           <h2 class="sust__title">Produkt przyjazny środowisku</h2>
@@ -58,11 +58,11 @@ const Sustainability: Component = () => {
           </ul>
           <div class="sust__badges">
             <span class="badge">
-              <img src={truck} alt="" loading="lazy" />
+              <img src={truck} alt="" loading="lazy" width="16" height="16" />
               Szybka dostawa
             </span>
             <span class="badge">
-              <img src={warranty} alt="" loading="lazy" />
+              <img src={warranty} alt="" loading="lazy" width="16" height="16" />
               Gwarancja do 12 lat
             </span>
           </div>

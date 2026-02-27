@@ -1,10 +1,9 @@
-import { Component } from "solid-js";
-import "./Why.css";
-import drop from "~/components/static/png/drop.webp";
-import leaf from "~/components/static/png/leaf.webp";
-import shield from "~/components/static/png/shield.webp";
-import scissors from "~/components/static/png/scissors.webp";
 import { IoPawOutline } from "solid-icons/io";
+import { Component } from "solid-js";
+import leaf from "~/components/static/png/leaf.webp";
+import scissors from "~/components/static/png/scissors.webp";
+import shield from "~/components/static/png/shield.webp";
+import "./Why.css";
 
 const Why: Component = () => {
   return (
@@ -16,7 +15,7 @@ const Why: Component = () => {
 
         <div class="why__grid">
           <article class="whyCard">
-            <img src={leaf} alt="" loading="lazy" />
+            <img src={leaf} alt="" loading="lazy" width="40" height="40" />
             <h3 class="whyCard__title">Naturalny wygląd</h3>
             <p class="whyCard__desc">
               Nasze produkty stworzone są aby skutecznie imitować żywy, idealnie
@@ -47,7 +46,7 @@ const Why: Component = () => {
           </article>
 
           <article class="whyCard">
-            <img src={shield} alt="" loading="lazy" />
+            <img src={shield} alt="" loading="lazy" width="40" height="40" />
             <h3 class="whyCard__title"> Zawsze świeży wygląd</h3>
             <p class="whyCard__desc">
               Skuteczna odpornośc na promienie UV sprawi, że kolor twojego
@@ -56,7 +55,7 @@ const Why: Component = () => {
           </article>
 
           <article class="whyCard">
-            <img src={scissors} alt="" loading="lazy" />
+            <img src={scissors} alt="" loading="lazy" width="40" height="40" />
             <h3 class="whyCard__title"> Produkt bezobsługowy</h3>
             <p class="whyCard__desc">
               Koniec z nawożeniem, podlewaniem i koszeniem swojego trawnika.

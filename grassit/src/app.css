@@ -1,6 +1,5 @@
-/* === FONTS: Chivo 400 / 500 / 700 (WOFF2 via fontsource) === */
+/* === FONTS: Chivo 400 / 700 (WOFF2 via fontsource) === */
 @import "@fontsource/chivo/latin-400.css";
-@import "@fontsource/chivo/latin-500.css";
 @import "@fontsource/chivo/latin-700.css";
 
 *,
@@ -47,7 +46,7 @@ main {
   width: 8px;
   height: 8px;
 }
-
+ 
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }

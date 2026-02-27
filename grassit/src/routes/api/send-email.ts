@@ -28,7 +28,7 @@ function emailLayout(content: string): string {
           <!-- HEADER -->
           <tr>
             <td style="background-color:#f0f5f1;padding:28px 0;text-align:center;border-bottom:1px solid #e2e8f0;">
-              <img src="${siteUrl}/Grassit_logo-monochrom_black.png" alt="Grassit" width="180" style="display:inline-block;max-width:180px;height:auto;" />
+              <img src="${siteUrl}/static/png/grassit_logo.webp" alt="Grassit" width="180" style="display:inline-block;max-width:180px;height:auto;" />
             </td>
           </tr>
 

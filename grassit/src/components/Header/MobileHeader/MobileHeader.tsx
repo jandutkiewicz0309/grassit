@@ -3,7 +3,7 @@ import { A } from "@solidjs/router";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineDown } from "solid-icons/ai";
 import { FiPackage, FiTool, FiMail, FiLayers, FiActivity, FiGrid, FiSettings, FiMessageCircle, FiTruck } from "solid-icons/fi";
 import "./MobileHeader.css";
-import grassit from "~/components/static/jpg/grassit.svg"
+import grassit from "~/components/static/png/grassit_logo.png"
 
 export const MobileHeader: Component = () => {
   const [open, setOpen] = createSignal(false);
@@ -40,8 +40,8 @@ export const MobileHeader: Component = () => {
   return (
     <header class="MobileHeader">
       <div class="mh__bar">
-        <A href="/" class="mh__brand">
-          <img src={grassit} class="mobile_img"/>
+        <A href="/" class="mh__brand" aria-label="Grassit – strona główna">
+          <img src={grassit} class="mobile_img" alt="Grassit" width="1336" height="884" />
         </A>
         <button
           class="mh__hamburger"
@@ -63,7 +63,7 @@ export const MobileHeader: Component = () => {
         >
           <div class="mh__sheet" onClick={(e) => e.stopPropagation()}>
             <div class="mh__sheet-header">
-              <img src={grassit} class="mh__sheet-logo" />
+              <img src={grassit} class="mh__sheet-logo" alt="" width="1336" height="884" />
               <button class="mh__closeBtn" aria-label="Zamknij" onClick={close}>
                 <AiOutlineClose size={20} />
               </button>

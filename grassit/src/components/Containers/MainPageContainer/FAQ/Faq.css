@@ -25,6 +25,7 @@
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  overflow-anchor: none;
 }
 
 .faqItem + .faqItem {
@@ -144,6 +145,10 @@
   overflow: hidden;
   transition: max-height 220ms ease;
   background: #fff;
+}
+
+.faqItem__panel--open {
+  max-height: 65px;
 }
 
 .faqItem__content {

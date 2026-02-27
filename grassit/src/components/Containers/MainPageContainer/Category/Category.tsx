@@ -10,6 +10,8 @@ type Card = {
   desc: string;
   href: string;
   img: string;
+  w: number;
+  h: number;
   span?: number;
 };
 
@@ -19,6 +21,8 @@ const cards: Card[] = [
     desc: "Gęste, dekoracyjne trawniki  dla twojego ogrodu i innych powierzchni zewnętrznych",
     href: "/produkty?category=Trawy Dekoracyjne",
     img: imgKrajobraz,
+    w: 4096,
+    h: 2731,
     span: 12,
   },
   {
@@ -26,6 +30,8 @@ const cards: Card[] = [
     desc: "Najwyższej jakości murawy sportowe do tenisa, piłki nożnej i padla.",
     href: "/produkty?category=Trawy sportowe",
     img: imgSportowe,
+    w: 440,
+    h: 352,
     span: 6,
   },
   {
@@ -33,6 +39,8 @@ const cards: Card[] = [
     desc: " Narzędzia montażowe i inne.",
     href: "/produkty?category=Akcesoria",
     img: imgAkcesoria,
+    w: 816,
+    h: 350,
     span: 6,
   },
 ];
@@ -58,7 +66,7 @@ const Categories: Component = () => {
               style={{ "grid-column": `span ${c.span ?? 6}` }}
               aria-label={`${c.title} – ${c.desc}. Zobacz produkty.`}
             >
-              <img class="catCard__img" src={c.img} alt="" loading="lazy" />
+              <img class="catCard__img" src={c.img} alt="" loading="lazy" width={c.w} height={c.h} />
               <div class="catCard__overlay">
                 <div class="card__content">
                   <h3 class="catCard__title">{c.title}</h3>

@@ -32,4 +32,18 @@ export default defineConfig({
     },
   },
   ssr: true,
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: (info) => {
+            if (info.name?.endsWith(".woff2")) {
+              return "assets/fonts/[name][extname]";
+            }
+            return "assets/[name]-[hash][extname]";
+          },
+        },
+      },
+    },
+  },
 });
