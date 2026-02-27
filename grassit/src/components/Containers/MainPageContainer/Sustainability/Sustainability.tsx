@@ -1,8 +1,8 @@
 import { Component } from "solid-js";
 import lawnImg from "~/components/static/png/NaturalInspiredLawn.jpg";
 import "./Sustainability.css";
-import truck from "~/components/static/png/truck.png";
-import warranty from "~/components/static/png/warranty.png";
+import truck from "~/components/static/png/truck.webp";
+import warranty from "~/components/static/png/warranty.webp";
 
 const Check = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">

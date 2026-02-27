@@ -2,8 +2,8 @@ import { Component, For } from "solid-js";
 import { A } from "@solidjs/router";
 import "./Category.css";
 import imgKrajobraz from "~/components/static/png/TrawyKrajobrazowe.jpg";
-import imgSportowe from "~/components/static/png/trawySportoweImg.jpg";
-import imgAkcesoria from "~/components/static/png/akcesoraImg.png";
+import imgSportowe from "~/components/static/png/trawySportoweImg.webp";
+import imgAkcesoria from "~/components/static/png/akcesoraImg.webp";
 
 type Card = {
   title: string;

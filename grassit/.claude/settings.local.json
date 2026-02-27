@@ -2,7 +2,17 @@
   "permissions": {
     "allow": [
       "Bash(node -e:*)",
-      "Bash(npx vinxi build:*)"
+      "Bash(npx vinxi build:*)",
+      "Bash(head:*)",
+      "Bash(sort:*)",
+      "Bash(tail:*)",
+      "Bash(ls:*)",
+      "Bash(du:*)",
+      "Bash(cat:*)",
+      "Bash(cd:*)",
+      "Bash(node:*)",
+      "Bash(cd C:/Users/jandu/grassit/grassit && pnpm build 2>&1)",
+      "Bash(python:*)"
     ]
   }
 }

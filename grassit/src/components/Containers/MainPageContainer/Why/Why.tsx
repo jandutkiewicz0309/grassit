@@ -1,9 +1,9 @@
 import { Component } from "solid-js";
 import "./Why.css";
-import drop from "~/components/static/png/drop.png";
-import leaf from "~/components/static/png/leaf.png";
-import shield from "~/components/static/png/shield.png";
-import scissors from "~/components/static/png/scissors.png";
+import drop from "~/components/static/png/drop.webp";
+import leaf from "~/components/static/png/leaf.webp";
+import shield from "~/components/static/png/shield.webp";
+import scissors from "~/components/static/png/scissors.webp";
 import { IoPawOutline } from "solid-icons/io";
 
 const Why: Component = () => {

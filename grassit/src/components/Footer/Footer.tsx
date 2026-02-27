@@ -1,7 +1,7 @@
 import { Component } from "solid-js";
 import { A } from "@solidjs/router";
 import "./Footer.css";
-import logo from "~/components/static/png/logo.png";
+import logo from "~/components/static/png/logo.webp";
 
 const IconFB = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">

@@ -1,6 +1,6 @@
 import { Component } from "solid-js";
 import "./Delivery.css";
-import delivery from "~/components/static/png/delivery.png";
+import delivery from "~/components/static/png/delivery.webp";
 
 export const DeliveryPage: Component = () => {
   return (

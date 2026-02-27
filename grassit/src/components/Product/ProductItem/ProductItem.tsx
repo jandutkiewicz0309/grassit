@@ -21,7 +21,7 @@ export const ProductItem: Component<IProductItem> = (props) => {
     >
       <div class="product_img-wrapper">
         {props.badge && <span class="product_badge">{props.badge}</span>}
-        <img class="product_img" src={props.img} alt={props.nameProduct} loading="lazy" />
+        <img class="product_img" src={props.img} alt={props.nameProduct} loading="lazy" width={400} height={300} />
       </div>
       <div class="text-container">
         <div class="name-price-info-container">

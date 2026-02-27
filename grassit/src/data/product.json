@@ -4,10 +4,10 @@
       "id": "amalfi",
       "category": "trawy_dekoracyjne",
       "technicalCard": "/static/pdf/amalfi.pdf",
-      "img": "/static/jpg/amalfi/amalfi1.jpg",
+      "img": "/static/webp/amalfi/amalfi1.webp",
       "images": [
-        "/static/jpg/amalfi/amalfi2.jpg",
-        "/static/jpg/amalfi/amalfi3.jpg"
+        "/static/webp/amalfi/amalfi2.webp",
+        "/static/webp/amalfi/amalfi3.webp"
       ],
       "nameProduct": "Amalfi",
       "price": "89,00",
@@ -26,10 +26,10 @@
       "id": "genewa",
       "category": "trawy_dekoracyjne",
       "technicalCard": "/static/pdf/genewa.pdf",
-      "img": "/static/jpg/genewa/genewa1.jpg",
+      "img": "/static/webp/genewa/genewa1.webp",
       "images": [
-        "/static/jpg/genewa/genewa3.jpg",
-        "/static/jpg/genewa/genewa2.jpg"
+        "/static/webp/genewa/genewa3.webp",
+        "/static/webp/genewa/genewa2.webp"
       ],
       "nameProduct": "Genewa",
       "price": "149,00",
@@ -48,15 +48,14 @@
       "id": "lagos",
       "category": "trawy_dekoracyjne",
       "technicalCard": "/static/pdf/lagos.pdf",
-      "img": "/static/jpg/lagos/lagos1.jpg",
+      "img": "/static/webp/lagos/lagos1.webp",
       "images": [
-        "/static/jpg/lagos/lagos2.jpg",
+        "/static/webp/lagos/lagos2.webp",
         "/static/jpg/lagos/lagos3.jpg"
       ],
       "nameProduct": "Lagos",
       "price": "99,00",
       "description": "Gęsta trawa syntetyczna o naturalnym wyglądzie, przeznaczona do aranżacji terenów zielonych.",
-
       "details": {
         "producer": "Grassit",
         "productDescription": "Trawnik Lagos to sztuczna trawa o wysokości włókna 38 mm, idealna do aranżacji terenów zielonych. Charakteryzuje się wysoką gęstością 23 100 włókien/m² oraz włóknami PE, które zapewniają bujny i naturalny wygląd. Produkt gwarantuje trwałą, bezobsługową powierzchnię zieloną, zachowującą intensywną barwę przez wiele lat.",
@@ -73,8 +72,8 @@
       "technicalCard": "/static/pdf/santiago.pdf",
       "img": "/static/jpg/santiago/santiago1.jpg",
       "images": [
-        "/static/jpg/santiago/santiago2.jpg",
-        "/static/jpg/santiago/santiago3.jpg"
+        "/static/webp/santiago/santiago2.webp",
+        "/static/webp/santiago/santiago3.webp"
       ],
       "nameProduct": "Santiago",
       "price": "66,00",
@@ -137,10 +136,10 @@
       "id": "vienna",
       "category": "trawy_dekoracyjne",
       "technicalCard": "/static/pdf/vienna.pdf",
-      "img": "/static/jpg/vienna/vienna3.jpg",
+      "img": "/static/webp/vienna/vienna3.webp",
       "images": [
-        "/static/jpg/vienna/vienna1.jpg",
-        "/static/jpg/vienna/vienna2.jpg"
+        "/static/webp/vienna/vienna1.webp",
+        "/static/webp/vienna/vienna2.webp"
       ],
       "nameProduct": "Vienna",
       "price": "139,00",
@@ -162,8 +161,8 @@
       "technicalCard": "/static/pdf/wenecja.pdf",
       "img": "/static/jpg/wenecja/wenecja1.jpg",
       "images": [
-        "/static/jpg/wenecja/wenecja2.jpg",
-        "/static/jpg/wenecja/wenecja3.jpg"
+        "/static/webp/wenecja/wenecja2.webp",
+        "/static/webp/wenecja/wenecja3.webp"
       ],
       "nameProduct": "Wenecja",
       "price": "54,00",
@@ -183,13 +182,13 @@
       "category": "trawy_sportowe",
       "subcategory": "murawy_piłkarskie",
       "technicalCard": "/static/pdf/football_pro_50.pdf",
-      "img": "/static/jpg/footballPro50/footballPro50.jpg",
+      "img": "/static/webp/footballPro50/footballPro50.webp",
       "images": [
-        "/static/jpg/footballPro50/footballPro50_2.jpg",
-        "/static/jpg/footballPro50/footballPro50_3.jpg",
-        "/static/jpg/footballPro50/footballPro50_4.jpg",
-        "/static/jpg/footballPro50/footballPro50_5.jpg",
-        "/static/jpg/footballPro50/footballPro50_6.jpg"
+        "/static/webp/footballPro50/footballPro50_2.webp",
+        "/static/webp/footballPro50/footballPro50_3.webp",
+        "/static/webp/footballPro50/footballPro50_4.webp",
+        "/static/webp/footballPro50/footballPro50_5.webp",
+        "/static/webp/footballPro50/footballPro50_6.webp"
       ],
       "nameProduct": "Grassit Football Pro 50",
       "price": "Wycena indywidualna",
@@ -208,10 +207,10 @@
       "category": "trawy_sportowe",
       "subcategory": "murawy_piłkarskie",
       "technicalCard": "/static/pdf/football_nosandy.pdf",
-      "img": "/static/jpg/footballNosandy/footballNosandy1.jpg",
+      "img": "/static/webp/footballNosandy/footballNosandy1.webp",
       "images": [
-        "/static/jpg/footballNosandy/footballNosandy2.jpg",
-        "/static/jpg/footballNosandy/footballNosandy3.jpg"
+        "/static/webp/footballNosandy/footballNosandy2.webp",
+        "/static/webp/footballNosandy/footballNosandy3.webp"
       ],
       "nameProduct": "Grassit Football Nosandy",
       "price": "Wycena indywidualna",
@@ -230,10 +229,10 @@
       "category": "trawy_sportowe",
       "subcategory": "murawy_padlowe",
       "technicalCard": "/static/pdf/padel_kit_common.pdf",
-      "img": "/static/jpg/padelKitCommon/padelKitBlue1.jpg",
+      "img": "/static/webp/padelKitCommon/padelKitBlue1.webp",
       "images": [
-        "/static/jpg/padelKitCommon/padelKitBlue1.jpg",
-        "/static/jpg/padelKitCommon/padelKitBlue1.jpg"
+        "/static/webp/padelKitCommon/padelKitBlue1.webp",
+        "/static/webp/padelKitCommon/padelKitBlue1.webp"
       ],
       "nameProduct": "Grassit Padel KIT Blue",
       "price": "Wycena indywidualna",
@@ -253,17 +252,25 @@
       "subcategory": "murawy_padlowe",
       "hidden": true,
       "technicalCard": "/static/pdf/padel_kit_pro_blue.pdf",
-      "img": "/static/jpg/padelKitProBlue/padelKitPro1.jpg",
+      "img": "/static/webp/padelKitProBlue/padelKitPro1.webp",
       "images": [
-        "/static/jpg/padelKitProBlue/padelKitPro2.jpg",
-        "/static/jpg/padelKitProBlue/padelKitPro3.jpg"
+        "/static/webp/padelKitProBlue/padelKitPro2.webp",
+        "/static/webp/padelKitProBlue/padelKitPro3.webp"
       ],
       "nameProduct": "Grassit Padel KIT PRO Blue",
       "price": "Wycena indywidualna",
       "description": "",
       "colorVariants": [
-        { "id": "Padel_Kit_pro_green", "color": "#16a34a", "label": "Zielony" },
-        { "id": "Padel_Kit_pro_blue", "color": "#2563eb", "label": "Niebieski" }
+        {
+          "id": "Padel_Kit_pro_green",
+          "color": "#16a34a",
+          "label": "Zielony"
+        },
+        {
+          "id": "Padel_Kit_pro_blue",
+          "color": "#2563eb",
+          "label": "Niebieski"
+        }
       ],
       "details": {
         "producer": "Grassit Pro",
@@ -279,14 +286,24 @@
       "category": "trawy_sportowe",
       "subcategory": "murawy_padlowe",
       "technicalCard": "/static/pdf/padel_kit_pro_green.pdf",
-      "img": "/static/jpg/padelKitProGreen/padelKitProGreen1.jpg",
-      "images": ["/static/jpg/padelKitProGreen/padelKitProGreen2.jpg"],
+      "img": "/static/webp/padelKitProGreen/padelKitProGreen1.webp",
+      "images": [
+        "/static/webp/padelKitProGreen/padelKitProGreen2.webp"
+      ],
       "nameProduct": "Grassit Padel KIT PRO",
       "price": "Wycena indywidualna",
       "description": "",
       "colorVariants": [
-        { "id": "Padel_Kit_pro_green", "color": "#16a34a", "label": "Zielony" },
-        { "id": "Padel_Kit_pro_blue", "color": "#2563eb", "label": "Niebieski" }
+        {
+          "id": "Padel_Kit_pro_green",
+          "color": "#16a34a",
+          "label": "Zielony"
+        },
+        {
+          "id": "Padel_Kit_pro_blue",
+          "color": "#2563eb",
+          "label": "Niebieski"
+        }
       ],
       "details": {
         "producer": "Grassit Pro",
@@ -302,10 +319,10 @@
       "category": "trawy_sportowe",
       "subcategory": "murawy_golfowe",
       "technicalCard": "/static/pdf/golf_club_pro.pdf",
-      "img": "/static/jpg/golfClubPro/golfClubPro.jpg",
+      "img": "/static/webp/golfClubPro/golfClubPro.webp",
       "images": [
-        "/static/jpg/golfClubPro/golfClubPro2.jpg",
-        "/static/jpg/golfClubPro/golfClubPro3.jpg"
+        "/static/webp/golfClubPro/golfClubPro2.webp",
+        "/static/webp/golfClubPro/golfClubPro3.webp"
       ],
       "nameProduct": "Grassit GOLF Club PRO",
       "price": "Wycena indywidualna",
@@ -324,10 +341,10 @@
       "category": "trawy_sportowe",
       "subcategory": "murawy_golfowe",
       "technicalCard": "/static/pdf/golf_club_27.pdf",
-      "img": "/static/jpg/golfClub27/golfClub27.jpg",
+      "img": "/static/webp/golfClub27/golfClub27.webp",
       "images": [
-        "/static/jpg/golfClub27/golfClub27_2.jpg",
-        "/static/jpg/golfClub27/golfClub27_3.jpg"
+        "/static/webp/golfClub27/golfClub27_2.webp",
+        "/static/webp/golfClub27/golfClub27_3.webp"
       ],
       "nameProduct": "Grassit GOLF Club 27",
       "price": "Wycena indywidualna",
@@ -346,10 +363,10 @@
       "category": "trawy_sportowe",
       "subcategory": "murawy_golfowe",
       "technicalCard": "/static/pdf/golf_turf_12.pdf",
-      "img": "/static/jpg/golfTurf12/golfTurf12.jpg",
+      "img": "/static/webp/golfTurf12/golfTurf12.webp",
       "images": [
-        "/static/jpg/golfTurf12/golfTurf2.jpg",
-        "/static/jpg/golfTurf12/golfTurf3.jpg"
+        "/static/webp/golfTurf12/golfTurf2.webp",
+        "/static/webp/golfTurf12/golfTurf3.webp"
       ],
       "nameProduct": "Grassit GOLF Turf 12",
       "price": "Wycena indywidualna",
