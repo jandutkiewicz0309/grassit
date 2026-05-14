@@ -221,6 +221,9 @@
   border-radius: 8px;
   border: 1px solid transparent;
   cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1;
   transition: transform 0.12s ease, box-shadow 0.12s ease,
     border-color 0.12s ease;
 }
@@ -265,6 +268,7 @@
   background: #eff6ff;
   color: #2563eb;
   border-color: #bfdbfe;
+  text-decoration: none;
 }
 .detailedProduct-btn--blue:hover {
   background: #dbeafe;

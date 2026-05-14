@@ -143,14 +143,14 @@ export const DetailedProduct: Component<IDetailedProduct> = (props) => {
                 Wyślij zapytanie
               </button>
               <Show when={props.technicalCard}>
-                <button
-                  type="button"
-                  onClick={() => window.open(props.technicalCard, "_blank")}
+                <a
+                  href={props.technicalCard}
+                  download=""
                   class="detailedProduct-btn detailedProduct-btn--blue"
                 >
                   <AiFillFilePdf style={{ color: "#3b82f6" }} size={18} />
                   Pobierz karte techniczna
-                </button>
+                </a>
               </Show>
             </div>
           </div>
