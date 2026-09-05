@@ -1,14 +1,20 @@
 import toast from "solid-toast";
+import { resolveSite } from "~/config/site";
+import { locale, t } from "~/utils/translations";
 import type { OnSubmitOrderForm } from "~/utils/types";
 
 export async function sendContactEmail(data: OnSubmitOrderForm) {
   const API_URL = "/mail.php";
+  const site = resolveSite();
 
   const resp = await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      subject: "Wiadomość ze strony",
+      subject: t("toast.subject"),
+      // mail.php picks the template language and the sender domain from these.
+      locale: locale(),
+      country: site.country,
       payload: data,
     }),
   });
@@ -16,23 +22,23 @@ export async function sendContactEmail(data: OnSubmitOrderForm) {
   const textResponse = await resp.text();
 
   if (!resp.ok) {
-    console.error("Błąd serwera:", textResponse);
+    console.error("Mail endpoint error:", textResponse);
     throw new Error(`HTTP Error: ${resp.status}`);
   }
 
   try {
     return JSON.parse(textResponse);
-  } catch (e) {
-    console.error("Nieprawidłowy JSON z PHP:", textResponse);
-    throw new Error("Błąd odpowiedzi serwera");
+  } catch {
+    console.error("Invalid JSON from mail.php:", textResponse);
+    throw new Error("Invalid server response");
   }
 }
 
 export async function sendEmailWithToast(
   data: OnSubmitOrderForm,
-  successMessage: string = "Dziękujemy! Formularz został wysłany."
+  successMessage: string = t("toast.success"),
 ): Promise<boolean> {
-  const toastId = toast.loading("Wysyłanie wiadomości...", {
+  const toastId = toast.loading(t("toast.sending"), {
     style: {
       background: "#f8fafc",
       color: "#0f172a",
@@ -43,7 +49,7 @@ export async function sendEmailWithToast(
   try {
     const res = await sendContactEmail(data);
     if (!res.ok) {
-      throw new Error(res.error || "Błąd wysyłki");
+      throw new Error(res.error || "Send failed");
     }
 
     toast.success(successMessage, {
@@ -59,9 +65,9 @@ export async function sendEmailWithToast(
       },
     });
     return true;
-  } catch (e: any) {
+  } catch (e) {
     console.error(e);
-    toast.error("Nie udało się wysłać formularza. Spróbuj ponownie.", {
+    toast.error(t("toast.error"), {
       id: toastId,
       style: {
         background: "#fef2f2",

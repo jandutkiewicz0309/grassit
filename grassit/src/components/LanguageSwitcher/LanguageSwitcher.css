@@ -1,0 +1,122 @@
+.langSwitch {
+  position: relative;
+  display: inline-flex;
+}
+
+/* Header pill - reuses the visual language of .button-header */
+.langSwitch__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #475569;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  background: transparent;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease,
+    background-color 120ms ease;
+}
+
+.langSwitch__btn:hover {
+  transform: translateY(-1px);
+  border-color: #047857;
+  background-color: rgba(4, 120, 87, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.langSwitch__btn:focus-visible {
+  outline: 2px solid #047857;
+  outline-offset: 2px;
+}
+
+.langSwitch__current {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.langSwitch__chev {
+  transition: transform 140ms ease;
+}
+
+.langSwitch.is-open .langSwitch__chev {
+  transform: rotate(180deg);
+}
+
+.langSwitch__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 120;
+  min-width: 168px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+.langSwitch__option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 10px;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 20px;
+  color: #334155;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.langSwitch__option:hover {
+  background-color: rgba(4, 120, 87, 0.08);
+  color: #047857;
+}
+
+.langSwitch__option.is-active {
+  background-color: #f0fdf4;
+  color: #15803d;
+  font-weight: 500;
+}
+
+.langSwitch__code {
+  min-width: 24px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.langSwitch__option.is-active .langSwitch__code {
+  color: #15803d;
+}
+
+/* Stacked variant for the mobile sheet */
+.langSwitch--block {
+  display: block;
+  width: 100%;
+}
+
+.langSwitch--block .langSwitch__btn {
+  width: 100%;
+  justify-content: space-between;
+  padding: 12px 10px;
+}
+
+.langSwitch--block .langSwitch__menu {
+  position: static;
+  width: 100%;
+  margin-top: 4px;
+  box-shadow: none;
+}

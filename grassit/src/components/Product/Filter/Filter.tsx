@@ -1,25 +1,17 @@
-import { Component, createSignal, Show } from "solid-js";
+import { Component, createMemo, createSignal, For, Show } from "solid-js";
 import { Checkbox } from "~/components/Input/CheckBox/CheckBox";
+import { resolveSite } from "~/config/site";
+import {
+  CATEGORY_VALUES,
+  SUBCATEGORY_VALUES,
+  type CategoryType,
+  type SubcategoryType,
+} from "~/data/products";
+import { t } from "~/utils/translations";
+import { currencySymbol } from "~/utils/translations/format";
 import "./Filter.css";
 
-export type CategoryType = "trawy_dekoracyjne" | "trawy_sportowe" | "akcesoria";
-export type SubcategoryType = "murawy_piłkarskie" | "murawy_padlowe" | "murawy_golfowe" | 'murawy_tenis';
-
-const CATEGORY_LABELS: Record<CategoryType, string> = {
-  trawy_dekoracyjne: "Dekoracyjne",
-  trawy_sportowe: "Sportowe",
-  akcesoria: "Akcesoria",
-};
-
-const SUBCATEGORY_LABELS: Record<SubcategoryType, string> = {
-  "murawy_piłkarskie": "Piłka Nożna",
-  "murawy_padlowe": "Padel",
-  "murawy_golfowe": "Golf",
-  "murawy_tenis": 'Tenis',
-};
-
-const ALL_SUBCATEGORIES = Object.keys(SUBCATEGORY_LABELS) as SubcategoryType[];
-const SIMPLE_CATEGORIES: CategoryType[] = ["trawy_dekoracyjne", "akcesoria"];
+export type { CategoryType, SubcategoryType };
 
 export interface IFilterProps {
   selected: Set<CategoryType>;
@@ -32,12 +24,35 @@ export interface IFilterProps {
 }
 
 export const FilterComponnet: Component<IFilterProps> = (props) => {
+  const site = resolveSite();
   const [minPrice, setMinPrice] = createSignal<string>("");
   const [maxPrice, setMaxPrice] = createSignal<string>("");
 
+  /**
+   * Built from `t` on every read so the labels follow a language change - a
+   * module-scope map would freeze at import time.
+   */
+  const categoryLabel = (category: CategoryType) =>
+    category === "trawy_dekoracyjne"
+      ? t("filter.catDecorative")
+      : category === "trawy_sportowe"
+        ? t("filter.catSport")
+        : t("filter.catAccessories");
+
+  const subcategoryLabel = (sub: SubcategoryType) =>
+    sub === "murawy_piłkarskie"
+      ? t("filter.subFootball")
+      : sub === "murawy_padlowe"
+        ? t("filter.subPadel")
+        : sub === "murawy_golfowe"
+          ? t("filter.subGolf")
+          : t("filter.subTennis");
+
+  const priceUnit = createMemo(() => `${currencySymbol(site)}/m²`);
+
   const handlePriceChange = () => {
     const min = parseFloat(minPrice()) || 0;
-    const max = parseFloat(maxPrice()) || 99999;
+    const max = parseFloat(maxPrice()) || site.priceMax;
     props.onPriceChange(min, max);
   };
 
@@ -54,76 +69,70 @@ export const FilterComponnet: Component<IFilterProps> = (props) => {
   return (
     <div class="main-container">
       <div class="header-section">
-        <span>Filtry</span>
-        <button onClick={handleClear}>Wyczysc</button>
+        <span>{t("filter.title")}</span>
+        <button onClick={handleClear}>{t("filter.clear")}</button>
       </div>
 
-      <span class="text-category-section">Kategorie</span>
+      <span class="text-category-section">{t("filter.categories")}</span>
       <div class="cat-grid">
-        <label class="cat-item" for="cat-trawy_dekoracyjne">
-          <Checkbox
-            id="cat-trawy_dekoracyjne"
-            checked={isChecked("trawy_dekoracyjne")}
-            disabled={props.disabled}
-            onClick={() => props.onToggle("trawy_dekoracyjne", !isChecked("trawy_dekoracyjne"))}
-          />
-          <span class="cat-label">Dekoracyjne</span>
-        </label>
-
-        <label class="cat-item" for="cat-trawy_sportowe">
-          <Checkbox
-            id="cat-trawy_sportowe"
-            checked={isChecked("trawy_sportowe")}
-            disabled={props.disabled}
-            onClick={() => props.onToggle("trawy_sportowe", !isChecked("trawy_sportowe"))}
-          />
-          <span class="cat-label">Sportowe</span>
-        </label>
-
-        <Show when={sportOpen()}>
-          <div class="subcat-list">
-            {ALL_SUBCATEGORIES.map((sub) => (
-              <label class="subcat-item" for={`sub-${sub}`}>
+        <For each={CATEGORY_VALUES}>
+          {(category) => (
+            <>
+              <label class="cat-item" for={`cat-${category}`}>
                 <Checkbox
-                  id={`sub-${sub}`}
-                  checked={isSubChecked(sub)}
+                  id={`cat-${category}`}
+                  checked={isChecked(category)}
                   disabled={props.disabled}
-                  onClick={() => props.onSubcategoryToggle(sub, !isSubChecked(sub))}
+                  onClick={() => props.onToggle(category, !isChecked(category))}
                 />
-                <span class="subcat-label">{SUBCATEGORY_LABELS[sub]}</span>
+                <span class="cat-label">{categoryLabel(category)}</span>
               </label>
-            ))}
-          </div>
-        </Show>
 
-        <label class="cat-item" for="cat-akcesoria">
-          <Checkbox
-            id="cat-akcesoria"
-            checked={isChecked("akcesoria")}
-            disabled={props.disabled}
-            onClick={() => props.onToggle("akcesoria", !isChecked("akcesoria"))}
-          />
-          <span class="cat-label">Akcesoria</span>
-        </label>
+              <Show when={category === "trawy_sportowe" && sportOpen()}>
+                <div class="subcat-list">
+                  <For each={SUBCATEGORY_VALUES}>
+                    {(sub) => (
+                      <label class="subcat-item" for={`sub-${sub}`}>
+                        <Checkbox
+                          id={`sub-${sub}`}
+                          checked={isSubChecked(sub)}
+                          disabled={props.disabled}
+                          onClick={() => props.onSubcategoryToggle(sub, !isSubChecked(sub))}
+                        />
+                        <span class="subcat-label">{subcategoryLabel(sub)}</span>
+                      </label>
+                    )}
+                  </For>
+                </div>
+              </Show>
+            </>
+          )}
+        </For>
       </div>
 
       <div class="bottom-inputs-section">
-        <span>Cena (zl/m2)</span>
+        <span>{t("filter.price", { unit: priceUnit() })}</span>
         <div class="inputs-container">
           <div class="min-input">
             <input
-              placeholder="Min"
+              placeholder={t("filter.min")}
               type="number"
               value={minPrice()}
-              onInput={(e) => { setMinPrice(e.currentTarget.value); handlePriceChange(); }}
+              onInput={(e) => {
+                setMinPrice(e.currentTarget.value);
+                handlePriceChange();
+              }}
             />
           </div>
           <div class="max-input">
             <input
-              placeholder="Max"
+              placeholder={t("filter.max")}
               type="number"
               value={maxPrice()}
-              onInput={(e) => { setMaxPrice(e.currentTarget.value); handlePriceChange(); }}
+              onInput={(e) => {
+                setMaxPrice(e.currentTarget.value);
+                handlePriceChange();
+              }}
             />
           </div>
         </div>

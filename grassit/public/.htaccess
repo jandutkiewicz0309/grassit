@@ -1,11 +1,47 @@
+# grassit.pl / grassit.de / grassit.ch all share this document root.
+# Anything that must differ per domain is switched on %{HTTP_HOST} below.
+
+Options -Indexes
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # --- Canonical host: HTTPS, no www ---------------------------------------
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  # --- Per-domain sitemap and robots ---------------------------------------
+  # One file each is served from the shared root, so pick by host.
+  RewriteCond %{HTTP_HOST} grassit\.de$ [NC]
+  RewriteRule ^sitemap\.xml$ sitemap-de.xml [L]
+  RewriteCond %{HTTP_HOST} grassit\.ch$ [NC]
+  RewriteRule ^sitemap\.xml$ sitemap-ch.xml [L]
+  RewriteRule ^sitemap\.xml$ sitemap-pl.xml [L]
+
+  RewriteCond %{HTTP_HOST} grassit\.de$ [NC]
+  RewriteRule ^robots\.txt$ robots-de.txt [L]
+  RewriteCond %{HTTP_HOST} grassit\.ch$ [NC]
+  RewriteRule ^robots\.txt$ robots-ch.txt [L]
+  RewriteRule ^robots\.txt$ robots-pl.txt [L]
+
+  # --- SPA fallback ---------------------------------------------------------
+  # Locale prefixes (/de/, /fr/, /it/, /en/) are not real directories, so they
+  # fall through to the app shell just like every other route.
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
+
+# mail.php writes its debug log into the web root; it must not be readable.
+<FilesMatch "^mail_debug\.log$">
+  Require all denied
+</FilesMatch>
 
 <IfModule mod_expires.c>
   ExpiresActive On
@@ -15,6 +51,14 @@
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType font/ttf "access plus 1 year"
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>

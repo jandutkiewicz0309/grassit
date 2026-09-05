@@ -3,6 +3,7 @@ import { TbPhoneCall } from "solid-icons/tb";
 import { TbMailFilled } from "solid-icons/tb";
 import { TbClockFilled } from "solid-icons/tb";
 import "./TopInfo.css";
+import { t } from "~/utils/translations";
 
 export interface TopInfoProps {
   phone: string;
@@ -23,7 +24,7 @@ export const TopInfo: Component<TopInfoProps> = (props) => {
         </div>
         <div class="top-info-item">
           <TbClockFilled size={16} class="top-info-icon" />
-          <span class="top-info-text">pon-pt 9:00-19:00 / sob 10:00-14:00</span>
+          <span class="top-info-text">{t("topInfo.hours")}</span>
         </div>
       </div>
     </div>

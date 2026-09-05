@@ -1,9 +1,21 @@
 import { Component, Show, createSignal, onCleanup, onMount } from "solid-js";
 import { A } from "@solidjs/router";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineDown } from "solid-icons/ai";
-import { FiPackage, FiTool, FiMail, FiLayers, FiActivity, FiGrid, FiSettings, FiMessageCircle, FiTruck } from "solid-icons/fi";
+import {
+  FiPackage,
+  FiTool,
+  FiMail,
+  FiLayers,
+  FiActivity,
+  FiGrid,
+  FiSettings,
+  FiMessageCircle,
+  FiTruck,
+} from "solid-icons/fi";
 import "./MobileHeader.css";
-import grassit from "~/components/static/jpg/grassit.svg"
+import grassit from "~/components/static/jpg/grassit.svg";
+import { LanguageSwitcher } from "~/components/LanguageSwitcher/LanguageSwitcher";
+import { path, t } from "~/utils/translations";
 
 export const MobileHeader: Component = () => {
   const [open, setOpen] = createSignal(false);
@@ -37,16 +49,19 @@ export const MobileHeader: Component = () => {
 
   const onNavClick = () => close();
 
+  /** Category deep-links carry the technical slug, never a translated label. */
+  const categoryHref = (category: string) => `${path("products")}?category=${category}`;
+
   return (
     <header class="MobileHeader">
       <div class="mh__bar">
-        <A href="/" class="mh__brand">
-          <img src={grassit} class="mobile_img"/>
+        <A href={path("home")} class="mh__brand" aria-label={t("nav.home")}>
+          <img src={grassit} class="mobile_img" alt="Grassit" />
         </A>
         <button
           class="mh__hamburger"
           type="button"
-          aria-label={open() ? "Zamknij menu" : "Otwórz menu"}
+          aria-label={open() ? t("nav.closeMenu") : t("nav.openMenu")}
           aria-expanded={open()}
           onClick={toggle}
         >
@@ -55,16 +70,11 @@ export const MobileHeader: Component = () => {
       </div>
 
       <Show when={open()}>
-        <div
-          class="mh__overlay"
-          role="dialog"
-          aria-modal="true"
-          onClick={close}
-        >
+        <div class="mh__overlay" role="dialog" aria-modal="true" onClick={close}>
           <div class="mh__sheet" onClick={(e) => e.stopPropagation()}>
             <div class="mh__sheet-header">
-              <img src={grassit} class="mh__sheet-logo" />
-              <button class="mh__closeBtn" aria-label="Zamknij" onClick={close}>
+              <img src={grassit} class="mh__sheet-logo" alt="Grassit" />
+              <button class="mh__closeBtn" aria-label={t("common.close")} onClick={close}>
                 <AiOutlineClose size={20} />
               </button>
             </div>
@@ -80,7 +90,7 @@ export const MobileHeader: Component = () => {
                     <span class="mh__expander-icon">
                       <FiPackage size={18} />
                     </span>
-                    <span>Produkty</span>
+                    <span>{t("nav.products")}</span>
                   </div>
                   <AiOutlineDown size={16} class="mh__chev" />
                 </button>
@@ -88,28 +98,24 @@ export const MobileHeader: Component = () => {
                 <Show when={openProdukty()}>
                   <div class="mh__group">
                     <A
-                      href="/produkty?category=Trawy Dekoracyjne"
+                      href={categoryHref("trawy_dekoracyjne")}
                       class="mh__link"
                       onClick={onNavClick}
                     >
                       <FiLayers size={15} class="mh__link-icon" />
-                      Trawy Dekoracyjne
+                      {t("nav.decorative")}
                     </A>
                     <A
-                      href="/produkty?category=Trawy sportowe"
+                      href={categoryHref("trawy_sportowe")}
                       class="mh__link"
                       onClick={onNavClick}
                     >
                       <FiActivity size={15} class="mh__link-icon" />
-                      Trawy Sportowe
+                      {t("nav.sport")}
                     </A>
-                    <A
-                      href="/produkty?category=Akcesoria"
-                      class="mh__link"
-                      onClick={onNavClick}
-                    >
+                    <A href={categoryHref("akcesoria")} class="mh__link" onClick={onNavClick}>
                       <FiGrid size={15} class="mh__link-icon" />
-                      Akcesoria
+                      {t("nav.accessories")}
                     </A>
                   </div>
                 </Show>
@@ -125,24 +131,24 @@ export const MobileHeader: Component = () => {
                     <span class="mh__expander-icon">
                       <FiTool size={18} />
                     </span>
-                    <span>Usługi</span>
+                    <span>{t("nav.services")}</span>
                   </div>
                   <AiOutlineDown size={16} class="mh__chev" />
                 </button>
 
                 <Show when={openUslugi()}>
                   <div class="mh__group">
-                    <A href="montaz" class="mh__link" onClick={onNavClick}>
+                    <A href={path("installation")} class="mh__link" onClick={onNavClick}>
                       <FiSettings size={15} class="mh__link-icon" />
-                      Montaż
+                      {t("nav.installation")}
                     </A>
-                    <A href="doradztwo" class="mh__link" onClick={onNavClick}>
+                    <A href={path("consulting")} class="mh__link" onClick={onNavClick}>
                       <FiMessageCircle size={15} class="mh__link-icon" />
-                      Doradztwo
+                      {t("nav.consulting")}
                     </A>
-                    <A href="dostawa" class="mh__link" onClick={onNavClick}>
+                    <A href={path("delivery")} class="mh__link" onClick={onNavClick}>
                       <FiTruck size={15} class="mh__link-icon" />
-                      Dostawa
+                      {t("nav.delivery")}
                     </A>
                   </div>
                 </Show>
@@ -150,14 +156,14 @@ export const MobileHeader: Component = () => {
 
               <div class="mh__divider" />
 
-              <A
-                href="/kontakt"
-                class="mh__cta"
-                onClick={onNavClick}
-              >
+              <A href={path("contact")} class="mh__cta" onClick={onNavClick}>
                 <FiMail size={18} />
-                Kontakt
+                {t("nav.contact")}
               </A>
+
+              <div class="mh__lang">
+                <LanguageSwitcher variant="block" onSelect={close} />
+              </div>
             </nav>
           </div>
         </div>

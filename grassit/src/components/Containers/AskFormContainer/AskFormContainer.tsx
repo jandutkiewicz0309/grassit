@@ -1,29 +1,27 @@
-// src/components/AskProduct/AskFormContainer.tsx
 import { Component, Show } from "solid-js";
 import { OnSubmitOrderForm } from "~/utils/types";
 import "./AskFormContainer.css";
 import AskProductFormCmp from "~/components/Contact/AskForSample/AskForSample";
+import { Price } from "~/components/Price/Price";
+import type { Product } from "~/data/products";
+import { productText, t } from "~/utils/translations";
 
 export interface IAskFormContainer {
-  productName: string;
-  productImg: string;
-  catalogNumber: string;
-  producer: string;
-  price: string;
-  productId?: string;
-  description?: string;
+  product: Product;
   onSubmit: (data: OnSubmitOrderForm) => Promise<boolean>;
 }
 
 export const AskFormContainer: Component<IAskFormContainer> = (props) => {
+  const text = () => productText(props.product.id);
+  const image = () => props.product.images?.[0] ?? props.product.img;
+
   return (
     <section class="askCard">
-      {/* Header */}
       <header class="askCard__head">
         <div class="askCard__media">
           <img
-            src={props.productImg}
-            alt={props.productName}
+            src={image()}
+            alt={props.product.nameProduct}
             class="askCard__img"
             loading="lazy"
           />
@@ -31,40 +29,40 @@ export const AskFormContainer: Component<IAskFormContainer> = (props) => {
 
         <div class="askCard__meta">
           <div class="askProduct-name-price">
-            <h2 class="askProduct-name">{props.productName}</h2>
+            <h2 class="askProduct-name">{props.product.nameProduct}</h2>
             <div class="askProduct-price-info">
-              <span class="askProduct-price" style={isNaN(parseFloat(props.price)) ? { "font-size": "14px", "white-space": "nowrap" } : {}}>
-                {props.price}{!isNaN(parseFloat(props.price)) && <>zł <span class="price-unit">/ m²</span></>}
-              </span>
-              <p>Dostępne</p>
+              <Price
+                price={props.product.price}
+                class="askProduct-price"
+                unitKey="product.perSqm"
+                unitClass="price-unit"
+              />
+              <p>{t("common.available")}</p>
             </div>
           </div>
 
-          <Show when={props.description}>
-            <p class="askCard__lead">{props.description}</p>
+          <Show when={text().description}>
+            <p class="askCard__lead">{text().description}</p>
           </Show>
 
-          {/* tabela szczegółów */}
           <div class="askCard__details">
-            <div class="askCard__detailsTitle">Szczegóły</div>
+            <div class="askCard__detailsTitle">{t("sample.detailsTitle")}</div>
 
             <div class="askCard__detailsTable">
               <div class="askCard__row">
-                <span class="askCard__label">Producent</span>
-                <span class="askCard__value">{props.producer}</span>
+                <span class="askCard__label">{t("product.producer")}</span>
+                <span class="askCard__value">{props.product.specs.producer}</span>
               </div>
 
               <div class="askCard__row">
-                <span class="askCard__label">Cena</span>
-                <span class="askCard__value">{props.price}</span>
+                <span class="askCard__label">{t("sample.price")}</span>
+                <Price price={props.product.price} class="askCard__value" />
               </div>
 
-              <Show when={props.productId}>
-                <div class="askCard__row">
-                  <span class="askCard__label">ID Produktu</span>
-                  <span class="askCard__value">{props.productId}</span>
-                </div>
-              </Show>
+              <div class="askCard__row">
+                <span class="askCard__label">{t("sample.productId")}</span>
+                <span class="askCard__value">{props.product.id}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -73,10 +71,11 @@ export const AskFormContainer: Component<IAskFormContainer> = (props) => {
       <div class="askCard__form">
         <AskProductFormCmp
           initial={{
-            productId: props.productId,
-            productName: props.productName,
-            sku: props.catalogNumber,
+            productId: props.product.id,
+            productName: props.product.nameProduct,
+            sku: props.product.specs.catalogNumber,
           }}
+          technicalCard={props.product.technicalCard}
           onSubmit={props.onSubmit}
         />
       </div>

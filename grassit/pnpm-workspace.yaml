@@ -1,0 +1,6 @@
+# Both packages ship prebuilt binaries for this platform
+# (@esbuild/win32-x64, @parcel/watcher-win32-x64), so their install scripts —
+# which only fetch a binary when the platform package is missing — are not needed.
+allowBuilds:
+  '@parcel/watcher': false
+  esbuild: false

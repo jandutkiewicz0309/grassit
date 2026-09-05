@@ -4,36 +4,30 @@ import { createMemo, Show } from "solid-js";
 import { BackArrow } from "~/components/BackArrow/BackArrow";
 import OrderProductSample from "~/components/Containers/OrderProductSample/OrderProductSample";
 import ProductNotFound from "~/components/ProductNotFound/ProductNotFound";
-import data from "~/data/product.json";
-import { Product } from "~/utils/interfaces";
+import { findProduct } from "~/data/products";
 import { sendEmailWithToast } from "~/utils/sendMail";
+import { t } from "~/utils/translations";
 import { OnSubmitOrderForm } from "~/utils/types";
 
 export default function AskProductByIdPage() {
   const params = useParams();
-  const product = createMemo<Product | undefined>(() => {
-    const all = (data as { products: Product[] }).products;
-    return all.find((p) => p.id === params.id);
-  });
+  const product = createMemo(() => findProduct(params.id));
 
   return (
     <>
       <Show when={product()}>
-        <Title>Zamów próbkę {product()!.nameProduct} - Grassit</Title>
-        <Meta name="description" content={`Zamów darmową próbkę ${product()!.nameProduct} od Grassit.`} />
+        <Title>{t("seo.orderSampleTitle", { name: product()!.nameProduct })}</Title>
+        <Meta
+          name="description"
+          content={t("seo.orderSampleDescription", { name: product()!.nameProduct })}
+        />
       </Show>
       <BackArrow />
       <Show when={product()} fallback={<ProductNotFound />}>
         <OrderProductSample
-          productName={product()!.nameProduct}
-          productImg={product()!.images?.[0] ?? product()!.img}
-          catalogNumber={product()!.details.catalogNumber}
-          producer={product()!.details.producer}
-          price={product()!.price}
-          description={product()!.description}
-          productId={product()!.id}
+          product={product()!}
           onSubmit={async (payload: OnSubmitOrderForm) => {
-            return await sendEmailWithToast(payload, "Dziękujemy! Wysłaliśmy zapytanie o produkt.");
+            return await sendEmailWithToast(payload, t("toast.successProduct"));
           }}
         />
       </Show>

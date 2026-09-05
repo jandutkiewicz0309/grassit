@@ -2,6 +2,8 @@ import { Component } from "solid-js";
 import { A } from "@solidjs/router";
 import "./Footer.css";
 import logo from "~/components/static/png/logo.png";
+import { resolveSite } from "~/config/site";
+import { path, t } from "~/utils/translations";
 
 const IconFB = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
@@ -20,93 +22,97 @@ const IconIG = () => (
   </svg>
 );
 
-
 const Footer: Component = () => {
+  const site = resolveSite();
+
+  /** Category deep-links carry the technical slug, never a translated label. */
+  const categoryHref = (category: string) => `${path("products")}?category=${category}`;
+
   return (
     <footer class="ft">
       <div class="ft__inner">
         <div class="ft__col ft__brand">
-          <A href="/" class="ft__logoLink" aria-label="Strona główna">
+          <A href={path("home")} class="ft__logoLink" aria-label={t("nav.home")}>
             <img src={logo} alt="Grassit" class="ft__logo" />
             <span class="sr-only">Grassit</span>
           </A>
-          <p class="ft__tagline">
-            Rozwiązanie idealne do domu, przestrzeni komercyjnych i obiektów
-            sportowych.
-          </p>
+          <p class="ft__tagline">{t("footer.tagline")}</p>
 
-          <div class="ft__social" aria-label="Media społecznościowe">
-            <A
+          <div class="ft__social" aria-label={t("footer.socialLabel")}>
+            <a
               href="https://www.facebook.com/grassitpolska"
               aria-label="Facebook"
               class="ft__socialBtn"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <IconFB />
-            </A>
-            <A
+            </a>
+            <a
               href="https://www.instagram.com/grassit.pl/"
               aria-label="Instagram"
               class="ft__socialBtn"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <IconIG />
-            </A>
-         
+            </a>
           </div>
         </div>
 
-        <nav class="ft__col" aria-label="Produkty">
-          <p class="ft__title">Produkty</p>
+        <nav class="ft__col" aria-label={t("footer.colProducts")}>
+          <p class="ft__title">{t("footer.colProducts")}</p>
           <ul class="ft__links">
             <li>
-              <A href="/produkty?category=Trawy Dekoracyjne">
-                Trawy Dekoracyjne
-              </A>
+              <A href={categoryHref("trawy_dekoracyjne")}>{t("nav.decorative")}</A>
             </li>
             <li>
-              <A href="/produkty?category=Trawy sportowe">Trawy sportowe</A>
+              <A href={categoryHref("trawy_sportowe")}>{t("nav.sport")}</A>
             </li>
             <li>
-              <A href="/produkty?category=Akcesoria">Akcesoria</A>
+              <A href={categoryHref("akcesoria")}>{t("nav.accessories")}</A>
             </li>
           </ul>
         </nav>
 
-        <nav class="ft__col" aria-label="Informacje">
-          <p class="ft__title">Informacje</p>
+        <nav class="ft__col" aria-label={t("footer.colInfo")}>
+          <p class="ft__title">{t("footer.colInfo")}</p>
           <ul class="ft__links">
             <li>
-              <A href="/o-nas">O nas</A>
+              <A href={path("about")}>{t("nav.about")}</A>
             </li>
             <li>
-              <A href="/dostawa">Dostawa</A>
+              <A href={path("delivery")}>{t("nav.delivery")}</A>
             </li>
             <li>
-              <A href="/realizacje">Realizacje</A>
+              <A href={path("contact")}>{t("nav.contact")}</A>
             </li>
           </ul>
         </nav>
 
-        <nav class="ft__col" aria-label="Usługi">
-          <p class="ft__title">Usługi</p>
+        <nav class="ft__col" aria-label={t("footer.colServices")}>
+          <p class="ft__title">{t("footer.colServices")}</p>
           <ul class="ft__links">
             <li>
-              <A href="/montaz">Montaż</A>
+              <A href={path("installation")}>{t("nav.installation")}</A>
             </li>
             <li>
-              <A href="/doradztwo">Doradztwo</A>
+              <A href={path("consulting")}>{t("nav.consulting")}</A>
             </li>
           </ul>
         </nav>
 
-        <address class="ft__col ft__contact" aria-label="Kontakt">
-          <p class="ft__title">Kontakt</p>
-          <p> Kazimierza Wielkiego 47 A</p>
-          <p>32-400 Myślenice, Polska</p>
-          <p>REGON: 522476299</p>
-          <p> NIP: 6812093897</p>
-          <p>+48 515 401 178</p>
+        <address class="ft__col ft__contact" aria-label={t("footer.colContact")}>
+          <p class="ft__title">{t("footer.colContact")}</p>
+          <p>Kazimierza Wielkiego 47 A</p>
+          <p>32-400 Myślenice, {t("footer.country")}</p>
+          <p>{t("footer.regon")}: 522476299</p>
           <p>
-            <a href="mailto:biuro@grassit.pl">biuro@grassit.pl</a>
+            {t("footer.vatId")}: 6812093897
+          </p>
+          <p>{site.phone}</p>
+          <p>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
           </p>
         </address>
       </div>
@@ -114,9 +120,7 @@ const Footer: Component = () => {
       <div class="ft__bottom__wrapper">
         <div class="ft__bottom">
           <div class="ft__bottomInner">
-            <p>
-              © {new Date().getFullYear()} Grassit. Wszelkie prawa zastrzeżone.
-            </p>
+            <p>{t("footer.copyright", { year: new Date().getFullYear() })}</p>
           </div>
         </div>
       </div>

@@ -1,0 +1,35 @@
+{
+  "grassit.pl": {
+    "host": "grassit.pl",
+    "country": "PL",
+    "currency": "PLN",
+    "defaultLocale": "pl",
+    "locales": ["pl", "en"],
+    "origin": "https://grassit.pl",
+    "email": "biuro@grassit.pl",
+    "phone": "+48 515 401 178",
+    "priceMax": 300
+  },
+  "grassit.de": {
+    "host": "grassit.de",
+    "country": "DE",
+    "currency": "EUR",
+    "defaultLocale": "de",
+    "locales": ["de", "en"],
+    "origin": "https://grassit.de",
+    "email": "biuro@grassit.pl",
+    "phone": "+48 515 401 178",
+    "priceMax": 80
+  },
+  "grassit.ch": {
+    "host": "grassit.ch",
+    "country": "CH",
+    "currency": "CHF",
+    "defaultLocale": "de",
+    "locales": ["de", "fr", "it", "en"],
+    "origin": "https://grassit.ch",
+    "email": "biuro@grassit.pl",
+    "phone": "+48 515 401 178",
+    "priceMax": 80
+  }
+}

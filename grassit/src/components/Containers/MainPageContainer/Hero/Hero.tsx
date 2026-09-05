@@ -1,4 +1,5 @@
 import { Component } from "solid-js";
+import { A } from "@solidjs/router";
 import mainImg from "~/components/static/png/MainImg.jpg";
 import shape from "~/components/static/png/shape.png";
 import waterDrop from "~/components/static/png/waterDrop.png";
@@ -6,48 +7,44 @@ import whiteScissors from "~/components/static/png/whiteScissors.png";
 
 import { BsShieldCheck } from "solid-icons/bs";
 import "./Hero.css";
+import { path, t } from "~/utils/translations";
 
 const Hero: Component = () => (
   <section class="hero" style={{ "--hero-bg": `url(${mainImg})` }}>
     <div class="hero__inner">
       <p class="hero__eyebrow">
-        <img alt="Kształt dekoracyjny" src={shape} />
-        Produkt ekologiczny
+        <img alt={t("hero.altShape")} src={shape} />
+        {t("hero.eyebrow")}
       </p>
 
-      <h1 class="hero__title">
-        Zielony trawnik
-        <br /> przez cały rok
-      </h1>
+      {/* One string, wrapped by CSS: the line break falls in a different place
+          in every language. */}
+      <h1 class="hero__title">{t("hero.title")}</h1>
 
-      <p class="hero__lead">
-        Odmień swoją przestrzeń dzięki najwyższej jakości trawie syntetycznej.
-        Idealna do stadionów, ogrodów, przestrzeni komercyjnych i publicznych.
-        Profesjonalny montaż, trwałość na lata.
-      </p>
+      <p class="hero__lead">{t("hero.lead")}</p>
 
       <div class="hero__actions">
-        <a href="/kontakt" class="btn btn--primary">
-          Skontaktuj się
-        </a>
+        <A href={path("contact")} class="btn btn--primary">
+          {t("common.contactUs")}
+        </A>
 
-        <a href="/produkty" class="btn btn--ghost">
-          Zobacz produkty
-        </a>
+        <A href={path("products")} class="btn btn--ghost">
+          {t("common.seeProducts")}
+        </A>
       </div>
 
-      <ul class="hero__usps" aria-label="Korzyści">
+      <ul class="hero__usps" aria-label={t("hero.uspsLabel")}>
         <li>
-          <img alt="Kropla wody" src={waterDrop} />
-          oszczędność wody
+          <img alt={t("hero.altWaterDrop")} src={waterDrop} />
+          {t("hero.usp1")}
         </li>
         <li>
           <BsShieldCheck />
-          Odporna na UV, bezpieczna dla zwierząt
+          {t("hero.usp2")}
         </li>
         <li>
-          <img alt="Nożyczki" src={whiteScissors} />
-          Nie wymaga pielęgnacji
+          <img alt={t("hero.altScissors")} src={whiteScissors} />
+          {t("hero.usp3")}
         </li>
       </ul>
     </div>

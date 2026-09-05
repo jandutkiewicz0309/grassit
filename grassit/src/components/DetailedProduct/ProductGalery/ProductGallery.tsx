@@ -1,8 +1,9 @@
 import { Component, createSignal, For, createMemo, onMount, createEffect, on } from "solid-js";
 import "./ProductGallery.css";
+import { t } from "~/utils/translations";
 
 export interface ProductGalleryProps {
-  images: string[]; // [główne, ...dodatkowe]
+  images: string[]; // [main, ...additional]
   alt?: string;
   onImageChange?: (src: string, index: number) => void;
 }
@@ -51,7 +52,7 @@ export const ProductGallery: Component<ProductGalleryProps> = (props) => {
       <div
         class="pg-main"
         role="img"
-        aria-label={props.alt ?? "Zdjęcie produktu"}
+        aria-label={props.alt ?? t("product.galleryMain")}
       >
         <img
           ref={mainEl}
@@ -63,7 +64,7 @@ export const ProductGallery: Component<ProductGalleryProps> = (props) => {
         />
       </div>
 
-      <div class="pg-thumbs" role="listbox" aria-label="Dodatkowe zdjęcia">
+      <div class="pg-thumbs" role="listbox" aria-label={t("product.galleryThumbs")}>
         <For each={thumbs()}>
           {(t) => (
             <button

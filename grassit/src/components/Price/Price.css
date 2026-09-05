@@ -1,0 +1,7 @@
+/* Quote-only products carry a sentence instead of an amount; keep it on one
+   line and shrink it so it does not blow up the card layout. Translations are
+   longer than the Polish original ("Individuelles Preisangebot"). */
+.price--onRequest {
+  font-size: 14px;
+  white-space: nowrap;
+}

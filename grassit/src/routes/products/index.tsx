@@ -1,31 +1,36 @@
 import { Meta, Title } from "@solidjs/meta";
 import { useNavigate } from "@solidjs/router";
+import { createMemo } from "solid-js";
 import { BackArrow } from "~/components/BackArrow/BackArrow";
-import { CategoryType } from "~/components/Product/Filter/Filter";
 import { ProductContainer } from "~/components/Product/ProductContainer/ProductContainer";
-import data from "~/data/product.json";
+import { VISIBLE_PRODUCTS } from "~/data/products";
+import { path, productText, t } from "~/utils/translations";
 
 const ProductPage = () => {
   const navigate = useNavigate();
 
-  const products = data.products.filter((p) => !(p as any).hidden).map((p) => ({
-    id: p.id,
-    img: p.img,
-    nameProduct: p.nameProduct,
-    price: p.price,
-    description: p.description,
-    badge: "badge" in p ? (p as any).badge : undefined,
-    category: p.category as CategoryType,
-    subcategory: "subcategory" in p ? (p as any).subcategory : undefined,
-    onClick: (id: string) => navigate(`/produkty/${id}`),
-  }));
+  // A memo, not a plain array: the descriptions come from the dictionary and
+  // must follow a language change.
+  const products = createMemo(() =>
+    VISIBLE_PRODUCTS.map((product) => ({
+      id: product.id,
+      img: product.img,
+      nameProduct: product.nameProduct,
+      price: product.price,
+      description: productText(product.id).description,
+      badge: product.badge,
+      category: product.category,
+      subcategory: product.subcategory,
+      onClick: (id: string) => navigate(path("product", { id })),
+    })),
+  );
 
   return (
     <main>
-      <Title>Produkty - Grassit</Title>
-      <Meta name="description" content="Odkryj nasz katalog traw syntetycznych – trawy dekoracyjne, sportowe i akcesoria. Sprawdź ceny i zamów darmową próbkę." />
+      <Title>{t("seo.productsTitle")}</Title>
+      <Meta name="description" content={t("seo.productsDescription")} />
       <BackArrow />
-      <ProductContainer productData={products} />
+      <ProductContainer productData={products()} />
     </main>
   );
 };

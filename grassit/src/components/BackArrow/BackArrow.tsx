@@ -1,5 +1,6 @@
 import { Component } from "solid-js";
 import { useNavigate } from "@solidjs/router";
+import { t } from "~/utils/translations";
 import "./BackArrow.css";
 
 export const BackArrow: Component = () => {
@@ -10,7 +11,7 @@ export const BackArrow: Component = () => {
   };
 
   return (
-    <button class="back-arrow" onClick={handleBack} aria-label="Wróć">
+    <button class="back-arrow" onClick={handleBack} aria-label={t("common.back")}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

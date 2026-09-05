@@ -358,3 +358,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Quote-only text in the similar-products card is smaller than in the hero. */
+.similar-product-price--onRequest {
+  font-size: 11px;
+}

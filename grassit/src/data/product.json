@@ -1,4 +1,6 @@
 {
+  "_pricingNote": "price is per m2, net, keyed by currency. EUR and CHF were derived from the PLN list (~4.30 PLN/EUR, ~4.65 PLN/CHF) and rounded - review them before the DE/CH launch, they are placeholders, not a commercial price list. price: null means 'quote on request'.",
+  "_textNote": "All human-readable product copy lives in src/utils/translations/products/<locale>.ts, keyed by product id.",
   "products": [
     {
       "id": "amalfi",
@@ -10,16 +12,14 @@
         "/static/jpg/amalfi/amalfi3.jpg"
       ],
       "nameProduct": "Amalfi",
-      "price": "89,00",
-      "description": "Stylowa trawa sztuczna o gęstym runie, odporna na UV i przeznaczona do nowoczesnych aranżacji ogrodowych.",
-      "details": {
+      "price": { "PLN": 89, "EUR": 20.5, "CHF": 19 },
+      "specs": {
         "producer": "Grassit",
-        "productDescription": "Amalf to stylowa trawa sztuczna o wysokości włókna 42 mm, stworzona z myślą o nowoczesnych aranżacjach krajobrazowych. Wysoka gęstość 17 800 wszyć na m² zapewnia zwarte, estetyczne runo i naturalny efekt zieleni. Wykonana z odpornych na promieniowanie UV włókien PE i PP, zachowuje swój kolor i formę przez długi czas. Całkowita waga 2530 g/m² gwarantuje trwałość oraz solidność, czyniąc ją doskonałym, długowiecznym rozwiązaniem do ogrodów i przestrzeni zewnętrznych.",
         "catalogNumber": "GT-0050",
-        "productHeight": "55 mm",
-        "productWeight": "± 3116 g/m²",
-        "productMaterial": "WŁÓKNO PP + POLIESTROWE KRÓTKIE | ±200 gr/m²",
-        "UVResistant": "Tak"
+        "heightMm": 55,
+        "weightGsm": 3116,
+        "weightApprox": true,
+        "uvResistant": true
       }
     },
     {
@@ -32,16 +32,14 @@
         "/static/jpg/genewa/genewa2.jpg"
       ],
       "nameProduct": "Genewa",
-      "price": "149,00",
-      "description": "Luksusowa trawa syntetyczna o wysokim, gęstym runie, odporna na UV i przeznaczona do intensywnego użytkowania.",
-      "details": {
+      "price": { "PLN": 149, "EUR": 34.5, "CHF": 32 },
+      "specs": {
         "producer": "Grassit",
-        "productDescription": "Genewa to wysokiej klasy trawa syntetyczna do zastosowań ogrodowych i krajobrazowych, charakteryzująca się imponującą wysokością włókna 55 mm. Wykonana z trwałej mieszanki włókien: 64% polietylenu (PE) oraz 36% polipropylenu (PP), zapewnia naturalny wygląd i długotrwałą odporność na użytkowanie. Dzięki tuftowanej konstrukcji, dużej gęstości oraz masie runa wynoszącej ok. 1866 g/m², a także całkowitej wysokości 57 mm, produkt wyróżnia się wyjątkową puszystością i luksusowym charakterem. Doskonale sprawdzi się w wielu zastosowaniach – od ogrodów prywatnych po przestrzenie publiczne. Trawa oferuje bardzo wysoką przepuszczalność wody (>2000 mm/h), odporność na promieniowanie UV (UVB 3000 h) oraz spełnia normy bezpieczeństwa pożarowego (Efl | EN 13501-1:2018), co czyni ją niezawodnym wyborem do intensywnego użytkowania. Produkt dostępny jest w szerokościach 2 m i 4 m oraz objęty 10-letnią gwarancją.",
         "catalogNumber": "GT-0040",
-        "productHeight": "40 mm",
-        "productWeight": "2.5 kg/m²",
-        "productMaterial": "Polipropylen (PP)",
-        "UVResistant": "Tak"
+        "heightMm": 40,
+        "weightGsm": 2500,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -54,17 +52,14 @@
         "/static/jpg/lagos/lagos3.jpg"
       ],
       "nameProduct": "Lagos",
-      "price": "99,00",
-      "description": "Gęsta trawa syntetyczna o naturalnym wyglądzie, przeznaczona do aranżacji terenów zielonych.",
-
-      "details": {
+      "price": { "PLN": 99, "EUR": 23, "CHF": 21.5 },
+      "specs": {
         "producer": "Grassit",
-        "productDescription": "Trawnik Lagos to sztuczna trawa o wysokości włókna 38 mm, idealna do aranżacji terenów zielonych. Charakteryzuje się wysoką gęstością 23 100 włókien/m² oraz włóknami PE, które zapewniają bujny i naturalny wygląd. Produkt gwarantuje trwałą, bezobsługową powierzchnię zieloną, zachowującą intensywną barwę przez wiele lat.",
         "catalogNumber": "GT-0030",
-        "productHeight": "30 mm",
-        "productWeight": "2.2 kg/m²",
-        "productMaterial": "PE/PP mix",
-        "UVResistant": "Tak"
+        "heightMm": 30,
+        "weightGsm": 2200,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -77,16 +72,14 @@
         "/static/jpg/santiago/santiago3.jpg"
       ],
       "nameProduct": "Santiago",
-      "price": "66,00",
-      "description": "Santiago (28 mm) to gęsta i trwała trawa krajobrazowa o naturalnym wyglądzie. Dzięki odporności na UV i solidnej wadze (2104 g/m²) zachowuje estetykę na lata.",
-      "details": {
+      "price": { "PLN": 66, "EUR": 15.5, "CHF": 14 },
+      "specs": {
         "producer": "Grassit",
-        "productDescription": "Model Santiago to gęsta trawa sztuczna o wysokości włókna 28 mm, idealna do zastosowań krajobrazowych. Waga runa 854 g/m² oraz zagęszczenie 15 750 wszyć na m² zapewniają estetyczny, zwarty wygląd i przyjemną strukturę. Wykonana z włókien PE i PP odpornych na promieniowanie UV, zachowuje naturalny kolor i świeżość przez długi czas. Całkowita waga 2104 g/m² gwarantuje solidność, sprawiając, że trawa prezentuje się naturalnie i niezawodnie w każdej przestrzeni zewnętrznej.",
         "catalogNumber": "GT-0020",
-        "productHeight": "20 mm",
-        "productWeight": "2.0 kg/m²",
-        "productMaterial": "Polietylen (PE)",
-        "UVResistant": "Tak"
+        "heightMm": 20,
+        "weightGsm": 2000,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -94,21 +87,16 @@
       "category": "trawy_dekoracyjne",
       "technicalCard": "/static/pdf/sofia.pdf",
       "img": "/static/jpg/sofia/sofia2.jpg",
-      "images": [
-        "/static/jpg/sofia/sofia3.jpg",
-        "/static/jpg/sofia/sofia1.jpg"
-      ],
+      "images": ["/static/jpg/sofia/sofia3.jpg", "/static/jpg/sofia/sofia1.jpg"],
       "nameProduct": "Sofia",
-      "price": "109,00",
-      "description": "Sofia (35 mm) to trawa premium o imponującej gęstości i wadze runa 1660 g/m². Wyjątkowo pełna, naturalna i odporna na UV – idealna do ekskluzywnych aranżacji.",
-      "details": {
+      "price": { "PLN": 109, "EUR": 25.5, "CHF": 23.5 },
+      "specs": {
         "producer": "Grassit",
-        "productDescription": "Model Sofia to sztuczna trawa z segmentu premium o wysokości 35 mm, wyróżniająca się imponującą gęstością 24 150 włókien/m² oraz wagą runa 1660 g/m². Wykonana z wysokiej jakości włókien PE i PP, jest w pełni odporna na promieniowanie UV. Zapewnia wyjątkowo pełny i naturalny wygląd, stanowiąc idealny wybór do realizacji projektów zieleni o najwyższych standardach.",
         "catalogNumber": "GT-0010",
-        "productHeight": "10 mm",
-        "productWeight": "1.6 kg/m²",
-        "productMaterial": "Polipropylen (PP)",
-        "UVResistant": "Tak"
+        "heightMm": 10,
+        "weightGsm": 1600,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -121,16 +109,14 @@
         "/static/jpg/santa_cruz/santa_cruz1.jpg"
       ],
       "nameProduct": "Santa Cruz",
-      "price": "119,00",
-      "description": "Santa Cruz (40 mm) to wyjątkowo solidna trawa o imponującej wadze 3010 g/m². Stworzona do nowoczesnych aranżacji, odporna na UV i zachowująca intensywną zieleń przez lata.",
-      "details": {
+      "price": { "PLN": 119, "EUR": 27.5, "CHF": 25.5 },
+      "specs": {
         "producer": "Grassit Pro",
-        "productDescription": "Model Santa Cruz to trwała sztuczna trawa o wysokości 40 mm, stworzona z myślą o nowoczesnych aranżacjach przestrzeni zielonych. Produkt charakteryzuje się gęstością 11 000 włókien na m² oraz łączną wagą 3010 g/m², co zapewnia wyjątkową gęstość i wytrzymałość. Wykonana z wysokiej jakości włókien PE i PP, jest w pełni odporna na promieniowanie UV, gwarantując naturalny wygląd oraz intensywną, zieloną barwę przez wiele lat użytkowania.",
         "catalogNumber": "GTP-0001",
-        "productHeight": "35 mm",
-        "productWeight": "2.7 kg/m²",
-        "productMaterial": "PE (monofilament)",
-        "UVResistant": "Tak"
+        "heightMm": 35,
+        "weightGsm": 2700,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -143,17 +129,15 @@
         "/static/jpg/vienna/vienna2.jpg"
       ],
       "nameProduct": "Vienna",
-      "price": "139,00",
-      "badge": "BEST SELLER",
-      "description": "Model Vienna (45 mm) to wyjątkowo gęsta i miękka trawa sztuczna o luksusowym, naturalnym wyglądzie. Dzięki wysokiej gramaturze i odporności UV idealnie sprawdzi się w ogrodzie.",
-      "details": {
+      "badge": "badgeBestseller",
+      "price": { "PLN": 139, "EUR": 32.5, "CHF": 30 },
+      "specs": {
         "producer": "Grassit",
-        "productDescription": "Model Vienna to wyjątkowo gęsta i efektowna trawa sztuczna o wysokości włókna 45 mm. Charakteryzuje się wysoką wagą runa – 1600 g/m² oraz gęstym splotem 14 700 włókien na m², co przekłada się na miękkość, sprężystość i bardzo naturalny wygląd. Wykonana z trwałych, odpornych na promieniowanie UV włókien PE i PP, doskonale sprawdzi się w aranżacjach ogrodowych i krajobrazowych. Całkowita waga 2850 g/m² nadaje jej luksusowy charakter i sprawia, że prezentuje się niezwykle realistycznie przez długie lata.",
         "catalogNumber": "GTP-0002",
-        "productHeight": "32 mm",
-        "productWeight": "2.4 kg/m²",
-        "productMaterial": "PE/PP mix",
-        "UVResistant": "Tak"
+        "heightMm": 32,
+        "weightGsm": 2400,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -166,16 +150,14 @@
         "/static/jpg/wenecja/wenecja3.jpg"
       ],
       "nameProduct": "Wenecja",
-      "price": "54,00",
-      "description": "Wenecja (30 mm) to uniwersalna trawa krajobrazowa o soczyście zielonym wyglądzie. Dzięki gęstości 16 800 wszyć/m² i mieszance włókien PE+PP gwarantuje trwałość oraz efekt idealnie zadbanego trawnika.",
-      "details": {
+      "price": { "PLN": 54, "EUR": 12.5, "CHF": 11.5 },
+      "specs": {
         "producer": "Grassit Pro",
-        "productDescription": "Model Wenecja to uniwersalna trawa sztuczna o wysokości włókna 30 mm, doskonale sprawdzająca się w projektach krajobrazowych. Zastosowanie mieszanki włókien PE i PP oraz gęstość 16 800 wszyć na m² zapewniają naturalny, soczyście zielony wygląd. Produkt ten łączy estetykę z wysoką trwałością, oferując efekt zadbanego trawnika, który zachowuje swój atrakcyjny wygląd przez długi czas. Jest to idealne rozwiązanie do różnorodnych aranżacji przestrzeni zewnętrznych.",
         "catalogNumber": "GTP-0003",
-        "productHeight": "45 mm",
-        "productWeight": "2.9 kg/m²",
-        "productMaterial": "PE (wysoka gęstość)",
-        "UVResistant": "Tak"
+        "heightMm": 45,
+        "weightGsm": 2900,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -192,15 +174,13 @@
         "/static/jpg/footballPro50/footballPro50_6.jpg"
       ],
       "nameProduct": "Grassit Football Pro 50",
-      "price": "Wycena indywidualna",
-      "description": "Grassit Football Pro 50 (50 mm) to profesjonalna trawa syntetyczna 3G do boisk piłkarskich, zapewniająca trwałość i stabilne warunki gry przy intensywnym użytkowaniu.",
-      "details": {
+      "price": null,
+      "specs": {
         "producer": "Grassit Pro",
-        "productDescription": "Wprowadź Grassit Football Pro 50 do swojej profesjonalnej oferty sportowej najwyższej klasy rozwiązanie w kategorii traw syntetycznych 3G, idealne do zastosowań piłkarskich. Ta trawa o wysokości 50 mm wymaga zastosowania wypełnienia (piasek, granulat gumowy, korek lub ich kombinacja), aby zapewnić optymalne właściwości gry. Została zaprojektowana z myślą o intensywnym użytkowaniu i wysokiej trwałości. Dzięki gęstości 10 080 splotów/m² oraz dostępności w rolkach o szerokości 200 cm i 400 cm, Grassit Football Pro 50 stanowi profesjonalną, niezawodną i wytrzymałą nawierzchnię, spełniającą wymagania nowoczesnych boisk piłkarskich.",
-        "productHeight": "50 mm",
-        "productWeight": "2080 g/m²",
-        "productMaterial": "PP + Polar + Siatka",
-        "UVResistant": "Tak"
+        "heightMm": 50,
+        "weightGsm": 2080,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -214,15 +194,13 @@
         "/static/jpg/footballNosandy/footballNosandy3.jpg"
       ],
       "nameProduct": "Grassit Football Nosandy",
-      "price": "Wycena indywidualna",
-      "description": "Grassit Football Nosandy (30 mm) to wytrzymała trawa syntetyczna do zastosowań multisportowych, zapewniająca stabilną nawierzchnię i długą żywotność.",
-      "details": {
+      "price": null,
+      "specs": {
         "producer": "Grassit Pro",
-        "productDescription": "Poznaj Grassit Football Nosandy — trawę syntetyczną o wysokości 30 mm, zaprojektowaną z myślą o zastosowaniach multisportowych. Dzięki gęstości 15 700 splotów/m² oraz zastosowaniu włókien z polipropylenu (PP) w połączeniu z podkładem typu fleece, nawierzchnia ta zapewnia wysoką trwałość i stabilne warunki do uprawiania sportu. Grassit Football Nosandy oferuje optymalną powierzchnię do intensywnych aktywności sportowych oraz objęta jest gwarancją odporności na promieniowanie UV wynoszącą od 5 do 8 lat.",
-        "productHeight": "32 mm",
-        "productWeight": "3633 g/m²",
-        "productMaterial": "PP",
-        "UVResistant": "Tak"
+        "heightMm": 32,
+        "weightGsm": 3633,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -236,15 +214,13 @@
         "/static/jpg/padelKitCommon/padelKitBlue1.jpg"
       ],
       "nameProduct": "Grassit Padel KIT Blue",
-      "price": "Wycena indywidualna",
-      "description": "",
-      "details": {
+      "price": null,
+      "specs": {
         "producer": "Grassit Pro",
-        "productDescription": "",
-        "productHeight": "10 mm",
-        "productWeight": "1485 g/m²",
-        "productMaterial": "Czarny podkład wykonany w 100% z polipropylenu (PP) z technologią fibre-lock fleece",
-        "UVResistant": "Tak"
+        "heightMm": 10,
+        "weightGsm": 1485,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -259,19 +235,25 @@
         "/static/jpg/padelKitProBlue/padelKitPro3.jpg"
       ],
       "nameProduct": "Grassit Padel KIT PRO Blue",
-      "price": "Wycena indywidualna",
-      "description": "",
+      "price": null,
       "colorVariants": [
-        { "id": "Padel_Kit_pro_green", "color": "#16a34a", "label": "Zielony" },
-        { "id": "Padel_Kit_pro_blue", "color": "#2563eb", "label": "Niebieski" }
+        {
+          "id": "Padel_Kit_pro_green",
+          "color": "#16a34a",
+          "labelKey": "colorGreen"
+        },
+        {
+          "id": "Padel_Kit_pro_blue",
+          "color": "#2563eb",
+          "labelKey": "colorBlue"
+        }
       ],
-      "details": {
+      "specs": {
         "producer": "Grassit Pro",
-        "productDescription": "",
-        "productHeight": "14 mm",
-        "productWeight": "2985 g/m²",
-        "productMaterial": "PP",
-        "UVResistant": "Tak"
+        "heightMm": 14,
+        "weightGsm": 2985,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -282,19 +264,25 @@
       "img": "/static/jpg/padelKitProGreen/padelKitProGreen1.jpg",
       "images": ["/static/jpg/padelKitProGreen/padelKitProGreen2.jpg"],
       "nameProduct": "Grassit Padel KIT PRO",
-      "price": "Wycena indywidualna",
-      "description": "",
+      "price": null,
       "colorVariants": [
-        { "id": "Padel_Kit_pro_green", "color": "#16a34a", "label": "Zielony" },
-        { "id": "Padel_Kit_pro_blue", "color": "#2563eb", "label": "Niebieski" }
+        {
+          "id": "Padel_Kit_pro_green",
+          "color": "#16a34a",
+          "labelKey": "colorGreen"
+        },
+        {
+          "id": "Padel_Kit_pro_blue",
+          "color": "#2563eb",
+          "labelKey": "colorBlue"
+        }
       ],
-      "details": {
+      "specs": {
         "producer": "Grassit Pro",
-        "productDescription": "",
-        "productHeight": "14 mm",
-        "productWeight": "2985 g/m²",
-        "productMaterial": "PP",
-        "UVResistant": "Tak"
+        "heightMm": 14,
+        "weightGsm": 2985,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -308,15 +296,13 @@
         "/static/jpg/golfClubPro/golfClubPro3.jpg"
       ],
       "nameProduct": "Grassit GOLF Club PRO",
-      "price": "Wycena indywidualna",
-      "description": "Grassit GOLF Club PRO (12 mm) to profesjonalna trawa golfowa o wyjątkowej gęstości, zapewniająca precyzyjne toczenie piłki i długą żywotność.",
-      "details": {
+      "price": null,
+      "specs": {
         "producer": "Grassit Pro",
-        "productDescription": "Wprowadź Grassit GOLF Club PRO do swojej oferty — najwyższej klasy rozwiązanie stworzone z myślą o profesjonalnym rynku golfowym. Ta trawa syntetyczna o wysokości 12 mm została zaprojektowana dla najbardziej wymagających golfistów. Dzięki imponującej masie runa 2105 g/m² oraz wyjątkowej gęstości 63 000 splotów/m² zapewnia doskonały, powtarzalny toczenie piłki, kluczowe dla najwyższego poziomu gry. Wykonana z wysokiej jakości, stabilizowanego UV polietylenu, Grassit GOLF Club PRO gwarantuje wyjątkową trwałość i niskie wymagania konserwacyjne. Produkt objęty jest 8-letnią gwarancją UV (na północ od Paryża) oraz 5-letnią gwarancją UV (na południe od Paryża), co czyni go idealnym wyborem dla pól golfowych, profesjonalnych ośrodków treningowych oraz luksusowych realizacji prywatnych.",
-        "productHeight": "14 mm",
-        "productWeight": "3303 g/m²",
-        "productMaterial": "PP",
-        "UVResistant": "Tak"
+        "heightMm": 14,
+        "weightGsm": 3303,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -330,15 +316,13 @@
         "/static/jpg/golfClub27/golfClub27_3.jpg"
       ],
       "nameProduct": "Grassit GOLF Club 27",
-      "price": "Wycena indywidualna",
-      "description": "Grassit GOLF Club 27 (25 mm) to profesjonalna trawa golfowa do tee boxów i driving range, zaprojektowana do intensywnego użytkowania.",
-      "details": {
+      "price": null,
+      "specs": {
         "producer": "Grassit Pro",
-        "productDescription": "Wprowadź Grassit GOLF Club 27 do swojej oferty — profesjonalne rozwiązanie przeznaczone do tee boxów oraz driving range. Ta wyjątkowo wytrzymała trawa syntetyczna o wysokości włókna 25 mm i całkowitej masie 5208 g/m², w połączeniu z imponującą gęstością 63 000 splotów/m², stanowi idealny wybór do intensywnego użytkowania. Zapewnia stabilne, powtarzalne właściwości gry, niezbędne w profesjonalnym środowisku treningowym. Wykonana z wysokiej jakości polietylenu stabilizowanego UV, Grassit GOLF Club 27 cechuje się wysoką odpornością na zużycie oraz warunki atmosferyczne. Produkt objęty jest 8-letnią gwarancją UV (na północ od Paryża) oraz 5-letnią gwarancją UV (na południe od Paryża), co czyni go doskonałą inwestycją dla pól golfowych i ośrodków treningowych stawiających na najwyższą jakość i trwałość.",
-        "productHeight": "27 mm",
-        "productWeight": "5208 g/m²",
-        "productMaterial": "PP",
-        "UVResistant": "Tak"
+        "heightMm": 27,
+        "weightGsm": 5208,
+        "weightApprox": false,
+        "uvResistant": true
       }
     },
     {
@@ -352,15 +336,13 @@
         "/static/jpg/golfTurf12/golfTurf3.jpg"
       ],
       "nameProduct": "Grassit GOLF Turf 12",
-      "price": "Wycena indywidualna",
-      "description": "Grassit GOLF Turf 12 (12 mm) to wszechstronna trawa golfowa zapewniająca stabilną nawierzchnię i równomierne toczenie piłki podczas treningu.",
-      "details": {
+      "price": null,
+      "specs": {
         "producer": "Grassit Pro",
-        "productDescription": "Grassit GOLF Turf 12 to wszechstronna trawa syntetyczna o wysokości 12 mm, zaprojektowana z myślą o zastosowaniach golfowych, łącząca funkcjonalność z estetycznym, kontrolowanym wyglądem. Dzięki całkowitej masie 2175 g/m² oraz gęstej strukturze 31 500 splotów/m² nawierzchnia zapewnia stabilność oraz równomierne toczenie piłki podczas treningów i ćwiczeń. Włókna wykonane z polietylenu stabilizowanego UV gwarantują długotrwałą wydajność zarówno w przestrzeniach wewnętrznych, jak i zewnętrznych. Produkt objęty jest 8-letnią gwarancją UV, co czyni Grassit GOLF Turf 12 niezawodnym wyborem dla putting greenów, stref treningowych oraz obszarów do ćwiczeń, gdzie kluczowe są trwałość, kontrola i powtarzalne warunki gry.",
-        "productHeight": "14 mm",
-        "productWeight": "2175 g/m²",
-        "productMaterial": "PP",
-        "UVResistant": "Tak"
+        "heightMm": 14,
+        "weightGsm": 2175,
+        "weightApprox": false,
+        "uvResistant": true
       }
     }
   ]

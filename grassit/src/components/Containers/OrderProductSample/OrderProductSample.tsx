@@ -1,16 +1,12 @@
 import { Component } from "solid-js";
 import AskFormContainer from "../AskFormContainer/AskFormContainer";
 import { OnSubmitOrderForm } from "~/utils/types";
+import type { Product } from "~/data/products";
+import { t } from "~/utils/translations";
 import "./index.css";
 
 export interface IProps {
-  productName: string;
-  productImg: string;
-  catalogNumber: string;
-  producer: string;
-  price: string;
-  productId?: string;
-  description?: string;
+  product: Product;
   onSubmit: (data: OnSubmitOrderForm) => Promise<boolean>;
 }
 
@@ -19,24 +15,11 @@ const OrderProductSample: Component<IProps> = (props) => {
     <div class="sampleBackground">
       <main class="sample-product-container">
         <div class="sample-product-header">
-          <h1>Poproś o próbkę</h1>
-          <p>
-            Proszę wypełnić poniższy formularz, a przedstawiciel handlowy
-            skontaktuje się z Państwem, aby pomóc w rozpoczęciu projektu. Można
-            również skontaktować się z naszymi licznymi przedstawicielami.
-          </p>
+          <h1>{t("sample.heading")}</h1>
+          <p>{t("sample.lead")}</p>
         </div>
 
-        <AskFormContainer
-          productName={props.productName}
-          productImg={props.productImg}
-          catalogNumber={props.catalogNumber}
-          producer={props.producer}
-          price={props.price}
-          description={props.description}
-          productId={props.productId}
-          onSubmit={props.onSubmit}
-        />
+        <AskFormContainer product={props.product} onSubmit={props.onSubmit} />
       </main>
     </div>
   );

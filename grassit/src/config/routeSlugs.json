@@ -1,0 +1,87 @@
+{
+  "home": {
+    "slugs": { "pl": "", "en": "", "de": "", "fr": "", "it": "" },
+    "sitemapPriority": "1.0"
+  },
+  "products": {
+    "slugs": {
+      "pl": "produkty",
+      "en": "products",
+      "de": "produkte",
+      "fr": "produits",
+      "it": "prodotti"
+    },
+    "sitemapPriority": "0.9"
+  },
+  "product": {
+    "slugs": {
+      "pl": "produkty",
+      "en": "products",
+      "de": "produkte",
+      "fr": "produits",
+      "it": "prodotti"
+    },
+    "param": true,
+    "sitemapPriority": "0.8"
+  },
+  "orderSample": {
+    "slugs": {
+      "pl": "zamow-probke",
+      "en": "order-sample",
+      "de": "muster-bestellen",
+      "fr": "commander-echantillon",
+      "it": "ordina-campione"
+    },
+    "param": true
+  },
+  "contact": {
+    "slugs": {
+      "pl": "kontakt",
+      "en": "contact",
+      "de": "kontakt",
+      "fr": "contact",
+      "it": "contatto"
+    },
+    "sitemapPriority": "0.7"
+  },
+  "installation": {
+    "slugs": {
+      "pl": "montaz",
+      "en": "installation",
+      "de": "montage",
+      "fr": "installation",
+      "it": "installazione"
+    },
+    "sitemapPriority": "0.7"
+  },
+  "consulting": {
+    "slugs": {
+      "pl": "doradztwo",
+      "en": "consulting",
+      "de": "beratung",
+      "fr": "conseil",
+      "it": "consulenza"
+    },
+    "sitemapPriority": "0.6"
+  },
+  "delivery": {
+    "slugs": {
+      "pl": "dostawa",
+      "en": "delivery",
+      "de": "lieferung",
+      "fr": "livraison",
+      "it": "consegna"
+    },
+    "sitemapPriority": "0.6"
+  },
+  "about": {
+    "slugs": {
+      "pl": "o-nas",
+      "en": "about",
+      "de": "ueber-uns",
+      "fr": "a-propos",
+      "it": "chi-siamo"
+    },
+    "sitemapPriority": "0.6"
+  }
+}

@@ -1,25 +1,20 @@
 import { Component } from "solid-js";
-import {
-  createForm,
-  Field,
-  Form,
-  reset,
-  setValue,
-  zodForm,
-} from "@modular-forms/solid";
-import { z } from "zod";
-import { askProductSchema, type AskProductForm } from "./schema";
+import { createForm, Field, Form, reset, setValue, zodForm } from "@modular-forms/solid";
+import { makeAskProductSchema, type AskProductForm } from "./schema";
 import FormInput from "~/components/Input/FormInput/FormInput";
 import { TbMailFilled } from "solid-icons/tb";
 import "./AskForSample.css";
 import { OnSubmitOrderForm } from "~/utils/types";
+import { t } from "~/utils/translations";
 
 export const AskProductFormCmp: Component<{
   initial?: Partial<AskProductForm>;
+  /** Path to the product data sheet, forwarded to the confirmation e-mail. */
+  technicalCard?: string;
   onSubmit: (data: OnSubmitOrderForm) => Promise<boolean>;
 }> = (props) => {
   const form = createForm<AskProductForm>({
-    validate: zodForm(askProductSchema),
+    validate: zodForm(makeAskProductSchema()),
     validateOn: "input",
     initialValues: {
       name: "",
@@ -39,30 +34,30 @@ export const AskProductFormCmp: Component<{
     },
   });
 
+  const required = (label: string) => `${label}${t("form.required")}`;
+
   return (
     <div class="askForm">
       <Form
         of={form}
         onSubmit={async (data) => {
-          const success = await props.onSubmit(data as AskProductForm);
+          const success = await props.onSubmit({
+            ...(data as AskProductForm),
+            technicalCard: props.technicalCard,
+          });
           if (success) {
             reset(form);
           }
         }}
       >
         <div class="askForm__fields">
-          {/* Imię */}
           <div class="askForm__group">
-            <span class="askForm__label">Imię*</span>
+            <span class="askForm__label">{required(t("form.firstName"))}</span>
             <Field of={form} name="productId">
-              {(f) => (
-                <input type="hidden" name="productId" value={f.value ?? ""} />
-              )}
+              {(f) => <input type="hidden" name="productId" value={f.value ?? ""} />}
             </Field>
             <Field of={form} name="productName">
-              {(f) => (
-                <input type="hidden" name="productName" value={f.value ?? ""} />
-              )}
+              {(f) => <input type="hidden" name="productName" value={f.value ?? ""} />}
             </Field>
             <Field of={form} name="name">
               {(f) => (
@@ -72,7 +67,7 @@ export const AskProductFormCmp: Component<{
                     preset="text"
                     value={f.value ?? ""}
                     onChange={(v) => setValue(form, "name", v)}
-                    placeHolder="Wprowadź swoje imię"
+                    placeHolder={t("form.phFirstName")}
                     error={!!f.error}
                   />
                   {f.error && <span class="field__error">{f.error}</span>}
@@ -81,9 +76,8 @@ export const AskProductFormCmp: Component<{
             </Field>
           </div>
 
-          {/* Nazwisko */}
           <div class="askForm__group">
-            <span class="askForm__label">Nazwisko*</span>
+            <span class="askForm__label">{required(t("form.lastName"))}</span>
             <Field of={form} name="lastName">
               {(f) => (
                 <>
@@ -92,7 +86,7 @@ export const AskProductFormCmp: Component<{
                     preset="text"
                     value={f.value ?? ""}
                     onChange={(v) => setValue(form, "lastName", v)}
-                    placeHolder="Wprowadź swoje nazwisko"
+                    placeHolder={t("form.phLastName")}
                     error={!!f.error}
                   />
                   {f.error && <span class="field__error">{f.error}</span>}
@@ -101,9 +95,8 @@ export const AskProductFormCmp: Component<{
             </Field>
           </div>
 
-          {/* Email */}
           <div class="askForm__group">
-            <span class="askForm__label">Email*</span>
+            <span class="askForm__label">{required(t("form.email"))}</span>
             <Field of={form} name="email">
               {(f) => (
                 <>
@@ -112,7 +105,7 @@ export const AskProductFormCmp: Component<{
                     preset="email"
                     value={f.value ?? ""}
                     onChange={(v) => setValue(form, "email", v)}
-                    placeHolder="Wprowadź swój adres email"
+                    placeHolder={t("form.phEmail")}
                     error={!!f.error}
                   />
                   {f.error && <span class="field__error">{f.error}</span>}
@@ -121,9 +114,8 @@ export const AskProductFormCmp: Component<{
             </Field>
           </div>
 
-          {/* Telefon */}
           <div class="askForm__group">
-            <span class="askForm__label">Numer telefonu*</span>
+            <span class="askForm__label">{required(t("form.phoneLong"))}</span>
             <Field of={form} name="phoneNumber">
               {(f) => (
                 <>
@@ -132,7 +124,7 @@ export const AskProductFormCmp: Component<{
                     preset="tel"
                     value={f.value ?? ""}
                     onChange={(v) => setValue(form, "phoneNumber", v)}
-                    placeHolder="Wprowadź swój numer telefonu"
+                    placeHolder={t("form.phPhone")}
                     error={!!f.error}
                     inputmode="tel"
                   />
@@ -142,10 +134,9 @@ export const AskProductFormCmp: Component<{
             </Field>
           </div>
 
-          {/* Ulica + Kod pocztowy (grid) */}
           <div class="askForm__row">
             <div class="askForm__group">
-              <span class="askForm__label">Ulica i numer mieszkania*</span>
+              <span class="askForm__label">{required(t("form.street"))}</span>
               <Field of={form} name="street">
                 {(f) => (
                   <>
@@ -154,7 +145,7 @@ export const AskProductFormCmp: Component<{
                       preset="street"
                       value={f.value ?? ""}
                       onChange={(v) => setValue(form, "street", v)}
-                      placeHolder="Wprowadź ulicę i numer domu/mieszkania"
+                      placeHolder={t("form.phStreet")}
                       error={!!f.error}
                     />
                     {f.error && <span class="field__error">{f.error}</span>}
@@ -164,7 +155,7 @@ export const AskProductFormCmp: Component<{
             </div>
 
             <div class="askForm__group askForm__group--zip">
-              <span class="askForm__label">Kod pocztowy*</span>
+              <span class="askForm__label">{required(t("form.zip"))}</span>
               <Field of={form} name="zip">
                 {(f) => (
                   <>
@@ -173,7 +164,7 @@ export const AskProductFormCmp: Component<{
                       preset="postalCode"
                       value={f.value ?? ""}
                       onChange={(v) => setValue(form, "zip", v)}
-                      placeHolder="Wprowadź kod pocztowy"
+                      placeHolder={t("form.phZip")}
                       error={!!f.error}
                     />
                     {f.error && <span class="field__error">{f.error}</span>}
@@ -183,9 +174,8 @@ export const AskProductFormCmp: Component<{
             </div>
           </div>
 
-          {/* Miasto */}
           <div class="askForm__group">
-            <span class="askForm__label">Miasto*</span>
+            <span class="askForm__label">{required(t("form.city"))}</span>
             <Field of={form} name="city">
               {(f) => (
                 <>
@@ -194,7 +184,7 @@ export const AskProductFormCmp: Component<{
                     preset="city"
                     value={f.value ?? ""}
                     onChange={(v) => setValue(form, "city", v)}
-                    placeHolder="Wprowadź miasto"
+                    placeHolder={t("form.phCity")}
                     error={!!f.error}
                   />
                   {f.error && <span class="field__error">{f.error}</span>}
@@ -203,9 +193,8 @@ export const AskProductFormCmp: Component<{
             </Field>
           </div>
 
-          {/* Firma */}
           <div class="askForm__group">
-            <span class="askForm__label">Firma (opcjonalnie)</span>
+            <span class="askForm__label">{t("form.company")}</span>
             <Field of={form} name="company">
               {(f) => (
                 <FormInput
@@ -213,15 +202,14 @@ export const AskProductFormCmp: Component<{
                   preset="company"
                   value={f.value ?? ""}
                   onChange={(v) => setValue(form, "company", v)}
-                  placeHolder="Wprowadź nazwę firmy do wysyłki"
+                  placeHolder={t("form.phCompany")}
                 />
               )}
             </Field>
           </div>
 
-          {/* NIP */}
           <div class="askForm__group">
-            <span class="askForm__label">NIP (opcjonalnie)</span>
+            <span class="askForm__label">{t("form.vatId")}</span>
             <Field of={form} name="nip">
               {(f) => (
                 <>
@@ -230,7 +218,7 @@ export const AskProductFormCmp: Component<{
                     preset="nip"
                     value={f.value ?? ""}
                     onChange={(v) => setValue(form, "nip", v)}
-                    placeHolder="Wprowadź numer NIP do faktury"
+                    placeHolder={t("form.phVatId")}
                     error={!!f.error}
                   />
                   {f.error && <span class="field__error">{f.error}</span>}
@@ -239,16 +227,15 @@ export const AskProductFormCmp: Component<{
             </Field>
           </div>
 
-          {/* Uwagi */}
           <div class="askForm__group">
-            <span class="askForm__label">Uwagi / preferencje</span>
+            <span class="askForm__label">{t("form.notes")}</span>
             <Field of={form} name="notes">
               {(f) => (
                 <div class="field field--textarea">
                   <textarea
                     class="field__textarea"
                     name="notes"
-                    placeholder="Dodatkowe uwagi do wysyłki…"
+                    placeholder={t("form.phNotes")}
                     value={f.value ?? ""}
                     onInput={(e) =>
                       setValue(
@@ -265,32 +252,14 @@ export const AskProductFormCmp: Component<{
         </div>
 
         <div class="askForm__actions">
-          <p class="askForm__legal">
-            Administratorem danych osobowych jest GRASSIT Sp. z o.o. z siedzibą
-            w Myślenicach (32-400), ul. Kazimierza Wielkiego 47. Dane osobowe
-            podane w formularzu kontaktowym przetwarzane są w celu obsługi
-            zapytania przesłanego za pomocą formularza oraz podjęcia działań na
-            żądanie osoby, której dane dotyczą, przed zawarciem umowy – na
-            podstawie art. 6 ust. 1 lit. b Rozporządzenia Parlamentu
-            Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. Dane
-            mogą być również przetwarzane w celu kontaktu handlowego – na
-            podstawie prawnie uzasadnionego interesu administratora (art. 6 ust.
-            1 lit. f RODO). Podanie danych jest dobrowolne, jednak niezbędne do
-            realizacji zapytania. Dane osobowe będą przechowywane przez okres
-            niezbędny do obsługi zapytania, a w przypadku zawarcia umowy – przez
-            okres jej realizacji oraz po jej zakończeniu przez czas wymagany
-            przepisami prawa. Przysługuje prawo dostępu do danych, ich
-            sprostowania, usunięcia, ograniczenia przetwarzania, wniesienia
-            sprzeciwu, przenoszenia danych oraz wniesienia skargi do Prezesa
-            Urzędu Ochrony Danych Osobowych.
-          </p>
+          <p class="askForm__legal">{t("form.legal")}</p>
 
           <button
             type="submit"
             class="detailedProduct-btn detailedProduct-btn--primary"
           >
             <TbMailFilled size={16} style={{ color: "white" }} />
-            Wyślij zapytanie
+            {t("common.sendInquiry")}
           </button>
         </div>
       </Form>

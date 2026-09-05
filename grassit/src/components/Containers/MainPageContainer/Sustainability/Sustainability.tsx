@@ -1,8 +1,9 @@
-import { Component } from "solid-js";
+import { Component, For, createMemo } from "solid-js";
 import lawnImg from "~/components/static/png/NaturalInspiredLawn.jpg";
 import "./Sustainability.css";
 import truck from "~/components/static/png/truck.png";
 import warranty from "~/components/static/png/warranty.png";
+import { t } from "~/utils/translations";
 
 const Check = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
@@ -11,59 +12,47 @@ const Check = () => (
 );
 
 const Sustainability: Component = () => {
+  const items = createMemo(() => [
+    { title: t("sustainability.toxinsTitle"), desc: t("sustainability.toxinsDesc") },
+    { title: t("sustainability.waterTitle"), desc: t("sustainability.waterDesc") },
+    { title: t("sustainability.recyclingTitle"), desc: t("sustainability.recyclingDesc") },
+  ]);
+
   return (
     <section class="sust">
       <div class="sust__inner">
         <div class="sust__media">
-          <img class="sust__img" src={lawnImg} alt="Sztuczna trawa inspirowana naturą" loading="lazy" />
+          <img
+            class="sust__img"
+            src={lawnImg}
+            alt={t("sustainability.imgAlt")}
+            loading="lazy"
+          />
         </div>
         <div class="sust__content">
-          <h2 class="sust__title">Produkt przyjazny środowisku</h2>
-          <p class="sust__lead">
-            Nasza trawa ogranicza zużycie wody i spływ chemikaliów, pozostając
-            miękka i bezpieczna dla dzieci oraz zwierząt.
-          </p>
+          <h2 class="sust__title">{t("sustainability.title")}</h2>
+          <p class="sust__lead">{t("sustainability.lead")}</p>
           <ul class="sust__list">
-            <li class="sust__item">
-              <Check />
-              <div>
-                <div class="sust__itemTitle">Brak toksycznych materiałów</div>
-                <div class="sust__itemDesc">
-                  produkt spełnia rygorystyczne normy bezpieczeństwa dla
-                  przestrzeni mieszkalnych i komercyjnych
-                </div>
-              </div>
-            </li>
-            <li class="sust__item">
-              <Check />
-              <div>
-                <div class="sust__itemTitle">Oszczędność wody</div>
-                <div class="sust__itemDesc">
-                  produkt nie wymaga podlewania, a jego specjalny drenaż
-                  odprowadza wodę do ziemi bez zostawiania kałuży i efektu
-                  „mokrej wykładziny”
-                </div>
-              </div>
-            </li>
-            <li class="sust__item">
-              <Check />
-              <div>
-                <div class="sust__itemTitle">Produkt podlega recyklingowi</div>
-                <div class="sust__itemDesc">
-                  podłoże w większości produktów nadaje się do recyklingu, przez
-                  co utylizacja trawnika nie wpływa negatywnie na środowisko
-                </div>
-              </div>
-            </li>
+            <For each={items()}>
+              {(item) => (
+                <li class="sust__item">
+                  <Check />
+                  <div>
+                    <div class="sust__itemTitle">{item.title}</div>
+                    <div class="sust__itemDesc">{item.desc}</div>
+                  </div>
+                </li>
+              )}
+            </For>
           </ul>
           <div class="sust__badges">
             <span class="badge">
               <img src={truck} alt="" loading="lazy" />
-              Szybka dostawa
+              {t("sustainability.badgeDelivery")}
             </span>
             <span class="badge">
               <img src={warranty} alt="" loading="lazy" />
-              Gwarancja do 12 lat
+              {t("sustainability.badgeWarranty")}
             </span>
           </div>
         </div>

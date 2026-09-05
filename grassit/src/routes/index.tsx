@@ -1,11 +1,12 @@
 import { Meta, Title } from "@solidjs/meta";
 import Home from "~/components/Containers/Home/Home";
+import { t } from "~/utils/translations";
 
 export default function HomeRoot() {
   return (
     <>
-      <Title>Grassit - Sztuczna trawa premium</Title>
-      <Meta name="description" content="Sztuczna trawa najwyższej jakości do ogrodów, obiektów sportowych i przestrzeni komercyjnych. Profesjonalny montaż i gwarancja trwałości." />
+      <Title>{t("seo.homeTitle")}</Title>
+      <Meta name="description" content={t("seo.homeDescription")} />
       <Home />
     </>
   );

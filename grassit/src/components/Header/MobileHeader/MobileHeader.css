@@ -246,3 +246,9 @@
 .MobileHeader * {
   box-sizing: border-box;
 }
+
+.mh__lang {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e2e8f0;
+}

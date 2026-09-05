@@ -1,0 +1,82 @@
+.geoBanner {
+  background: #f0fdf4;
+  border-bottom: 1px solid #bbf7d0;
+  color: #14532d;
+}
+
+.geoBanner__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 12px;
+}
+
+.geoBanner__icon {
+  flex: 0 0 auto;
+  color: #15803d;
+}
+
+.geoBanner__text {
+  flex: 1 1 220px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.geoBanner__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  background: #15803d;
+  border-radius: 8px;
+  transition: background-color 120ms ease;
+}
+
+.geoBanner__cta:hover {
+  background: #047857;
+}
+
+.geoBanner__stay {
+  padding: 7px 10px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 18px;
+  color: #15803d;
+  background: transparent;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.geoBanner__stay:hover {
+  background: rgba(21, 128, 61, 0.08);
+}
+
+.geoBanner__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  color: #15803d;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.geoBanner__close:hover {
+  background: rgba(21, 128, 61, 0.1);
+}
+
+@media (max-width: 640px) {
+  .geoBanner__text {
+    flex-basis: 100%;
+  }
+}

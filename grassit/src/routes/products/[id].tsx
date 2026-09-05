@@ -4,63 +4,50 @@ import { createMemo, Show } from "solid-js";
 import { BackArrow } from "~/components/BackArrow/BackArrow";
 import { DetailedProduct } from "~/components/DetailedProduct/DetailedProduct";
 import ProductNotFound from "~/components/ProductNotFound/ProductNotFound";
-import data from "~/data/product.json";
+import { resolveSite } from "~/config/site";
+import { findProduct, similarProducts } from "~/data/products";
+import { path, productText, t } from "~/utils/translations";
 
-export default function detailedProduct() {
+export default function DetailedProductPage() {
   const params = useParams();
   const navigate = useNavigate();
-  const product = createMemo(() =>
-    data.products.find((p) => p.id === params.id)
-  );
+  const site = resolveSite();
 
-  const similarProducts = createMemo(() => {
-    const currentProduct = product();
-    if (!currentProduct) return [];
-
-    return data.products
-      .filter(
-        (p) =>
-          p.category === currentProduct.category && p.id !== currentProduct.id && !(p as any).hidden
-      )
-      .slice(0, 3)
-      .map((p) => ({
-        id: p.id,
-        img: p.img,
-        nameProduct: p.nameProduct,
-        price: p.price,
-      }));
+  const product = createMemo(() => findProduct(params.id));
+  const similar = createMemo(() => {
+    const current = product();
+    return current ? similarProducts(current) : [];
   });
+
+  const description = () => productText(product()!.id).description;
+
+  /** OG scrapers reject relative image paths, so they are made absolute. */
+  const ogImage = () => {
+    const current = product()!;
+    return site.origin + (current.images?.[0] ?? current.img);
+  };
 
   return (
     <main>
       <Show when={product()}>
-        <Title>{product()!.nameProduct} - Grassit</Title>
-        <Meta name="description" content={product()!.description} />
-        <Meta property="og:title" content={`${product()!.nameProduct} - Grassit`} />
-        <Meta property="og:description" content={product()!.description} />
-        <Meta property="og:image" content={product()!.images?.[0] ?? product()!.img} />
+        <Title>{t("seo.productTitle", { name: product()!.nameProduct })}</Title>
+        <Meta name="description" content={description()} />
+        <Meta
+          property="og:title"
+          content={t("seo.productTitle", { name: product()!.nameProduct })}
+        />
+        <Meta property="og:description" content={description()} />
+        <Meta property="og:image" content={ogImage()} />
       </Show>
       <BackArrow />
       <Show when={product()} fallback={<ProductNotFound />}>
         <DetailedProduct
-          id={product()!.id}
-          nameProduct={product()!.nameProduct}
-          price={product()!.price}
-          productDescription={product()!.details.productDescription}
-          producer={product()!.details.producer}
-          catalogNumber={product()!.details.catalogNumber}
-          productHeight={product()!.details.productHeight}
-          productWeight={product()!.details.productWeight}
-          productMaterial={product()!.details.productMaterial}
-          UVResistant={product()!.details.UVResistant}
-          images={product()!.images ?? [product()!.img]}
-          technicalCard={product()!.technicalCard}
-          colorVariants={(product() as any).colorVariants}
-          similarProducts={similarProducts()}
-          onAskClick={() => navigate("/kontakt")}
-          onAskClickAskProduct={(id: string) => navigate(`/zamów-próbkę/${id}`)}
-          onSimilarProductClick={(id: string) => navigate(`/produkty/${id}`)}
-          onColorVariantClick={(id: string) => navigate(`/produkty/${id}`)}
+          product={product()!}
+          similarProducts={similar()}
+          onAskClick={() => navigate(path("contact"))}
+          onAskClickAskProduct={(id: string) => navigate(path("orderSample", { id }))}
+          onSimilarProductClick={(id: string) => navigate(path("product", { id }))}
+          onColorVariantClick={(id: string) => navigate(path("product", { id }))}
         />
       </Show>
     </main>

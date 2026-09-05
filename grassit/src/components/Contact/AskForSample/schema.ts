@@ -1,47 +1,49 @@
-// schema.ts (lub gdzie trzymasz schemat)
 import { z } from "zod";
+import { COUNTRY_VALIDATION } from "~/config/validation";
+import { resolveSite, type Country } from "~/config/site";
+import { t } from "~/utils/translations";
 
 const NAME_RE = /^[\p{L}\p{M}]+([ '-][\p{L}\p{M}]+)*$/u;
-const ZIP_PL = /^\d{2}-\d{3}$/;
 
-function isValidNIP(raw: string) {
-  const nip = raw.replace(/\D/g, "");
-  if (nip.length !== 10) return false;
-  const w = [6, 5, 7, 2, 3, 4, 5, 6, 7];
-  const s = w.reduce((acc, wi, i) => acc + wi * Number(nip[i]), 0);
-  return s % 11 === Number(nip[9]);
+/**
+ * Built on demand: the messages come from `t`, and the postcode / tax-id rules
+ * depend on the market this domain serves - a German customer must not be
+ * validated against the Polish `12-345` postcode and the NIP checksum.
+ */
+export function makeAskProductSchema(country: Country = resolveSite().country) {
+  const rules = COUNTRY_VALIDATION[country];
+
+  return z.object({
+    name: z
+      .string()
+      .trim()
+      .min(2, t("errors.minChars"))
+      .regex(NAME_RE, t("errors.lettersOnly")),
+    lastName: z
+      .string()
+      .trim()
+      .min(2, t("errors.minChars"))
+      .regex(NAME_RE, t("errors.lettersOnly")),
+    email: z.string().trim().email(t("errors.email")),
+    phoneNumber: z.string().trim().regex(/^\+?[0-9\s-]{7,20}$/, t("errors.phone")),
+    street: z.string().trim().min(3, t("errors.street")),
+    zip: z
+      .string()
+      .trim()
+      .regex(rules.zip, t("errors.zipFormat", { example: rules.zipExample })),
+    city: z.string().trim().min(2, t("errors.city")),
+    company: z.string().trim().optional(),
+    nip: z
+      .string()
+      .trim()
+      .optional()
+      .refine((v) => !v || rules.isValidVatId(v), t("errors.vatInvalid")),
+    notes: z.string().trim().optional(),
+    // Product metadata, carried through into the e-mail payload.
+    productId: z.string().trim().optional(),
+    productName: z.string().trim().optional(),
+    sku: z.string().trim().optional(),
+  });
 }
 
-export const askProductSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(2, "Podaj przynajmniej 2 znaki")
-    .regex(NAME_RE, "Tylko litery"),
-  lastName: z
-    .string()
-    .trim()
-    .min(2, "Podaj przynajmniej 2 znaki")
-    .regex(NAME_RE, "Tylko litery"),
-  email: z.string().trim().email("Podaj poprawny e-mail"),
-  phoneNumber: z
-    .string()
-    .trim()
-    .regex(/^\+?[0-9\s-]{7,20}$/, "Podaj poprawny numer telefonu"),
-  street: z.string().trim().min(3, "Podaj ulicę i numer"),
-  zip: z.string().trim().regex(ZIP_PL, "Format 12-345"),
-  city: z.string().trim().min(2, "Podaj miasto"),
-  company: z.string().trim().optional(),
-  nip: z
-    .string()
-    .trim()
-    .optional()
-    .refine((v) => !v || isValidNIP(v), "Nieprawidłowy NIP"),
-  notes: z.string().trim().optional(),
-  // metadane produktu (opcjonalne, ale chcemy je mieć w payloadzie):
-  productId: z.string().trim().optional(),
-  productName: z.string().trim().optional(),
-  sku: z.string().trim().optional(),
-});
-
-export type AskProductForm = z.infer<typeof askProductSchema>;
+export type AskProductForm = z.infer<ReturnType<typeof makeAskProductSchema>>;

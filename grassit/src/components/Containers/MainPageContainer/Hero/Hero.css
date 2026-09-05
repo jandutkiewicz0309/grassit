@@ -46,6 +46,18 @@
   line-height: 60px;
   font-weight: 600;
   margin: 0px;
+  /* The headline used to carry a hard <br />. Languages break in different
+     places, so the width does the wrapping instead. */
+  max-width: 620px;
+  text-wrap: balance;
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 40px;
+    line-height: 44px;
+    max-width: 100%;
+  }
 }
 
 .hero__lead {

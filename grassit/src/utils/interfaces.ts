@@ -15,28 +15,12 @@ export interface IAskProductFields {
   zip: string;
   city: string;
   company?: string;
+  /** Business tax id - NIP in PL, USt-IdNr. in DE, UID in CH. */
   nip?: string;
   notes?: string;
   productId?: string;
   productName?: string;
   sku?: string;
-}
-
-export interface ProductDetails {
-  producer: string;
-  productDescription: string;
-  catalogNumber: string;
-  productHeight: string;
-  productWeight: string;
-  productMaterial: string;
-  UVResistant: string;
-}
-export interface Product {
-  id: string;
-  img: string;
-  images?: string[];
-  nameProduct: string;
-  price: string;
-  description: string;
-  details: ProductDetails;
+  /** Path to the product data sheet, linked from the confirmation e-mail. */
+  technicalCard?: string;
 }

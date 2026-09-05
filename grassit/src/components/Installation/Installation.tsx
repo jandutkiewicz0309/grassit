@@ -1,46 +1,40 @@
-import { Component } from "solid-js";
+import { Component, For } from "solid-js";
+import { A } from "@solidjs/router";
 import "./Installation.css";
 import instalationImg from "~/components/static/png/instalationImg.jpg";
+import { path, t } from "~/utils/translations";
 
 export const InstallationPage: Component = () => {
+  const items = () => [
+    t("installation.item1"),
+    t("installation.item2"),
+    t("installation.item3"),
+    t("installation.item4"),
+    t("installation.item5"),
+  ];
+
   return (
     <section class="montaz">
       <div class="montaz__grid">
         <div class="montaz__media">
-          <img src={instalationImg} alt="Montaż sztucznej trawy" loading="lazy" />
+          <img src={instalationImg} alt={t("installation.imgAlt")} loading="lazy" />
         </div>
 
         <div class="montaz__content">
-          <h1 class="montaz__title">Montaż trawy syntetycznej</h1>
+          <h1 class="montaz__title">{t("installation.title")}</h1>
 
-          <p class="montaz__lead">
-            Zajmujemy się kompleksowym montażem i sprzedażą sztucznej trawy na
-            terenie całej Polski. Realizujemy projekty zarówno dla klientów
-            indywidualnych, jak i firm, od małych ogrodów, przez tarasy, po
-            rozległe tereny rekreacyjne i komercyjne. W zależności od
-            zastosowania oferujemy trawy o różnej wysokości włókna, gęstości i
-            sprężystości, dobrane tak, by zachować idealny wygląd i trwałość
-            przez wiele lat.
-          </p>
+          <p class="montaz__lead">{t("installation.lead")}</p>
 
-          <p class="montaz__intro">W ramach usługi zapewniamy:</p>
+          <p class="montaz__intro">{t("installation.intro")}</p>
           <ul class="montaz__list">
-            <li>przygotowanie i wyrównanie podłoża,</li>
-            <li>dostawę trawy oraz materiałów montażowych,</li>
-            <li>wykonanie niezbędnych docięć i łączeń,</li>
-            <li>wypełnienie piaskiem kwarcowym (jeśli wymagane),</li>
-            <li>uporządkowanie terenu po zakończeniu prac.</li>
+            <For each={items()}>{(item) => <li>{item}</li>}</For>
           </ul>
 
-          <p class="montaz__note">
-            Cena usługi zależy od wielkości projektu, stopnia skomplikowania,
-            rodzaju podłoża oraz użytych materiałów. Wszystkie wyceny
-            przygotowujemy indywidualnie.
-          </p>
+          <p class="montaz__note">{t("installation.note")}</p>
 
-          <a href="/kontakt" class="montaz__cta">
-            Skontaktuj się
-          </a>
+          <A href={path("contact")} class="montaz__cta">
+            {t("common.contactUs")}
+          </A>
         </div>
       </div>
     </section>

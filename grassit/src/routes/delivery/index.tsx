@@ -1,12 +1,13 @@
 import { Meta, Title } from "@solidjs/meta";
 import { BackArrow } from "~/components/BackArrow/BackArrow";
 import { DeliveryPage } from "~/components/Delivery/Delivery";
+import { t } from "~/utils/translations";
 
 export const delivery = () => {
   return (
     <main>
-      <Title>Dostawa - Grassit</Title>
-      <Meta name="description" content="Szybka i bezpieczna dostawa sztucznej trawy Grassit na terenie całej Polski." />
+      <Title>{t("seo.deliveryTitle")}</Title>
+      <Meta name="description" content={t("seo.deliveryDescription")} />
       <BackArrow />
       <DeliveryPage />
     </main>

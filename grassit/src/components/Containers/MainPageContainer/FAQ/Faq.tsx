@@ -1,33 +1,23 @@
-import { Component, For, createSignal, onMount } from "solid-js";
+import { Component, For, createEffect, createMemo, createSignal, onMount } from "solid-js";
 import "./Faq.css";
+import { locale, t } from "~/utils/translations";
 
 type QA = { q: string; a: string };
-
-const DATA: QA[] = [
-  {
-    q: "Jak wygląda pielęgnacja sztucznej trawy?",
-    a: "Wystarczy okresowe wyczesanie, usunięcie liści i przepłukanie wodą. W strefach intensywnych można dodać wypełnienie i podnieść włókna szczotką.",
-  },
-  {
-    q: "Co z odprowadzaniem wody podczas deszczu?",
-    a: "Podłoże jest perforowane, dzięki czemu woda szybko przesiąka do warstwy drenażowej. Przy właściwie przygotowanej podsypce nie tworzą się zastoiska.",
-  },
-  {
-    q: "Jak długo może służyć sztuczna trawa?",
-    a: "Żywotność zależy od klasy produktu i intensywności użytkowania. Dobre trawy ogrodowe zachowują estetykę nawet 10–15 lat; w miejscach mocno eksploatowanych okres ten bywa krótszy.",
-  },
-  {
-    q: "Czy sztuczna trawa jest bezpieczna dla dzieci i zwierząt?",
-    a: "Tak. Produkty są wolne od ołowiu i toksyn, a miękkie włókna minimalizują ryzyko otarć. Zalecamy regularne płukanie w strefach zabawy.",
-  },
-];
 
 const Faq: Component = () => {
   const [openIdx, setOpenIdx] = createSignal<number | null>(0);
   let panels: HTMLDivElement[] = [];
 
+  const items = createMemo<QA[]>(() => [
+    { q: t("faq.q1"), a: t("faq.a1") },
+    { q: t("faq.q2"), a: t("faq.a2") },
+    { q: t("faq.q3"), a: t("faq.a3") },
+    { q: t("faq.q4"), a: t("faq.a4") },
+  ]);
+
   const recalcHeights = () => {
     panels.forEach((el, i) => {
+      if (!el) return;
       const opened = openIdx() === i;
       el.style.maxHeight = opened ? `${el.scrollHeight}px` : "0px";
     });
@@ -38,6 +28,13 @@ const Faq: Component = () => {
     window.addEventListener("resize", recalcHeights);
   });
 
+  // Answers differ in length between languages, so the measured panel height
+  // has to be taken again after a language change.
+  createEffect(() => {
+    locale();
+    queueMicrotask(recalcHeights);
+  });
+
   const toggle = (i: number) => {
     setOpenIdx((curr) => (curr === i ? null : i));
     queueMicrotask(recalcHeights);
@@ -46,9 +43,9 @@ const Faq: Component = () => {
   return (
     <section class="faq">
       <div class="faq__inner">
-        <h2 class="faq__title">Często zadawane pytania</h2>
+        <h2 class="faq__title">{t("faq.heading")}</h2>
         <div class="faq__list" role="list">
-          <For each={DATA}>
+          <For each={items()}>
             {(item, i) => (
               <div class="faqItem" role="listitem">
                 <p class="faqItem__head">
