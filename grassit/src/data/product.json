@@ -26,10 +26,10 @@
       "id": "genewa",
       "category": "trawy_dekoracyjne",
       "technicalCard": "/static/pdf/genewa.pdf",
-      "img": "/static/jpg/genewa/genewa1.jpg",
+      "img": "/static/jpg/genewa/Genewa1.jpg",
       "images": [
-        "/static/jpg/genewa/genewa3.jpg",
-        "/static/jpg/genewa/genewa2.jpg"
+        "/static/jpg/genewa/Genewa3.jpg",
+        "/static/jpg/genewa/Genewa2.jpg"
       ],
       "nameProduct": "Genewa",
       "price": { "PLN": 149, "EUR": 34.5, "CHF": 32 },
