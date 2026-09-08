@@ -119,8 +119,8 @@ const Footer: Component = () => {
 
       {/* Impressumspflicht - obowiązek wyłącznie dla rynku niemieckiego. */}
       <Show when={site.country === "DE"}>
-        <details class="ft__impressum">
-          <summary class="ft__impressumSummary">{t("impressum.title")}</summary>
+        <section class="ft__impressum" aria-label={t("impressum.title")}>
+          <p class="ft__impressumHeading">{t("impressum.title")}</p>
 
           <div class="ft__impressumBody">
             <div class="ft__impressumBlock">
@@ -165,7 +165,7 @@ const Footer: Component = () => {
               <p>5.000,00 PLN</p>
             </div>
           </div>
-        </details>
+        </section>
       </Show>
 
       <div class="ft__bottom__wrapper">

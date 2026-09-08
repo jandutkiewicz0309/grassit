@@ -119,44 +119,21 @@
   text-underline-offset: 3px;
 }
 
-/* Impressum - dane rejestrowe, zwinięte domyślnie */
+/* Impressum - dane rejestrowe, widoczne na stałe (tylko rynek DE) */
 .ft__impressum {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px 8px;
 }
 
-.ft__impressumSummary {
-  cursor: pointer;
-  list-style: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.ft__impressumHeading {
+  margin: 0;
   font-size: 14px;
   line-height: 20px;
   font-weight: 700;
   color: #0f172a;
   letter-spacing: 0.2px;
   text-transform: uppercase;
-}
-.ft__impressumSummary::-webkit-details-marker {
-  display: none;
-}
-.ft__impressumSummary::after {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg) translate(-2px, -2px);
-  transition: transform 0.15s ease;
-}
-.ft__impressum[open] .ft__impressumSummary::after {
-  transform: rotate(-135deg) translate(-2px, -2px);
-}
-.ft__impressumSummary:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .ft__impressumBody {
