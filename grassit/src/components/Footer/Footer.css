@@ -119,6 +119,90 @@
   text-underline-offset: 3px;
 }
 
+/* Impressum - dane rejestrowe, zwinięte domyślnie */
+.ft__impressum {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 8px;
+}
+
+.ft__impressumSummary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+.ft__impressumSummary::-webkit-details-marker {
+  display: none;
+}
+.ft__impressumSummary::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 0.15s ease;
+}
+.ft__impressum[open] .ft__impressumSummary::after {
+  transform: rotate(-135deg) translate(-2px, -2px);
+}
+.ft__impressumSummary:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ft__impressumBody {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.ft__impressumBlock {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.ft__impressumBlock p {
+  margin: 0;
+  color: #334155;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.ft__impressumBlock a {
+  color: #0f172a;
+  text-decoration: none;
+}
+.ft__impressumBlock a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ft__impressumBlock .ft__impressumName,
+.ft__impressumBlock .ft__impressumTitle {
+  font-weight: 700;
+  color: #0f172a;
+}
+.ft__impressumBlock .ft__impressumTitle--spaced {
+  margin-top: 10px;
+}
+
+@media (max-width: 760px) {
+  .ft__impressum {
+    padding: 0 16px 8px;
+  }
+}
+
 .ft__bottom__wrapper {
   padding: 0px 24px;
 }

@@ -122,6 +122,24 @@ export const fr: Dictionary = {
     copyright: "© {{ year }} Grassit. Tous droits réservés.",
   },
 
+  impressum: {
+    title: "Mentions légales",
+    contact: "Contact",
+    phone: "Téléphone",
+    email: "E-mail",
+    web: "Site internet",
+    representation: "Représentée par le directoire",
+    president: "Président du directoire",
+    boardMember: "Membre du directoire",
+    representationNote:
+      "Chaque membre du directoire est habilité à représenter seul la société.",
+    registry: "Immatriculation",
+    registryNote:
+      "Société inscrite au registre des entreprises du Krajowy Rejestr Sądowy (KRS) - registre national judiciaire polonais.",
+    court: "Tribunal d'immatriculation",
+    capital: "Capital social",
+  },
+
   topInfo: {
     hours: "lun–ven 9h00–19h00 / sam 10h00–14h00",
   },

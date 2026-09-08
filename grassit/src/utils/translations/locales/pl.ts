@@ -126,6 +126,24 @@ export const pl = {
     copyright: "© {{ year }} Grassit. Wszelkie prawa zastrzeżone.",
   },
 
+  impressum: {
+    title: "Dane rejestrowe",
+    contact: "Kontakt",
+    phone: "Telefon",
+    email: "E-mail",
+    web: "Strona internetowa",
+    representation: "Reprezentacja - Zarząd",
+    president: "Prezes Zarządu",
+    boardMember: "Członek Zarządu",
+    representationNote:
+      "Każdy członek zarządu jest uprawniony do samodzielnej reprezentacji spółki.",
+    registry: "Wpis do rejestru",
+    registryNote:
+      "Spółka wpisana do rejestru przedsiębiorców Krajowego Rejestru Sądowego (KRS).",
+    court: "Sąd rejestrowy",
+    capital: "Kapitał zakładowy",
+  },
+
   topInfo: {
     hours: "pon-pt 9:00-19:00 / sob 10:00-14:00",
   },

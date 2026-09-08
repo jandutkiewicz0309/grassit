@@ -122,6 +122,24 @@ export const it: Dictionary = {
     copyright: "© {{ year }} Grassit. Tutti i diritti riservati.",
   },
 
+  impressum: {
+    title: "Note legali",
+    contact: "Contatti",
+    phone: "Telefono",
+    email: "E-mail",
+    web: "Sito web",
+    representation: "Rappresentata dal consiglio di amministrazione",
+    president: "Presidente del consiglio di amministrazione",
+    boardMember: "Membro del consiglio di amministrazione",
+    representationNote:
+      "Ogni membro del consiglio di amministrazione è autorizzato a rappresentare la società singolarmente.",
+    registry: "Iscrizione nel registro",
+    registryNote:
+      "Società iscritta nel registro delle imprese del Krajowy Rejestr Sądowy (KRS) - registro nazionale giudiziario polacco.",
+    court: "Tribunale del registro",
+    capital: "Capitale sociale",
+  },
+
   topInfo: {
     hours: "lun–ven 9:00–19:00 / sab 10:00–14:00",
   },

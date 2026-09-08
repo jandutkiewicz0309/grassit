@@ -121,6 +121,24 @@ export const de: Dictionary = {
     copyright: "© {{ year }} Grassit. Alle Rechte vorbehalten.",
   },
 
+  impressum: {
+    title: "Impressum",
+    contact: "Kontakt",
+    phone: "Telefon",
+    email: "E-Mail",
+    web: "Internet",
+    representation: "Vertreten durch den Vorstand",
+    president: "Präsident des Vorstands",
+    boardMember: "Mitglied des Vorstands",
+    representationNote:
+      "Jedes Vorstandsmitglied ist zur selbstständigen Vertretung der Gesellschaft berechtigt.",
+    registry: "Registereintrag",
+    registryNote:
+      "Eingetragen im Unternehmensregister des Krajowy Rejestr Sądowy (KRS) - Nationales Gerichtsregister.",
+    court: "Registergericht",
+    capital: "Stammkapital",
+  },
+
   topInfo: {
     hours: "Mo–Fr 9:00–19:00 / Sa 10:00–14:00",
   },

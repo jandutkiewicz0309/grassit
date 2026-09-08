@@ -121,6 +121,24 @@ export const en: Dictionary = {
     copyright: "© {{ year }} Grassit. All rights reserved.",
   },
 
+  impressum: {
+    title: "Legal notice",
+    contact: "Contact",
+    phone: "Phone",
+    email: "E-mail",
+    web: "Website",
+    representation: "Represented by the Management Board",
+    president: "President of the Management Board",
+    boardMember: "Member of the Management Board",
+    representationNote:
+      "Each member of the Management Board is authorised to represent the company individually.",
+    registry: "Register entry",
+    registryNote:
+      "Entered in the business register of the Krajowy Rejestr Sądowy (KRS) - the Polish National Court Register.",
+    court: "Registry court",
+    capital: "Share capital",
+  },
+
   topInfo: {
     hours: "Mon–Fri 9:00–19:00 / Sat 10:00–14:00",
   },

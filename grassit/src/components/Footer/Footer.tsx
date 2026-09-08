@@ -1,4 +1,4 @@
-import { Component } from "solid-js";
+import { Component, Show } from "solid-js";
 import { A } from "@solidjs/router";
 import "./Footer.css";
 import logo from "~/components/static/png/logo.png";
@@ -116,6 +116,57 @@ const Footer: Component = () => {
           </p>
         </address>
       </div>
+
+      {/* Impressumspflicht - obowiązek wyłącznie dla rynku niemieckiego. */}
+      <Show when={site.country === "DE"}>
+        <details class="ft__impressum">
+          <summary class="ft__impressumSummary">{t("impressum.title")}</summary>
+
+          <div class="ft__impressumBody">
+            <div class="ft__impressumBlock">
+              <p class="ft__impressumName">GRASSIT Spółka z ograniczoną odpowiedzialnością</p>
+              <p>ul. Kazimierza Wielkiego 47 A</p>
+              <p>32-400 Myślenice, {t("footer.country")}</p>
+            </div>
+
+            <div class="ft__impressumBlock">
+              <p class="ft__impressumTitle">{t("impressum.contact")}</p>
+              <p>
+                {t("impressum.phone")}: {site.phone}
+              </p>
+              <p>
+                {t("impressum.email")}: <a href={`mailto:${site.email}`}>{site.email}</a>
+              </p>
+              <p>
+                {t("impressum.web")}: <a href={site.origin}>{site.origin.replace("https://", "")}</a>
+              </p>
+            </div>
+
+            <div class="ft__impressumBlock">
+              <p class="ft__impressumTitle">{t("impressum.representation")}</p>
+              <p>Tadeusz Wojciech Widomski - {t("impressum.president")}</p>
+              <p>Tadeusz Władysław Widomski - {t("impressum.boardMember")}</p>
+              <p>{t("impressum.representationNote")}</p>
+            </div>
+
+            <div class="ft__impressumBlock">
+              <p class="ft__impressumTitle">{t("impressum.registry")}</p>
+              <p>{t("impressum.registryNote")}</p>
+              <p>KRS: 0000979694</p>
+              <p>REGON: 522476299</p>
+              <p>NIP: 6812093897</p>
+            </div>
+
+            <div class="ft__impressumBlock">
+              <p class="ft__impressumTitle">{t("impressum.court")}</p>
+              <p>Sąd Rejonowy dla Krakowa-Śródmieścia w Krakowie</p>
+              <p>XII Wydział Gospodarczy Krajowego Rejestru Sądowego</p>
+              <p class="ft__impressumTitle ft__impressumTitle--spaced">{t("impressum.capital")}</p>
+              <p>5.000,00 PLN</p>
+            </div>
+          </div>
+        </details>
+      </Show>
 
       <div class="ft__bottom__wrapper">
         <div class="ft__bottom">
